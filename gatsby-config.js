@@ -6,5 +6,5 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: ['gatsby-plugin-pnpm'],
+  plugins: ['gatsby-plugin-emotion', 'gatsby-plugin-pnpm'],
 };

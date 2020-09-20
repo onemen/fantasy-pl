@@ -1,6 +1,10 @@
 dependencies:
+  '@emotion/core': 10.0.35_react@16.13.1
+  '@emotion/styled': 10.0.27_4d699cf7e8a2bf97a506a18e2a399a54
   gatsby: 2.24.63_9dab313dfc55731918ae7b0a11c575a8
+  gatsby-plugin-emotion: 4.3.11_a5191425feb83fef37261f909373d417
   gatsby-plugin-pnpm: 1.2.5_gatsby@2.24.63
+  polished: 3.6.7
   react: 16.13.1
   react-dom: 16.13.1_react@16.13.1
 devDependencies:
@@ -489,6 +493,14 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-lY6kdGpWHvjoe2vk4WrAapEuBR69EMxZl+RoGRhrFGNYVK8mOPAW8VfbT/ZgrFbXlDNiiaxQnAtgVCZ6jv30EA==
+  /@babel/plugin-syntax-jsx/7.10.4:
+    dependencies:
+      '@babel/helper-plugin-utils': 7.10.4
+    dev: false
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    resolution:
+      integrity: sha512-KCg9mio9jwiARCB7WAcQ7Y1q+qicILjoK8LP/VkPkEKaf5dkaZZK1EcTe91a3JJlZ3qy6L5s9X52boEYi8DM9g==
   /@babel/plugin-syntax-jsx/7.10.4_@babel+core@7.10.5:
     dependencies:
       '@babel/core': 7.10.5
@@ -868,6 +880,17 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-wTeqHVkN1lfPLubRiZH3o73f4rfon42HpgxUSs86Nc+8QIcm/B9s8NNVXu/gwGcOyd7yDib9ikxoDLxJP0UiDA==
+  /@babel/plugin-transform-react-jsx/7.10.4:
+    dependencies:
+      '@babel/helper-builder-react-jsx': 7.10.4
+      '@babel/helper-builder-react-jsx-experimental': 7.11.5
+      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/plugin-syntax-jsx': 7.10.4
+    dev: false
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    resolution:
+      integrity: sha512-L+MfRhWjX0eI7Js093MM6MacKU4M6dnCRa/QPDwYMxjljzSCzzlzKzj9Pk4P3OtrPcxr2N3znR419nr3Xw+65A==
   /@babel/plugin-transform-react-jsx/7.10.4_@babel+core@7.11.6:
     dependencies:
       '@babel/core': 7.11.6
@@ -1159,6 +1182,25 @@ packages:
     dev: false
     resolution:
       integrity: sha512-bvM7Qz6eKnJVFIn+1LPtjlBFPVN5jNDc1XmN15vWe7Q3DPBufWWsLiIvUu7xW87uTG6QoggpIDnUgLQvPheU+Q==
+  /@emotion/babel-plugin-jsx-pragmatic/0.1.5:
+    dependencies:
+      '@babel/plugin-syntax-jsx': 7.10.4
+    dev: false
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    resolution:
+      integrity: sha512-y+3AJ0SItMDaAgGPVkQBC/S/BaqaPACkQ6MyCI2CUlrjTxKttTVfD3TMtcs7vLEcLxqzZ1xiG0vzwCXjhopawQ==
+  /@emotion/babel-preset-css-prop/10.0.27:
+    dependencies:
+      '@babel/plugin-transform-react-jsx': 7.10.4
+      '@babel/runtime': 7.11.2
+      '@emotion/babel-plugin-jsx-pragmatic': 0.1.5
+      babel-plugin-emotion: 10.0.33
+    dev: false
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    resolution:
+      integrity: sha512-rducrjTpLGDholp0l2l4pXqpzAqYYGMg/x4IteO0db2smf6zegn6RRZdDnbaoMSs63tfPWgo2WukT1/F1gX/AA==
   /@emotion/cache/10.0.29:
     dependencies:
       '@emotion/sheet': 0.9.4
@@ -5874,6 +5916,21 @@ packages:
       node: '>=10.13.0'
     resolution:
       integrity: sha512-0npo/wjYO94nqcjl0aMkL65LvJuVnaieJzlxpA6Fdj2s90RjKI0mCj/3VPvRBz3p0aDp5+gas4kUa5KE4B3b0Q==
+  /gatsby-plugin-emotion/4.3.11_a5191425feb83fef37261f909373d417:
+    dependencies:
+      '@babel/runtime': 7.11.2
+      '@emotion/babel-preset-css-prop': 10.0.27
+      '@emotion/core': 10.0.35_react@16.13.1
+      gatsby: 2.24.63_9dab313dfc55731918ae7b0a11c575a8
+    dev: false
+    engines:
+      node: '>=10.13.0'
+    peerDependencies:
+      '@babel/core': ^7.11.6
+      '@emotion/core': ^10.0.5
+      gatsby: ^2.0.0
+    resolution:
+      integrity: sha512-CTXJ1N02o/6hdqFyIHvW/+5uGUjfO8E9D2O2v/w7gceuJBUxNdoCA1y9aJeJTFkBLICe7emXMi5Aa0M5Wup0SQ==
   /gatsby-plugin-page-creator/2.3.28_gatsby@2.24.63:
     dependencies:
       '@babel/traverse': 7.11.5
@@ -9457,6 +9514,14 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==
+  /polished/3.6.7:
+    dependencies:
+      '@babel/runtime': 7.11.2
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-b4OViUOihwV0icb9PHmWbR+vPqaSzSAEbgLskvb7ANPATVXGiYv/TQFHQo65S53WU9i5EQ1I03YDOJW7K0bmYg==
   /portfinder/1.0.28:
     dependencies:
       async: 2.6.3
@@ -13015,10 +13080,14 @@ packages:
     resolution:
       integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==
 specifiers:
+  '@emotion/core': ^10.0.35
+  '@emotion/styled': ^10.0.27
   env-cmd: ^10.1.0
   gatsby: ^2.24.63
+  gatsby-plugin-emotion: ^4.3.11
   gatsby-plugin-pnpm: ^1.2.5
   node-fetch: 2.6.1
+  polished: ^3.6.7
   prettier: 2.1.2
   react: ^16.13.1
   react-dom: ^16.13.1
