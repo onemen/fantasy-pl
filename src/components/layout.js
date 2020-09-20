@@ -24,8 +24,9 @@ const colors = {
 
 export const globalStyles = css`
   :root {
+    --primary-color: ${colors.gray};
     --dark-bg-color: ${colors.primaryDarker};
-    --text-color: ${colors.lightGreen};
+    --menu-text-color: ${colors.lightGreen};
     --link_color: ${colors.link_color};
     --link_color_hover: ${colors.link_color_hover};
     --active_menu: ${darken(0.15, brand.primary)};
@@ -45,7 +46,7 @@ export const globalStyles = css`
     word-wrap: break-word;
   }
   body {
-    color: ${colors.lightGreen};
+    color: ${colors.gray};
     background-color: ${colors.primaryDark};
   }
 `;
@@ -68,7 +69,7 @@ const Container = styled.div`
   }
 `;
 
-const Layout = ({ children, maxWidth = 800 }) => {
+const Layout = ({ children, maxWidth = 1170 }) => {
   return (
     <>
       <Global styles={globalStyles} />
