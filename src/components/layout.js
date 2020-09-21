@@ -70,16 +70,16 @@ const Container = styled.div`
   }
 `;
 
-const Layout = ({ children, maxWidth = 1170 }) => {
+const Layout = ({ children, maxWidth = 1170, language = 'he' }) => {
   return (
     <>
       <Global styles={globalStyles} />
       <Container maxWidth={maxWidth}>
         <div className="content-wrapper">
-          <Header maxWidth={maxWidth} />
+          <Header maxWidth={maxWidth} language={language} />
           <div className="content">{children}</div>
         </div>
-        <Footer maxWidth={maxWidth} />
+        <Footer maxWidth={maxWidth} language={language} />
       </Container>
     </>
   );

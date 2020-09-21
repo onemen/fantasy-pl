@@ -12,13 +12,14 @@ const Container = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    direction: ${prop => (prop.language === 'he' ? 'rtl' : 'ltr')};
 
     margin: 0 auto;
     max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}px` : 'none')};
     min-height: 4rem;
   }
 
-  .left-menu {
+  .end-menu-box {
     img {
       display: inherit;
       width: 25px;
@@ -56,24 +57,23 @@ const Container = styled.header`
     img {
       height: 40px;
       width: 40px;
-      margin-left: 0.75rem;
+      margin-inline-end: 0.75rem;
     }
   }
 `;
 
-const Header = ({ maxWidth }) => {
+const Header = ({ maxWidth, language }) => {
   return (
-    <Container maxWidth={maxWidth}>
+    <Container maxWidth={maxWidth} language={language}>
       <div className="header-content">
-        <MenuList className="left-menu" space="1rem">
-          <li>
-            <img src={userIcon} alt="" />
-          </li>
-          <li>
-            <Link className="nav-item btn" to="/login">
-              כניסה
-            </Link>
-          </li>
+        <div className="start-menu-box">
+          <Link className="logo-box" to="/">
+            <img src={logo} alt="לוגו" />
+            פנטזי ליג
+          </Link>
+        </div>
+        <Navbar className="middle" />
+        <MenuList className="end-menu-box" space="1rem">
           <li>
             <Link
               className="nav-item"
@@ -83,14 +83,15 @@ const Header = ({ maxWidth }) => {
               הרשמה
             </Link>
           </li>
+          <li>
+            <Link className="nav-item btn" to="/login">
+              כניסה
+            </Link>
+          </li>
+          <li>
+            <img src={userIcon} alt="" />
+          </li>
         </MenuList>
-        <Navbar className="middle" />
-        <div className="right">
-          <Link className="logo-box" to="/">
-            פנטזי ליג
-            <img src={logo} alt="לוגו" />
-          </Link>
-        </div>
       </div>
     </Container>
   );

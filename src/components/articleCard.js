@@ -5,7 +5,7 @@ import React from 'react';
 const ArticleCard = ({ data }) => {
   return (
     <Link
-      to="blog/1"
+      to={data.slug}
       css={css`
         height: 400px;
         display: flex;
