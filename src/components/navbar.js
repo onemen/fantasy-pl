@@ -15,8 +15,7 @@ export const MenuList = styled.ul`
 
   .nav-item {
     color: var(
-      ${prop =>
-        prop.color === 'text' ? '--primary-color' : '--menu-text-color'}
+      ${prop => (prop.color === 'text' ? '--primary-color' : '--title-color')}
     );
     font-size: 0.9rem;
     text-decoration: none;

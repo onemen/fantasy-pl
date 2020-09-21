@@ -30,7 +30,7 @@ const Container = styled.header`
       display: inline-block;
       padding: 0.3em 1.2em;
       background-color: var(--link_color);
-      border: 0.1em solid var(--menu-text-color);
+      border: 0.1em solid var(--title-color);
       border-radius: 0.3em;
       text-decoration: none;
       font-family: 'Rubik', Arial, Helvetica, sans-serif;
@@ -40,7 +40,7 @@ const Container = styled.header`
 
       &:hover,
       &:focus {
-        color: var(--menu-text-color);
+        color: var(--title-color);
         background-color: transparent;
       }
     }
@@ -49,7 +49,7 @@ const Container = styled.header`
   .logo-box {
     display: flex;
     align-items: center;
-    color: var(--menu-text-color);
+    color: var(--title-color);
     text-decoration: none;
     font-size: 1.25rem;
 

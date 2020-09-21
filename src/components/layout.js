@@ -14,7 +14,7 @@ const brand = {
 const colors = {
   primaryDark: '#575353',
   primaryDarker: '#3C2F2F',
-  // primaryDarker: '#676262',
+  darkGray: '#676262',
   gray: '#DBDADA',
   lightGreen: '#4CE656',
   green: '#00CA6F',
@@ -26,7 +26,8 @@ export const globalStyles = css`
   :root {
     --primary-color: ${colors.gray};
     --dark-bg-color: ${colors.primaryDarker};
-    --menu-text-color: ${colors.lightGreen};
+    --card-bg-color: ${colors.darkGray};
+    --title-color: ${colors.lightGreen};
     --link_color: ${colors.link_color};
     --link_color_hover: ${colors.link_color_hover};
     --active_menu: ${darken(0.15, brand.primary)};
@@ -35,13 +36,13 @@ export const globalStyles = css`
   *:before,
   *:after {
     box-sizing: inherit;
+    padding: 0;
+    margin: 0;
   }
   html,
   body {
     font-style: normal;
     font-size: 18px;
-    padding: 0;
-    margin: 0;
     line-height: 1.7;
     word-wrap: break-word;
   }
