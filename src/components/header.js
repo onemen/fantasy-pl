@@ -3,6 +3,8 @@ import { Link } from 'gatsby';
 import React from 'react';
 import logo from '../images/premier-league.svg';
 import userIcon from '../images/user.svg';
+import theme from '../styles/theme';
+import MobileNav from './mobile-nav';
 import Navbar, { MenuList } from './navbar';
 
 const Container = styled.header`
@@ -60,6 +62,23 @@ const Container = styled.header`
       margin-inline-end: 0.75rem;
     }
   }
+
+  @media (max-width: 769px) {
+    .navbar-box,
+    .end-menu-box {
+      display: none;
+    }
+    padding: 0 1rem;
+  }
+
+  .mobile-nav {
+    display: none;
+    visibility: hidden;
+    @media (max-width: 769px) {
+      display: block;
+      visibility: visible;
+    }
+  }
 `;
 
 const Header = ({ maxWidth, language }) => {
@@ -72,19 +91,21 @@ const Header = ({ maxWidth, language }) => {
             פנטזי ליג
           </Link>
         </div>
-        <Navbar className="middle" />
+        <MobileNav color={theme.colors.lightGreen} />
+        <Navbar className="navbar-box" />
         <MenuList className="end-menu-box" space="1rem">
           <li>
             <Link
               className="nav-item"
               activeClassName="active-nav-item"
               to="/register"
+              aria-label="הרשמה"
             >
               הרשמה
             </Link>
           </li>
           <li>
-            <Link className="nav-item btn" to="/login">
+            <Link className="nav-item btn" to="/login" aria-label="כניסה">
               כניסה
             </Link>
           </li>

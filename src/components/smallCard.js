@@ -7,6 +7,7 @@ const SmallCard = ({ data }) => {
   return (
     <Link
       to={data.slug}
+      aria-label="לקריאת המאמר"
       css={css`
         border-radius: 10px;
         background-color: var(--card-bg-color);

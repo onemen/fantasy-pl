@@ -31,15 +31,16 @@ export const MenuList = styled.ul`
   }
 `;
 
-const Navbar = ({ color }) => {
+const Navbar = ({ color, className }) => {
   return (
-    <nav>
+    <nav className={className}>
       <MenuList color={color}>
         <li>
           <Link
             className="nav-item"
             activeClassName="active-nav-item"
             to="/blog"
+            aria-label="תוכן"
           >
             תוכן
           </Link>
@@ -49,6 +50,7 @@ const Navbar = ({ color }) => {
             className="nav-item"
             activeClassName="active-nav-item"
             to="/news"
+            aria-label="חדשות"
           >
             חדשות
           </Link>
@@ -58,6 +60,7 @@ const Navbar = ({ color }) => {
             className="nav-item"
             activeClassName="active-nav-item"
             to="/help"
+            aria-label="הדרכה"
           >
             הדרכה
           </Link>

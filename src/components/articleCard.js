@@ -7,6 +7,7 @@ const ArticleCard = ({ data }) => {
   return (
     <Link
       to={data.slug}
+      aria-label="למאמר השלם"
       css={css`
         display: flex;
         flex-direction: column;

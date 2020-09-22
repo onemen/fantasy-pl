@@ -1,36 +1,20 @@
 import { css, Global } from '@emotion/core';
 import styled from '@emotion/styled';
-import { darken } from 'polished';
 import React from 'react';
 import '../styles/fonts.css';
+import theme from '../styles/theme';
 import Footer from './footer';
 import Header from './header';
 
-const brand = {
-  primary: '#00CA6F',
-  secondary: '#EEF4F2',
-};
-
-const colors = {
-  primaryDark: '#575353',
-  primaryDarker: '#3C2F2F',
-  darkGray: '#676262',
-  gray: '#DBDADA',
-  lightGreen: '#4CE656',
-  green: '#00CA6F',
-  link_color: brand.primary,
-  link_color_hover: `${darken(0.07, brand.primary)}`,
-};
-
 export const globalStyles = css`
   :root {
-    --primary-color: ${colors.gray};
-    --dark-bg-color: ${colors.primaryDarker};
-    --card-bg-color: ${colors.darkGray};
-    --title-color: ${colors.lightGreen};
-    --link_color: ${colors.link_color};
-    --link_color_hover: ${colors.link_color_hover};
-    --active_menu: ${darken(0.15, brand.primary)};
+    --primary-color: ${theme.colors.gray};
+    --dark-bg-color: ${theme.colors.primaryDarker};
+    --card-bg-color: ${theme.colors.darkGray};
+    --title-color: ${theme.colors.lightGreen};
+    --link_color: ${theme.colors.link_color};
+    --link_color_hover: ${theme.colors.link_color_hover};
+    --active_menu: ${theme.colors.link_color_active};
   }
   *,
   *:before,
@@ -47,8 +31,11 @@ export const globalStyles = css`
     word-wrap: break-word;
   }
   body {
-    color: ${colors.gray};
-    background-color: ${colors.primaryDark};
+    color: ${theme.colors.gray};
+    background-color: ${theme.colors.primaryDark};
+  }
+  button {
+    cursor: pointer;
   }
 `;
 
