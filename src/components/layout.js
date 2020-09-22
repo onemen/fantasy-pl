@@ -2,6 +2,7 @@ import { css, Global } from '@emotion/core';
 import styled from '@emotion/styled';
 import React from 'react';
 import '../styles/fonts.css';
+import reset from '../styles/reset';
 import theme from '../styles/theme';
 import Footer from './footer';
 import Header from './header';
@@ -15,13 +16,6 @@ export const globalStyles = css`
     --link_color: ${theme.colors.link_color};
     --link_color_hover: ${theme.colors.link_color_hover};
     --active_menu: ${theme.colors.link_color_active};
-  }
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-    padding: 0;
-    margin: 0;
   }
   html,
   body {
@@ -37,6 +31,8 @@ export const globalStyles = css`
   button {
     cursor: pointer;
   }
+
+  ${reset};
 `;
 
 const Container = styled.div`
