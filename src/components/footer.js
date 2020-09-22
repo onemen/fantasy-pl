@@ -9,15 +9,33 @@ const Container = styled.footer`
 
   .footer-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     direction: ${prop => (prop.language === 'he' ? 'rtl' : 'ltr')};
 
     margin: 0 auto;
+    padding: 0 1rem;
     max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}px` : 'none')};
     min-height: 4rem;
 
     font-size: 0.9rem;
+
+    & > * {
+      margin: 0.5rem 0;
+    }
+
+    @media (min-width: ${prop => +prop.maxWidth + 10}px) {
+      padding: 0;
+    }
+
+    @media (min-width: 769px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      & > * {
+        margin: 0;
+      }
+    }
   }
 `;
 

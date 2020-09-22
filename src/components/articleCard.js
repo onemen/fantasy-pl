@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 
-const ArticleCard = ({ data, ...props }) => {
+const ArticleCard = ({ data }) => {
   return (
     <Link
       to={data.slug}
@@ -38,7 +38,6 @@ const ArticleCard = ({ data, ...props }) => {
           }
         }
       `}
-      {...props}
     >
       <div>
         <Img

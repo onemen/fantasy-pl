@@ -53,6 +53,7 @@ export default function Home({ data }) {
   const cards = Array.from({ length: 9 }, (_, i) => {
     return { ...cardData, slug: cardData.slug + i };
   });
+  cards[4].fluid = mainArticleData.fluid;
 
   console.log({ data });
   const maxWidth = '1170';
@@ -62,7 +63,7 @@ export default function Home({ data }) {
         css={css`
           margin-top: 3.35rem;
           padding: 0 1rem;
-          @media (min-width: ${maxWidth}px) {
+          @media (min-width: ${+maxWidth + 10}px) {
             padding: 0;
           }
         `}
