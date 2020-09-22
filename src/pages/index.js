@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
+import { graphql } from 'gatsby';
 import React from 'react';
-import ArticleCard from '../components/articleCard';
 import Layout from '../components/layout';
 import SmallCard from '../components/smallCard';
 
@@ -23,7 +23,9 @@ const cardData = {
   title: '"מציאות" העונה במשחק הפנטזי של הפרמייר ליג לעונת 20/21',
   subTitle: 'איך לא להישאר בלי כסף אחרי בחירת כל השחקנים הטובים.',
   summery: '',
-  image: 'dog-with-football.png',
+  // image: 'dog-with-football.png',
+  image: 'dog-with-football-unsplash.jpg',
+  // image: 'dog-with-football-unsplash.jpg',
   imageDescription: 'כלב עם כדור',
   author: guest
   publishedDate: 'ספטמבר 14, 2020',
@@ -31,11 +33,30 @@ const cardData = {
   slug: 'blog/',
 };
 
-const cards = Array.from({ length: 9 }, (_, i) => {
-  return { ...cardData, slug: cardData.slug + i };
-});
+export const query = graphql`
+  query {
+    allImageSharp {
+      edges {
+        node {
+          fluid(maxWidth: 350, quality: 100) {
+            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluidLimitPresentationSize
+          }
+        }
+      }
+    }
+  }
+`;
 
-export default function Home() {
+export default function Home({ data }) {
+  // for testing add fluid data to the demo card
+  cardData.fluid = data.allImageSharp.edges[1].node.fluid;
+
+  const cards = Array.from({ length: 9 }, (_, i) => {
+    return { ...cardData, slug: cardData.slug + i };
+  });
+
+  console.log({ data });
   return (
     <Layout maxWidth="1170">
       <div
@@ -43,17 +64,18 @@ export default function Home() {
           margin-top: 3.35rem;
         `}
       >
-        <ArticleCard data={mainArticleData} />
+        {/* <ArticleCard data={mainArticleData} /> */}
         <div
           css={css`
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem 10%;
             margin: 3.35rem 0;
+            padding: 0 1rem;
           `}
         >
           {cards.map(card => (
-            <SmallCard key={card.slug} data={card} type="small" />
+            <SmallCard key={card.slug} data={card} />
           ))}
         </div>
       </div>

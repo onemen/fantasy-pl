@@ -1,5 +1,6 @@
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 import React from 'react';
 
 const SmallCard = ({ data }) => {
@@ -7,47 +8,52 @@ const SmallCard = ({ data }) => {
     <Link
       to={data.slug}
       css={css`
-        height: 180px;
-        display: flex;
+        border-radius: 10px;
+        background-color: var(--card-bg-color);
+        color: var(--primary-color);
         text-decoration: none;
+
+        max-width: 350px;
+        justify-self: center;
       `}
     >
-      <img
-        css={css`
-          border-radius: 10px 0 0 10px;
-          width: 165px;
-        `}
-        src={data.image}
-        alt={data.imageDescription ?? 'image'}
-      />
       <div
         css={css`
-          border-radius: 0 10px 10px 0;
-          display: flex;
-          flex-direction: column;
-          direction: ${data.language === 'he' ? 'rtl' : 'ltr'};
-          padding: 1rem;
-
-          background-color: var(--card-bg-color);
-          color: var(--primary-color);
+          height: 250px;
         `}
       >
-        <h1
+        <Img
+          fluid={data.fluid}
+          css={css`
+            border-radius: 10px 10px 0 0;
+            height: 100%;
+          `}
+          alt={data.imageDescription ?? 'image'}
+        />
+      </div>
+
+      <div
+        css={css`
+          direction: ${data.language === 'he' ? 'rtl' : 'ltr'};
+          padding: 1rem;
+        `}
+      >
+        <p
           css={css`
             color: var(--title-color);
             font-size: 1.25rem;
             font-weight: 400;
             line-height: 1;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
           `}
         >
           {data.title}
-        </h1>
+        </p>
         <p
           css={css`
             font-size: 0.875rem;
             line-height: 1.3;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             flex-grow: 1;
           `}
         >
@@ -59,6 +65,7 @@ const SmallCard = ({ data }) => {
               margin-inline-start: 1rem;
             }
             font-size: 0.665rem;
+            font-weight: 100;
           `}
         >
           <span>{data.author}</span>
