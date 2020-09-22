@@ -47,8 +47,8 @@ export const query = graphql`
 
 export default function Home({ data }) {
   // for testing add fluid data to the demo card
-  mainArticleData.fluid = data.allImageSharp.edges[0].node.fluid;
-  cardData.fluid = data.allImageSharp.edges[1].node.fluid;
+  mainArticleData.fluid = data.allImageSharp.edges[1].node.fluid;
+  cardData.fluid = data.allImageSharp.edges[0].node.fluid;
 
   const cards = Array.from({ length: 9 }, (_, i) => {
     return { ...cardData, slug: cardData.slug + i };

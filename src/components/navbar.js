@@ -28,6 +28,7 @@ export const MenuList = styled.ul`
 
   .active-nav-item {
     color: var(--active_menu);
+    font-weight: bold;
   }
 `;
 

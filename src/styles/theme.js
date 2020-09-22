@@ -1,4 +1,4 @@
-import { darken } from 'polished';
+import { darken, lighten } from 'polished';
 
 const brand = {
   primary: '#00CA6F',
@@ -14,7 +14,7 @@ const colors = {
   green: '#00CA6F',
   link_color: brand.primary,
   link_color_hover: `${darken(0.07, brand.primary)}`,
-  link_color_active: `${darken(0.15, brand.primary)}`,
+  link_color_active: `${lighten(0.15, brand.primary)}`,
 };
 
 const theme = {
