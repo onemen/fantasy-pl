@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
 import React from 'react';
+import ArticleCard from '../components/articleCard';
 import Layout from '../components/layout';
 import SmallCard from '../components/smallCard';
 
@@ -11,7 +12,6 @@ const mainArticleData = {
   והאהוב. בינתיים אנחנו, שחקני הפנטזי, עומלים על בניית הקבוצה שתשמש
   אותנו במהלך העונה. אלא שהטור הזה לא הולך לעסוק בבניית הקבוצה אלא
   בהעברות בזמן העונה, כנראה החלק הכי טריקי במשחק הפנטזי.`,
-  image: 'boy-with-football.png',
   imageDescription: 'ילד עם כדור',
   author: guest
   publishedDate: 'ספטמבר 9, 2020',
@@ -23,9 +23,6 @@ const cardData = {
   title: '"מציאות" העונה במשחק הפנטזי של הפרמייר ליג לעונת 20/21',
   subTitle: 'איך לא להישאר בלי כסף אחרי בחירת כל השחקנים הטובים.',
   summery: '',
-  // image: 'dog-with-football.png',
-  image: 'dog-with-football-unsplash.jpg',
-  // image: 'dog-with-football-unsplash.jpg',
   imageDescription: 'כלב עם כדור',
   author: guest
   publishedDate: 'ספטמבר 14, 2020',
@@ -38,7 +35,7 @@ export const query = graphql`
     allImageSharp {
       edges {
         node {
-          fluid(maxWidth: 350, quality: 100) {
+          fluid(maxWidth: 1000, quality: 100) {
             ...GatsbyImageSharpFluid
             ...GatsbyImageSharpFluidLimitPresentationSize
           }
@@ -50,6 +47,7 @@ export const query = graphql`
 
 export default function Home({ data }) {
   // for testing add fluid data to the demo card
+  mainArticleData.fluid = data.allImageSharp.edges[0].node.fluid;
   cardData.fluid = data.allImageSharp.edges[1].node.fluid;
 
   const cards = Array.from({ length: 9 }, (_, i) => {
@@ -57,21 +55,25 @@ export default function Home({ data }) {
   });
 
   console.log({ data });
+  const maxWidth = '1170';
   return (
-    <Layout maxWidth="1170">
+    <Layout maxWidth={maxWidth}>
       <div
         css={css`
           margin-top: 3.35rem;
+          padding: 0 1rem;
+          @media (min-width: ${maxWidth}px) {
+            padding: 0;
+          }
         `}
       >
-        {/* <ArticleCard data={mainArticleData} /> */}
+        <ArticleCard data={mainArticleData} />
         <div
           css={css`
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem 10%;
             margin: 3.35rem 0;
-            padding: 0 1rem;
           `}
         >
           {cards.map(card => (

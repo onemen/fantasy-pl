@@ -13,7 +13,9 @@ const SmallCard = ({ data }) => {
         color: var(--primary-color);
         text-decoration: none;
 
-        max-width: 350px;
+        @media (min-width: 500px) {
+          max-width: 350px;
+        }
         justify-self: center;
       `}
     >
