@@ -1,6 +1,19 @@
 const { createFilePath } = require('gatsby-source-filesystem');
 const slugify = require('@sindresorhus/slugify');
 const path = require('path');
+const stripMarkdownPlugin = require('strip-markdown');
+const remark = require('remark');
+
+function stripMarkdown(markdownString) {
+  return remark()
+    .use(stripMarkdownPlugin)
+    .processSync(markdownString)
+    .toString();
+}
+
+function trim(text) {
+  return (text ?? '').trim();
+}
 
 module.exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === `MarkdownRemark`) {
@@ -18,22 +31,83 @@ module.exports.onCreateNode = ({ node, getNode, actions }) => {
     console.log({ slug, fileAbsolutePath: node.fileAbsolutePath });
 
     createNodeField({
+      name: 'id',
+      node,
+      value: node.id,
+    });
+
+    createNodeField({
+      name: 'title',
+      node,
+      value: trim(node.frontmatter.title),
+    });
+
+    createNodeField({
+      name: 'subtitle',
+      node,
+      value: trim(node.frontmatter.subtitle),
+    });
+
+    createNodeField({
+      name: 'summery',
+      node,
+      value: trim(node.frontmatter.summery),
+    });
+
+    createNodeField({
+      name: 'language',
+      node,
+      value: node.frontmatter.language ?? 'he',
+    });
+
+    createNodeField({
+      name: 'author',
+      node,
+      value: trim(node.frontmatter.author) || 'אורח',
+    });
+
+    const description = trim(node.frontmatter.description);
+    createNodeField({
+      name: 'description',
+      node,
+      value: description,
+    });
+
+    createNodeField({
+      name: 'plainTextDescription',
+      node,
+      value: stripMarkdown(description),
+    });
+
+    createNodeField({
       node,
       name: 'slug',
       value: slug,
     });
 
-    // createNodeField({
-    //   name: 'banner',
-    //   node,
-    //   value: node.frontmatter.banner,
-    // });
+    createNodeField({
+      name: 'date',
+      node,
+      value: node.frontmatter.date ? node.frontmatter.date.split(' ')[0] : '',
+    });
 
-    // createNodeField({
-    //   name: 'bannerCredit',
-    //   node,
-    //   value: node.frontmatter.bannerCredit,
-    // });
+    createNodeField({
+      name: 'banner',
+      node,
+      value: node.frontmatter.banner,
+    });
+
+    createNodeField({
+      name: 'bannerCredit',
+      node,
+      value: node.frontmatter.bannerCredit,
+    });
+
+    createNodeField({
+      name: 'keywords',
+      node,
+      value: node.frontmatter.keywords || [],
+    });
   }
 };
 

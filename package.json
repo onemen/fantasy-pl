@@ -33,7 +33,9 @@
     "polished": "^3.6.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-markdown": "^4.3.1"
+    "react-markdown": "^4.3.1",
+    "remark": "^12.0.1",
+    "strip-markdown": "^3.1.2"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",

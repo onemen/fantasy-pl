@@ -4,9 +4,19 @@ import Img from 'gatsby-image';
 import InfoLine from './infoLine';
 
 const SmallCard = ({ data }) => {
+  const {
+    author,
+    banner,
+    date,
+    language,
+    keywords,
+    slug,
+    subtitle,
+    title,
+  } = data.fields;
   return (
     <Link
-      to={data.slug}
+      to={slug}
       aria-label="לקריאת המאמר"
       css={css`
         border-radius: 10px;
@@ -26,18 +36,18 @@ const SmallCard = ({ data }) => {
         `}
       >
         <Img
-          fluid={data.fluid}
+          fluid={banner.childImageSharp.fluid}
           css={css`
             border-radius: 10px 10px 0 0;
             height: 100%;
           `}
-          alt={data.imageDescription ?? 'image'}
+          alt={keywords.join(', ')}
         />
       </div>
 
       <div
         css={css`
-          direction: ${data.language === 'he' ? 'rtl' : 'ltr'};
+          direction: ${language === 'he' ? 'rtl' : 'ltr'};
           padding: 1rem;
         `}
       >
@@ -50,7 +60,7 @@ const SmallCard = ({ data }) => {
             margin-bottom: 0.5rem;
           `}
         >
-          {data.title}
+          {title}
         </p>
         <p
           css={css`
@@ -60,11 +70,11 @@ const SmallCard = ({ data }) => {
             flex-grow: 1;
           `}
         >
-          {data.subTitle}
+          {subtitle}
         </p>
         <InfoLine>
-          <span>{data.author}</span>
-          <span>{data.publishedDate}</span>
+          <span>{author}</span>
+          <span>{date}</span>
         </InfoLine>
       </div>
     </Link>
