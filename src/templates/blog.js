@@ -63,7 +63,7 @@ const blogStyle = css`
     text-align: left;
     padding: 8px;
   }
-  tr:nth-child(2n) {
+  tr:nth-of-type(2n) {
     background-color: ${theme.colors.primaryDark};
   }
   table p {
