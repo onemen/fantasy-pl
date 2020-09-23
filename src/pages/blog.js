@@ -6,7 +6,7 @@ import format from '../lib/format';
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
             frontmatter {
@@ -23,7 +23,6 @@ const BlogPage = () => {
     }
   `);
 
-  console.log(data);
   return (
     <Layout dir="rtl">
       <h1>רשימת פרסומים</h1>

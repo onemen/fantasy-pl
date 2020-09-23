@@ -1,5 +1,7 @@
 import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import Markdown from 'react-markdown';
 import InfoLine from '../components/infoLine';
 import Layout from '../components/layout';
 import format from '../lib/format';
@@ -75,11 +77,14 @@ const blogStyle = css`
 `;
 
 const blog = ({ data, ...rest }) => {
-  console.log(
-    'data.markdownRemark.frontmatter',
-    data.markdownRemark.frontmatter
-  );
-  const { author, date, title } = data.markdownRemark.frontmatter;
+  const {
+    author,
+    banner,
+    bannerCredit,
+    date,
+    title,
+  } = data.markdownRemark.frontmatter;
+
   return (
     <Layout dir="rtl" css={blogStyle}>
       <h1>{title}</h1>
@@ -88,6 +93,28 @@ const blog = ({ data, ...rest }) => {
         <span>{author}</span>
         <span>{format(date)}</span>
       </InfoLine>
+
+      {banner && (
+        <div
+          css={css`
+            text-align: center;
+            margin: 1rem auto;
+            p {
+              margin-bottom: 0;
+            }
+            @media (max-width: 767px) {
+              padding: 0;
+            }
+          `}
+        >
+          <Img
+            css={{ maxHeight: '400px' }}
+            fluid={banner.childImageSharp.fluid}
+          />
+          {bannerCredit ? <Markdown>{bannerCredit}</Markdown> : null}
+        </div>
+      )}
+
       <article
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
       ></article>
@@ -104,6 +131,10 @@ export const pageQuery = graphql`
         title
         author
         date
+        banner {
+          ...bannerImage720
+        }
+        bannerCredit
       }
       html
     }

@@ -1,16 +1,22 @@
 ---
 slug: fantasy-league-rules
 title: פנטזי פריימיר ליג – החוקים
-date: '2020-09-14'
+subtitle: החוקים הבסיסיים והפחות בסיסיים של המשחק
+date: '2020-09-09'
 author: guest
-description: >-
-  _.החוקים הבסיסיים והפחות בסיסיים של המשחק_
+description: החוקים הבסיסיים והפחות בסיסיים של המשחק
+summery: >
+  תקציר המאמר...
+  תקציר המאמר...
+  תקציר המאמר...
+  תקציר המאמר...
+language: he
 keywords:
   - fantasy
   - football
 banner: ./images/banner.jpg
 bannerCredit:
-  'Photo by [Arseny Togulev](https://unsplash.com/photos/GKLQ8PJuCzI) on
+  'צילום [Arseny Togulev](https://unsplash.com/photos/GKLQ8PJuCzI) ב
   [Unsplash](https://unsplash.com)'
 ---
 

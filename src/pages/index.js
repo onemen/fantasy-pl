@@ -54,7 +54,6 @@ export default function Home({ data }) {
   });
   cards[4].fluid = mainArticleData.fluid;
 
-  console.log({ data });
   const maxWidth = '1170';
   return (
     <Layout

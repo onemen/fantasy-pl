@@ -22,6 +22,18 @@ module.exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'slug',
       value: slug,
     });
+
+    // createNodeField({
+    //   name: 'banner',
+    //   node,
+    //   value: node.frontmatter.banner,
+    // });
+
+    // createNodeField({
+    //   name: 'bannerCredit',
+    //   node,
+    //   value: node.frontmatter.bannerCredit,
+    // });
   }
 };
 
