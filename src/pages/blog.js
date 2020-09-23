@@ -1,6 +1,8 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import React from 'react';
+import InfoLine from '../components/infoLine';
 import Layout from '../components/layout';
+import format from '../lib/format';
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
@@ -11,6 +13,7 @@ const BlogPage = () => {
             frontmatter {
               title
               date
+              author
             }
             fields {
               slug
@@ -25,22 +28,23 @@ const BlogPage = () => {
   return (
     <Layout>
       <div dir="rtl">
-        <h1>בלוגים</h1>
-        <ol>
+        <h1>רשימת פרסומים</h1>
+        <ul>
           {data.allMarkdownRemark.edges.map(({ node }, index) => {
+            const { author, date, title } = node.frontmatter;
             return (
               <li key={index}>
-                <Link
-                  to={`/blog/${node.fields.slug}`}
-                  style={{ display: 'inline-block' }}
-                >
-                  <h2>{node.frontmatter.title}</h2>
-                  <p>{node.frontmatter.date}</p>
+                <Link to={node.fields.slug} style={{ display: 'inline-block' }}>
+                  <h2>{title}</h2>
+                  <InfoLine>
+                    <span>{author}</span>
+                    <span>{format(date)}</span>
+                  </InfoLine>
                 </Link>
               </li>
             );
           })}
-        </ol>
+        </ul>
       </div>
     </Layout>
   );

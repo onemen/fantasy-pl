@@ -1,7 +1,9 @@
 import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
 import React from 'react';
+import InfoLine from '../components/infoLine';
 import Layout from '../components/layout';
+import format from '../lib/format';
 import theme from '../styles/theme';
 
 const blogStyle = css`
@@ -74,11 +76,20 @@ const blogStyle = css`
 `;
 
 const blog = ({ data, ...rest }) => {
+  console.log(
+    'data.markdownRemark.frontmatter',
+    data.markdownRemark.frontmatter
+  );
+  const { author, date, title } = data.markdownRemark.frontmatter;
   return (
     <Layout>
       <div dir="rtl" css={blogStyle}>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
-        <p>{data.markdownRemark.frontmatter.date}</p>
+        <h1>{title}</h1>
+
+        <InfoLine>
+          <span>{author}</span>
+          <span>{format(date)}</span>
+        </InfoLine>
         <div
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         ></div>
@@ -94,6 +105,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
+        author
         date
       }
       html

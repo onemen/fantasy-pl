@@ -2,6 +2,7 @@ import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
+import InfoLine from './infoLine';
 
 const ArticleCard = ({ data }) => {
   return (
@@ -80,19 +81,10 @@ const ArticleCard = ({ data }) => {
         >
           {data.summery}
         </p>
-        <div
-          className="card__info"
-          css={css`
-            * + * {
-              margin-inline-start: 1rem;
-            }
-            font-size: 0.875rem;
-            font-weight: 100;
-          `}
-        >
+        <InfoLine className="card__info">
           <span>{data.author}</span>
           <span>{data.publishedDate}</span>
-        </div>
+        </InfoLine>
       </div>
     </Link>
   );

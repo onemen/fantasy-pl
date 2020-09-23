@@ -2,6 +2,7 @@ import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
+import InfoLine from './infoLine';
 
 const SmallCard = ({ data }) => {
   return (
@@ -62,18 +63,10 @@ const SmallCard = ({ data }) => {
         >
           {data.subTitle}
         </p>
-        <div
-          css={css`
-            * + * {
-              margin-inline-start: 1rem;
-            }
-            font-size: 0.665rem;
-            font-weight: 100;
-          `}
-        >
+        <InfoLine>
           <span>{data.author}</span>
           <span>{data.publishedDate}</span>
-        </div>
+        </InfoLine>
       </div>
     </Link>
   );
