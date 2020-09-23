@@ -1,6 +1,5 @@
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
-import React from 'react';
 import Layout from '../components/layout';
 import theme from '../styles/theme';
 

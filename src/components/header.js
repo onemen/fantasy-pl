@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import React from 'react';
 import logo from '../images/premier-league.svg';
 import userIcon from '../images/user.svg';
 import theme from '../styles/theme';

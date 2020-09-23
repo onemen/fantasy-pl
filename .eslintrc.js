@@ -7,13 +7,8 @@ module.exports = {
   extends: [require.resolve(`eslint-config-react-app`)],
   plugins: [`graphql`],
   rules: {
-    // New versions of react use a special jsx runtime that remove the requirement
-    // for having react in scope for jsx. Once the jsx runtime is backported to all
-    // versions of react we can make this always be `off`.
-    // I would also assume that eslint-config-react-app will switch their flag to `off`
-    // when jsx runtime is stable in all common versions of React.
-    // "react/react-in-jsx-scope": usingJsxRuntime ? `off` : `error`, // Conditionally apply for reactRuntime?
-    'react/react-in-jsx-scope': `error`, // Conditionally apply for reactRuntime?
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
     'import/no-webpack-loader-syntax': [0],
     // "graphql/template-strings": [
     //   `error`,

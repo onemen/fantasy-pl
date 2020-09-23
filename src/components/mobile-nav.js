@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import theme from '../styles/theme';
 
 const Container = props => {

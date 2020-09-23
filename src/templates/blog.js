@@ -1,6 +1,5 @@
 import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
-import React from 'react';
 import InfoLine from '../components/infoLine';
 import Layout from '../components/layout';
 import format from '../lib/format';

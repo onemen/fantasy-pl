@@ -1,6 +1,5 @@
 import { css, Global } from '@emotion/core';
 import styled from '@emotion/styled';
-import React from 'react';
 import '../styles/fonts.css';
 import reset from '../styles/reset';
 import theme from '../styles/theme';
@@ -55,7 +54,7 @@ const Container = styled.div`
 
 const Layout = ({ children, maxWidth = 1170, language = 'he' }) => {
   return (
-    <>
+    <div>
       <Global styles={globalStyles} />
       <Container maxWidth={maxWidth}>
         <div className="content-wrapper">
@@ -64,7 +63,7 @@ const Layout = ({ children, maxWidth = 1170, language = 'he' }) => {
         </div>
         <Footer maxWidth={maxWidth} language={language} />
       </Container>
-    </>
+    </div>
   );
 };
 

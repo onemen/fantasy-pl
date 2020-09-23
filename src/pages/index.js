@@ -1,6 +1,5 @@
 import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
-import React from 'react';
 import ArticleCard from '../components/articleCard';
 import Layout from '../components/layout';
 import SmallCard from '../components/smallCard';

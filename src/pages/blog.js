@@ -1,5 +1,4 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import React from 'react';
 import InfoLine from '../components/infoLine';
 import Layout from '../components/layout';
 import format from '../lib/format';
