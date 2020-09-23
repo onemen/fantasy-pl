@@ -81,18 +81,16 @@ const blog = ({ data, ...rest }) => {
   );
   const { author, date, title } = data.markdownRemark.frontmatter;
   return (
-    <Layout>
-      <div dir="rtl" css={blogStyle}>
-        <h1>{title}</h1>
+    <Layout dir="rtl" css={blogStyle}>
+      <h1>{title}</h1>
 
-        <InfoLine>
-          <span>{author}</span>
-          <span>{format(date)}</span>
-        </InfoLine>
-        <div
-          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-        ></div>
-      </div>
+      <InfoLine>
+        <span>{author}</span>
+        <span>{format(date)}</span>
+      </InfoLine>
+      <article
+        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+      ></article>
     </Layout>
   );
 };

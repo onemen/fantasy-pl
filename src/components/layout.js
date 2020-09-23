@@ -45,21 +45,31 @@ const Container = styled.div`
   .content-wrapper {
     flex-grow: 1;
   }
-
-  .content {
-    margin: 0 auto;
-    max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}px` : 'none')};
-  }
 `;
 
-const Layout = ({ children, maxWidth = 1170, language = 'he' }) => {
+const Layout = ({
+  children,
+  className,
+  dir,
+  maxWidth = 1170,
+  language = 'he',
+}) => {
   return (
     <div>
       <Global styles={globalStyles} />
       <Container maxWidth={maxWidth}>
         <div className="content-wrapper">
           <Header maxWidth={maxWidth} language={language} />
-          <div className="content">{children}</div>
+          <main
+            css={css`
+              margin: 0 auto;
+              max-width: ${maxWidth ? `${maxWidth}px` : 'none'};
+            `}
+            dir={dir}
+            className={className}
+          >
+            {children}
+          </main>
         </div>
         <Footer maxWidth={maxWidth} language={language} />
       </Container>

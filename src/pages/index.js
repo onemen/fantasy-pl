@@ -57,29 +57,27 @@ export default function Home({ data }) {
   console.log({ data });
   const maxWidth = '1170';
   return (
-    <Layout maxWidth={maxWidth}>
+    <Layout
+      maxWidth={maxWidth}
+      css={css`
+        padding: 3.35rem 1rem 0;
+        @media (min-width: ${+maxWidth + 10}px) {
+          padding: 3.35rem 0 0;
+        }
+      `}
+    >
+      <ArticleCard data={mainArticleData} />
       <div
         css={css`
-          margin-top: 3.35rem;
-          padding: 0 1rem;
-          @media (min-width: ${+maxWidth + 10}px) {
-            padding: 0;
-          }
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem 10%;
+          margin: 3.35rem 0;
         `}
       >
-        <ArticleCard data={mainArticleData} />
-        <div
-          css={css`
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem 10%;
-            margin: 3.35rem 0;
-          `}
-        >
-          {cards.map(card => (
-            <SmallCard key={card.slug} data={card} />
-          ))}
-        </div>
+        {cards.map(card => (
+          <SmallCard key={card.slug} data={card} />
+        ))}
       </div>
     </Layout>
   );
