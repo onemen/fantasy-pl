@@ -9,7 +9,7 @@ export const MenuList = styled.ul`
   padding: 0;
 
   li + li {
-    margin-inline-start: ${prop => prop.space ?? '6rem'};
+    margin-inline-start: ${prop => prop.space || '6rem'};
   }
 
   .nav-item {

@@ -55,7 +55,7 @@ module.exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       name: 'language',
       node,
-      value: node.frontmatter.language ?? 'he',
+      value: node.frontmatter.language || 'he',
     });
 
     createNodeField({
