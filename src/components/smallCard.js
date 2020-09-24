@@ -3,22 +3,20 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import InfoLine from './infoLine';
 
-const SmallCard = ({ data }) => {
+const SmallCard = ({ node }) => {
   const {
-    author,
-    banner,
-    date,
-    language,
-    keywords,
-    slug,
-    subtitle,
-    title,
-  } = data.fields;
+    fields: { author, date, language, keywords, slug, subtitle, title },
+    bannerField: { banner },
+  } = node;
+
   return (
     <Link
       to={slug}
       aria-label="לקריאת המאמר"
       css={css`
+        display: flex;
+        flex-direction: column;
+
         border-radius: 10px;
         background-color: var(--card-bg-color);
         color: var(--primary-color);
@@ -49,6 +47,9 @@ const SmallCard = ({ data }) => {
         css={css`
           direction: ${language === 'he' ? 'rtl' : 'ltr'};
           padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
         `}
       >
         <p

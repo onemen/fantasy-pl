@@ -1,27 +1,50 @@
 import { graphql } from 'gatsby';
 
-/*
-fragment bannerImage260 on File {
-  childImageSharp {
-    fluid(maxWidth: 260, traceSVG: { color: "#573ede" }, quality: 50) {
-      ...GatsbyImageSharpFluid_withWebp_tracedSVG
-    }
-  }
-}
-fragment bannerImage640 on File {
-  childImageSharp {
-    fluid(maxWidth: 640, traceSVG: { color: "#573ede" }) {
-      ...GatsbyImageSharpFluid_withWebp_tracedSVG
-    }
-  }
-}
-*/
-
 export const bannerImage = graphql`
+  fragment bannerImage400 on File {
+    childImageSharp {
+      fluid(maxWidth: 400, traceSVG: { color: "#573ede" }) {
+        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      }
+    }
+  }
+  fragment bannerImage640 on File {
+    childImageSharp {
+      fluid(maxWidth: 640, traceSVG: { color: "#573ede" }) {
+        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      }
+    }
+  }
   fragment bannerImage720 on File {
     childImageSharp {
       fluid(maxWidth: 720, traceSVG: { color: "#573ede" }, quality: 75) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      }
+    }
+  }
+  fragment cardFields on MarkdownRemark {
+    fields {
+      author
+      date
+      language
+      keywords
+      slug
+      subtitle
+      summery
+      title
+    }
+  }
+  fragment bannerField400 on MarkdownRemark {
+    bannerField: fields {
+      banner {
+        ...bannerImage400
+      }
+    }
+  }
+  fragment bannerField720 on MarkdownRemark {
+    bannerField: fields {
+      banner {
+        ...bannerImage720
       }
     }
   }

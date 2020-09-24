@@ -7,29 +7,33 @@ import SmallCard from '../components/smallCard';
 export default function Home() {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      latestPost: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1
+      ) {
         edges {
           node {
-            fields {
-              author
-              banner {
-                ...bannerImage720
-              }
-              date
-              language
-              keywords
-              slug
-              subtitle
-              summery
-              title
-            }
+            ...cardFields
+            ...bannerField720
+          }
+        }
+      }
+      posts: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        skip: 1
+      ) {
+        edges {
+          node {
+            ...cardFields
+            ...bannerField400
           }
         }
       }
     }
   `);
 
-  const [latestArticle, ...articles] = data.allMarkdownRemark.edges;
+  const posts = data.posts.edges;
+  const cards = [...posts, ...posts, ...posts, ...posts, ...posts];
 
   const maxWidth = '1170';
   return (
@@ -42,7 +46,7 @@ export default function Home() {
         }
       `}
     >
-      <ArticleCard data={latestArticle.node} />
+      <ArticleCard node={data.latestPost.edges[0].node} />
       <div
         css={css`
           display: grid;
@@ -51,8 +55,8 @@ export default function Home() {
           margin: 3.35rem 0;
         `}
       >
-        {articles.map(({ node }) => (
-          <SmallCard key={node.fields.slug} data={node} />
+        {cards.map(({ node }, i) => (
+          <SmallCard key={node.fields.slug + i} node={node} />
         ))}
       </div>
     </Layout>

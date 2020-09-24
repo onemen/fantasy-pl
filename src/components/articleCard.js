@@ -3,21 +3,16 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import InfoLine from './infoLine';
 
-const ArticleCard = ({ data }) => {
+const ArticleCard = ({ node }) => {
   const {
-    author,
-    banner,
-    date,
-    language,
-    keywords,
-    slug,
-    summery,
-    title,
-  } = data.fields;
+    fields: { author, date, language, keywords, slug, summery, title },
+    bannerField: { banner },
+  } = node;
+
   return (
     <Link
       to={slug}
-      aria-label="למאמר השלם"
+      aria-label="לקריאת המאמר"
       css={css`
         display: flex;
         flex-direction: column;
@@ -66,6 +61,8 @@ const ArticleCard = ({ data }) => {
           height: 100%;
           direction: ${language === 'he' ? 'rtl' : 'ltr'};
           padding: 1rem;
+          display: flex;
+          flex-direction: column;
         `}
       >
         <h1

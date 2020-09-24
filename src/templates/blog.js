@@ -83,7 +83,7 @@ const blog = ({ data, ...rest }) => {
     bannerCredit,
     date,
     title,
-  } = data.markdownRemark.frontmatter;
+  } = data.markdownRemark.fields;
 
   return (
     <Layout dir="rtl" css={blogStyle}>
@@ -127,7 +127,7 @@ export default blog;
 export const pageQuery = graphql`
   query getMarkdownFile($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      frontmatter {
+      fields {
         title
         author
         date
