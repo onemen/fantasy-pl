@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 const InfoLine = ({
   children,
   className,
-  size = '0.875rem',
+  size = '0.775rem',
   space = '1rem',
   weight = '100',
 }) => {

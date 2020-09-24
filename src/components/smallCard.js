@@ -22,7 +22,9 @@ const SmallCard = ({ node }) => {
         color: var(--primary-color);
         text-decoration: none;
 
+        width: 350px;
         @media (min-width: 500px) {
+          width: auto;
           max-width: 350px;
         }
         justify-self: center;
@@ -30,7 +32,7 @@ const SmallCard = ({ node }) => {
     >
       <div
         css={css`
-          height: 250px;
+          height: 200px;
         `}
       >
         <Img

@@ -15,7 +15,7 @@ const blogStyle = css`
   background-color: ${theme.colors.darkGray};
 
   h2 {
-    margin-top: 3.1rem;
+    margin-top: 2.55rem;
     margin-bottom: 1.55rem;
   }
 
@@ -87,9 +87,18 @@ const blog = ({ data, ...rest }) => {
 
   return (
     <Layout dir="rtl" css={blogStyle} frontmatter={data.markdownRemark.fields}>
-      <h1>{title}</h1>
+      <h1
+        css={css`
+          font-size: 2.25rem;
+          line-height: 1.1;
+          margin-bottom: 1rem;
+          text-align: center;
+        `}
+      >
+        {title}
+      </h1>
 
-      <InfoLine>
+      <InfoLine size="">
         <span>{author}</span>
         <span>{format(date)}</span>
       </InfoLine>

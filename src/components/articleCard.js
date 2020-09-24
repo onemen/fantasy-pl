@@ -22,20 +22,30 @@ const ArticleCard = ({ node }) => {
         color: var(--primary-color);
         text-decoration: none;
 
+        width: 350px;
+        @media (min-width: 500px) {
+          align-self: center;
+          max-width: 500px;
+          width: unset;
+        }
+
         @media (min-width: 900px) {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: 330px;
+          width: unset;
+          max-width: unset;
 
           img {
             border-radius: 15px 0 0 15px;
           }
 
           .card__title {
-            font-size: 2.25rem;
+            font-size: 2rem;
           }
 
           .card__summery {
-            font-size: 1.4rem;
+            font-size: 1rem;
             line-height: 1.5;
           }
 
@@ -69,7 +79,7 @@ const ArticleCard = ({ node }) => {
           className="card__title"
           css={css`
             color: var(--title-color);
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             line-height: 1.1;
             margin-bottom: 1rem;
           `}
@@ -79,7 +89,7 @@ const ArticleCard = ({ node }) => {
         <p
           className="card__summery"
           css={css`
-            font-size: 1rem;
+            font-size: 0.875rem;
             line-height: 1.3;
             margin-bottom: 1rem;
             flex-grow: 1;

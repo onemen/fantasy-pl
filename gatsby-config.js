@@ -5,7 +5,12 @@ module.exports = {
     title: 'פנזטי ליג - בלוג',
     description: 'כל מה שיש לדעת על פנטזי פריימר ליג',
     author: guest
-    keywords: ['fantasy.premier league', 'פנזטי ליג - בלוג', 'football'],
+    keywords: [
+      'fantasy premier league',
+      'פנזטי ליג - בלוג',
+      'fantasy football',
+      'football',
+    ],
   },
   plugins: [
     {

@@ -40,6 +40,8 @@ export default function Home() {
     <Layout
       maxWidth={maxWidth}
       css={css`
+        display: flex;
+        flex-direction: column;
         padding: 3.35rem 1rem 0;
         @media (min-width: ${+maxWidth + 10}px) {
           padding: 3.35rem 0 0;
@@ -48,6 +50,7 @@ export default function Home() {
     >
       <ArticleCard node={data.latestPost.edges[0].node} />
       <div
+        dir="rtl"
         css={css`
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
