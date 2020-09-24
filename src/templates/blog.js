@@ -1,11 +1,17 @@
 import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import React from 'react';
 import Markdown from 'react-markdown';
+import rehypeReact from 'rehype-react';
 import InfoLine from '../components/infoLine';
 import Layout from '../components/layout';
 import format from '../lib/format';
 import theme from '../styles/theme';
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+}).Compiler;
 
 const blogStyle = css`
   width: 100%;
@@ -124,9 +130,11 @@ const blog = ({ data, ...rest }) => {
         </div>
       )}
 
-      <article
+      {/*       <article
         dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-      ></article>
+      ></article> */}
+
+      <article>{renderAst(data.markdownRemark.htmlAst)}</article>
     </Layout>
   );
 };
@@ -145,7 +153,7 @@ export const pageQuery = graphql`
         }
         bannerCredit
       }
-      html
+      htmlAst
     }
   }
 `;

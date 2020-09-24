@@ -17,7 +17,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',
-        path: `${__dirname}/content/blog`,
+        path: path.join(__dirname, 'content', 'blog'),
       },
     },
     {
@@ -25,6 +25,13 @@ module.exports = {
       options: {
         name: 'images',
         path: path.join(__dirname, 'src', 'images'),
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: path.join(__dirname, 'src'),
+        name: 'src',
       },
     },
     'gatsby-plugin-emotion',
@@ -35,6 +42,8 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
+        excerpt: true,
+        excerpt_separator: `<!-- end -->`,
         plugins: [
           // gatsby-remark-relative-images must go before gatsby-remark-images
           'gatsby-remark-relative-images',
@@ -60,6 +69,7 @@ module.exports = {
         background_color: '#575353',
         theme_color: '#00CA6F',
         display: 'standalone',
+        icon: 'src/images/icon.png',
         icons: [
           {
             src: '/favicons/android-chrome-192x192.png',
