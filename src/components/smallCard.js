@@ -28,6 +28,16 @@ const SmallCard = ({ node }) => {
           max-width: 350px;
         }
         justify-self: center;
+
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+          0 10px 10px rgba(0, 0, 0, 0.22);
+
+        transition: all 0.2s ease-in-out;
+        :hover {
+          transform: scale(1.02, 1.02);
+          box-shadow: 0 22px 32px rgba(0, 0, 0, 0.22),
+            0 14px 14px rgba(0, 0, 0, 0.2);
+        }
       `}
     >
       <div
