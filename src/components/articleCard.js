@@ -16,6 +16,7 @@ const ArticleCard = ({ node }) => {
       css={css`
         display: flex;
         flex-direction: column;
+        align-self: center;
 
         border-radius: 15px;
         background-color: var(--card-bg-color);
@@ -24,7 +25,6 @@ const ArticleCard = ({ node }) => {
 
         width: 350px;
         @media (min-width: 500px) {
-          align-self: center;
           max-width: 500px;
           width: unset;
         }
