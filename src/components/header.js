@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import logo from '../images/premier-league.svg';
-import userIcon from '../images/user.svg';
 import theme from '../styles/theme';
 import MobileNav from './mobile-nav';
-import Navbar, { MenuList } from './navbar';
+import Navbar from './navbar';
 
 const Container = styled.header`
   background-color: var(--dark-bg-color);
@@ -18,34 +17,6 @@ const Container = styled.header`
     margin: 0 auto;
     max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}px` : 'none')};
     min-height: 4rem;
-  }
-
-  .end-menu-box {
-    img {
-      display: inherit;
-      width: 25px;
-      height: 25px;
-      margin: 0;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.3em 1.2em;
-      background-color: var(--link_color);
-      border: 0.1em solid var(--title-color);
-      border-radius: 0.3em;
-      text-decoration: none;
-      font-family: 'Rubik', Arial, Helvetica, sans-serif;
-      text-align: center;
-      transition: all 0.2s;
-      color: #ffffff;
-
-      &:hover,
-      &:focus {
-        color: var(--title-color);
-        background-color: transparent;
-      }
-    }
   }
 
   .logo-box {
@@ -92,26 +63,6 @@ const Header = ({ maxWidth, language }) => {
         </div>
         <MobileNav color={theme.colors.lightGreen} />
         <Navbar className="navbar-box" />
-        <MenuList className="end-menu-box" space="1rem">
-          <li>
-            <Link
-              className="nav-item"
-              activeClassName="active-nav-item"
-              to="/register"
-              aria-label="הרשמה"
-            >
-              הרשמה
-            </Link>
-          </li>
-          <li>
-            <Link className="nav-item btn" to="/login" aria-label="כניסה">
-              כניסה
-            </Link>
-          </li>
-          <li>
-            <img src={userIcon} alt="" />
-          </li>
-        </MenuList>
       </div>
     </Container>
   );

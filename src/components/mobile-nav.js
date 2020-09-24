@@ -130,37 +130,26 @@ const Toggle = ({ color = 'white' }) => {
             <Link
               className="nav-item"
               activeClassName="active-nav-item"
-              to="/blog"
-              aria-label="תוכן"
+              to="/"
+              aria-label="דף הבית"
             >
-              תוכן
+              דף הבית
             </Link>
             <Link
               className="nav-item"
               activeClassName="active-nav-item"
-              to="/news"
-              aria-label="חדשות"
+              to="/about"
+              aria-label="אודות"
             >
-              חדשות
+              אודות
             </Link>
             <Link
               className="nav-item"
               activeClassName="active-nav-item"
-              to="/help"
-              aria-label="הדרכה"
+              to="/contact"
+              aria-label="כתבו לנו"
             >
-              הדרכה
-            </Link>
-            <Link
-              className="nav-item"
-              activeClassName="active-nav-item"
-              to="/register"
-              aria-label="הרשמה"
-            >
-              הרשמה
-            </Link>
-            <Link className="nav-item btn" to="/login" aria-label="כניסה">
-              כניסה
+              כתבו לנו
             </Link>
           </Container>
         </div>

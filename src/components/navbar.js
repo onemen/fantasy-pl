@@ -9,7 +9,7 @@ export const MenuList = styled.ul`
   padding: 0;
 
   li + li {
-    margin-inline-start: ${prop => prop.space ?? '2.5rem'};
+    margin-inline-start: ${prop => prop.space ?? '6rem'};
   }
 
   .nav-item {
@@ -39,30 +39,30 @@ const Navbar = ({ color, className }) => {
           <Link
             className="nav-item"
             activeClassName="active-nav-item"
-            to="/blog"
-            aria-label="תוכן"
+            to="/"
+            aria-label="דף הבית"
           >
-            תוכן
+            דף הבית
           </Link>
         </li>
         <li>
           <Link
             className="nav-item"
             activeClassName="active-nav-item"
-            to="/news"
-            aria-label="חדשות"
+            to="/about"
+            aria-label="אודות"
           >
-            חדשות
+            אודות
           </Link>
         </li>
         <li>
           <Link
             className="nav-item"
             activeClassName="active-nav-item"
-            to="/help"
-            aria-label="הדרכה"
+            to="/contact"
+            aria-label="כתבו לנו"
           >
-            הדרכה
+            כתבו לנו
           </Link>
         </li>
       </MenuList>
