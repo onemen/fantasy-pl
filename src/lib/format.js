@@ -1,16 +1,19 @@
 import { format } from 'date-fns';
 import { enUS, he } from 'date-fns/locale';
 
+// eslint-disable-next-line no-unused-vars
 const locales = { enUS, he };
 
-export default function (date, formatStr = 'd MMMM, yyyy') {
+export default function (
+  date,
+  formatStr = 'd MMMM, yyyy',
+  options = { locale: he }
+) {
   try {
     if (typeof date === 'string') {
       date = new Date(date);
     }
-    return format(date, formatStr, {
-      locale: window.__localeId__ ? locales[window.__localeId__] : he,
-    });
+    return format(date, formatStr, options);
   } catch (error) {
     console.log(error, { date, formatStr, typeOfDate: typeof date });
   }
