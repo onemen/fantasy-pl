@@ -8,6 +8,7 @@ dependencies:
   gatsby-plugin-emotion: 4.3.11_a5191425feb83fef37261f909373d417
   gatsby-plugin-manifest: 2.4.31_gatsby@2.24.63
   gatsby-plugin-pnpm: 1.2.5_gatsby@2.24.63
+  gatsby-plugin-react-helmet: 3.3.11_745fcce95e8b23427316d779b0bbecb7
   gatsby-plugin-sharp: 2.6.36_gatsby@2.24.63
   gatsby-remark-images: 3.3.30_25dddfcf17471d15dd0b50b43375a7a8
   gatsby-remark-relative-images: 2.0.2
@@ -17,6 +18,7 @@ dependencies:
   polished: 3.6.7
   react: 16.13.1
   react-dom: 16.13.1_react@16.13.1
+  react-helmet: 6.1.0_react@16.13.1
   react-markdown: 4.3.1_react@16.13.1
   remark: 12.0.1
   strip-markdown: 3.1.2
@@ -6992,6 +6994,19 @@ packages:
       gatsby: ~2.x.x
     resolution:
       integrity: sha512-zGJUVApj641WTPiE0L4ZEFbt0iK8pEVIP0dtG5hPTRaTrb0zeZRp8Id9COf5sciwO0zGfT1/CmF6OyhV8KZr+g==
+  /gatsby-plugin-react-helmet/3.3.11_745fcce95e8b23427316d779b0bbecb7:
+    dependencies:
+      '@babel/runtime': 7.11.2
+      gatsby: 2.24.63_9dab313dfc55731918ae7b0a11c575a8
+      react-helmet: 6.1.0_react@16.13.1
+    dev: false
+    engines:
+      node: '>=10.13.0'
+    peerDependencies:
+      gatsby: ^2.0.0
+      react-helmet: ^5.1.3 || ^6.0.0
+    resolution:
+      integrity: sha512-O9CBmxSAE/ODCKj5fGITP5zAVguD83+fIWQPgEzur+lwnvRyXoJBfMjKQezMECvWVv5UOfTwTL1/dcU87+UNkA==
   /gatsby-plugin-sharp/2.6.36_gatsby@2.24.63:
     dependencies:
       '@babel/runtime': 7.11.2
@@ -12380,6 +12395,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
+  /react-fast-compare/3.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
   /react-focus-lock/2.4.1_react@16.13.1:
     dependencies:
       '@babel/runtime': 7.11.2
@@ -12394,6 +12413,18 @@ packages:
       react: ^16.8.0
     resolution:
       integrity: sha512-c5ZP56KSpj9EAxzScTqQO7bQQNPltf/W1ZEBDqNDOV1XOIwvAyHX0O7db9ekiAtxyKgnqZjQlLppVg94fUeL9w==
+  /react-helmet/6.1.0_react@16.13.1:
+    dependencies:
+      object-assign: 4.1.1
+      prop-types: 15.7.2
+      react: 16.13.1
+      react-fast-compare: 3.2.0
+      react-side-effect: 2.1.0_react@16.13.1
+    dev: false
+    peerDependencies:
+      react: '>=16.3.0'
+    resolution:
+      integrity: sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw==
   /react-hot-loader/4.13.0_react-dom@16.13.1+react@16.13.1:
     dependencies:
       fast-levenshtein: 2.0.6
@@ -12520,6 +12551,14 @@ packages:
         optional: true
     resolution:
       integrity: sha512-BZIO3GaEs0Or1OhA5C//n1ibUP1HdjJmqUVUsOCMxwoIpaCocbB9TFKwHOkBa/nyYy3slirqXeiPYGwdSDiseA==
+  /react-side-effect/2.1.0_react@16.13.1:
+    dependencies:
+      react: 16.13.1
+    dev: false
+    peerDependencies:
+      react: ^16.3.0
+    resolution:
+      integrity: sha512-IgmcegOSi5SNX+2Snh1vqmF0Vg/CbkycU9XZbOHJlZ6kMzTmi3yc254oB1WCkgA7OQtIAoLmcSFuHTc/tlcqXg==
   /react-style-singleton/2.1.0_react@16.13.1:
     dependencies:
       get-nonce: 1.0.1
@@ -15918,6 +15957,7 @@ specifiers:
   gatsby-plugin-emotion: ^4.3.11
   gatsby-plugin-manifest: ^2.4.31
   gatsby-plugin-pnpm: ^1.2.5
+  gatsby-plugin-react-helmet: ^3.3.11
   gatsby-plugin-sharp: ^2.6.36
   gatsby-remark-images: ^3.3.30
   gatsby-remark-relative-images: ^2.0.2
@@ -15929,6 +15969,7 @@ specifiers:
   prettier: 2.1.2
   react: ^16.13.1
   react-dom: ^16.13.1
+  react-helmet: ^6.1.0
   react-markdown: ^4.3.1
   remark: ^12.0.1
   strip-markdown: ^3.1.2

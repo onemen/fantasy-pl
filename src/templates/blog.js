@@ -86,7 +86,7 @@ const blog = ({ data, ...rest }) => {
   } = data.markdownRemark.fields;
 
   return (
-    <Layout dir="rtl" css={blogStyle}>
+    <Layout dir="rtl" css={blogStyle} frontmatter={data.markdownRemark.fields}>
       <h1>{title}</h1>
 
       <InfoLine>

@@ -5,6 +5,7 @@ module.exports = {
     title: 'פנזטי ליג - בלוג',
     description: 'כל מה שיש לדעת על פנטזי פריימר ליג',
     author: guest
+    keywords: ['fantasy.premier league', 'פנזטי ליג - בלוג', 'football'],
   },
   plugins: [
     {
@@ -23,6 +24,7 @@ module.exports = {
     },
     'gatsby-plugin-emotion',
     'gatsby-plugin-pnpm',
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

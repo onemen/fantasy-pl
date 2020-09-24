@@ -25,6 +25,7 @@
     "gatsby-plugin-emotion": "^4.3.11",
     "gatsby-plugin-manifest": "^2.4.31",
     "gatsby-plugin-pnpm": "^1.2.5",
+    "gatsby-plugin-react-helmet": "^3.3.11",
     "gatsby-plugin-sharp": "^2.6.36",
     "gatsby-remark-images": "^3.3.30",
     "gatsby-remark-relative-images": "^2.0.2",
@@ -34,6 +35,7 @@
     "polished": "^3.6.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
     "react-markdown": "^4.3.1",
     "remark": "^12.0.1",
     "strip-markdown": "^3.1.2"
