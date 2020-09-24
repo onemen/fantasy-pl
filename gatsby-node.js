@@ -12,7 +12,7 @@ function stripMarkdown(markdownString) {
 }
 
 function trim(text) {
-  return (text ?? '').trim();
+  return (text || '').trim();
 }
 
 module.exports.onCreateNode = ({ node, getNode, actions }) => {
