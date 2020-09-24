@@ -28,8 +28,6 @@ module.exports.onCreateNode = ({ node, getNode, actions }) => {
       slug = `/blog/${node.frontmatter.slug || slugify(parentNode.name)}`;
     }
 
-    console.log({ slug, fileAbsolutePath: node.fileAbsolutePath });
-
     createNodeField({
       name: 'id',
       node,
