@@ -1,36 +1,68 @@
+const config = require('./config/website');
 const path = require('path');
+
+const here = (...p) => path.join(__dirname, ...p);
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+const {
+  NODE_ENV,
+  ROOT_URL: NETLIFY_SITE_URL = config.siteUrl,
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env;
+
+const isNetlifyProduction = NETLIFY_ENV === 'production';
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
 module.exports = {
   siteMetadata: {
-    title: 'פנזטי ליג - בלוג',
-    description: 'כל מה שיש לדעת על פנטזי פריימר ליג',
-    author: guest
+    siteUrl,
+    title: config.siteTitle,
+    description: config.siteDescription,
     keywords: [
       'fantasy premier league',
       'פנזטי ליג - בלוג',
       'fantasy football',
       'football',
     ],
+    canonicalUrl: siteUrl,
+    image: config.siteLogo,
+    author: guest
+      name: config.author,
+      minibio: config.minibio,
+    },
+    organization: {
+      name: config.organization,
+      url: siteUrl,
+      logo: config.siteLogo,
+    },
+    social: {
+      twitter: config.twitterHandle,
+      fbAppID: config.siteFBAppID,
+    },
   },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',
-        path: path.join(__dirname, 'content', 'blog'),
+        path: here('content', 'blog'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: path.join(__dirname, 'src', 'images'),
+        path: here('src', 'images'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: path.join(__dirname, 'src'),
+        path: here('src'),
         name: 'src',
       },
     },

@@ -5,6 +5,7 @@ import Markdown from 'react-markdown';
 import ReactMarkdown from 'react-markdown/with-html';
 import InfoLine from '../components/infoLine';
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 import format from '../lib/format';
 import theme from '../styles/theme';
 
@@ -43,7 +44,7 @@ const blogStyle = css`
       padding: 0;
     }
 
-    img {
+    &__img {
       max-height: 400px;
     }
   }
@@ -112,17 +113,16 @@ const blogStyle = css`
   }
 `;
 
-const blog = ({ data, ...rest }) => {
-  const {
-    author,
-    banner,
-    bannerCredit,
-    date,
-    title,
-  } = data.markdownRemark.fields;
+const blog = ({ data: { markdown } }) => {
+  const { author, banner, bannerCredit, date, title } = markdown.fields;
 
   return (
-    <Layout dir="rtl" css={blogStyle} frontmatter={data.markdownRemark.fields}>
+    <Layout dir="rtl" css={blogStyle} frontmatter={markdown.fields}>
+      <SEO
+        frontmatter={markdown.fields}
+        metaImage={banner?.childImageSharp?.fluid?.src}
+        isBlogPost
+      />
       <h1>{title}</h1>
 
       <InfoLine size="">
@@ -132,13 +132,13 @@ const blog = ({ data, ...rest }) => {
 
       {banner && (
         <div className="banner">
-          <Img fluid={banner.childImageSharp.fluid} />
+          <Img className="banner__img" fluid={banner.childImageSharp.fluid} />
           {bannerCredit ? <Markdown>{bannerCredit}</Markdown> : null}
         </div>
       )}
 
       <article className="blog">
-        <ReactMarkdown source={data.markdownRemark.html} escapeHtml={false} />
+        <ReactMarkdown source={markdown.html} escapeHtml={false} />
       </article>
     </Layout>
   );
@@ -148,7 +148,7 @@ export default blog;
 
 export const pageQuery = graphql`
   query getMarkdownFile($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdown: markdownRemark(fields: { slug: { eq: $slug } }) {
       fields {
         title
         author
@@ -163,14 +163,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-/*
-clean html:
-1. remove all new line /\n/g -> ''
-2. remove all spaces between >< />\s+</g -> '><'
-3. remove all space after <em > /<em\s+>/g -> '<em>'
-4. remove all space after </em > /</em\s+>/g -> '<em>'
-5. replace all spaces with on space ??
-
-
-*/

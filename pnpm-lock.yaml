@@ -3,6 +3,7 @@ dependencies:
   '@emotion/styled': 10.0.27_4d699cf7e8a2bf97a506a18e2a399a54
   '@sindresorhus/slugify': 1.1.0
   date-fns: 2.16.1
+  dotenv: 8.2.0
   gatsby: 2.24.65_ab5fa5390cbd459ad50e69edc78cee5f
   gatsby-image: 2.4.19
   gatsby-plugin-emotion: 4.3.11_0b44c631d594b8b23c703d7d5b6a460c
@@ -23,7 +24,6 @@ dependencies:
   remark: 12.0.1
   strip-markdown: 3.1.2
 devDependencies:
-  env-cmd: 10.1.0
   node-fetch: 2.6.1
   prettier: 2.1.2
 lockfileVersion: 5.1
@@ -4293,12 +4293,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
-  /commander/4.1.1:
-    dev: true
-    engines:
-      node: '>= 6'
-    resolution:
-      integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
   /common-tags/1.8.0:
     dev: false
     engines:
@@ -4659,6 +4653,7 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+    dev: false
     engines:
       node: '>= 8'
     resolution:
@@ -5623,16 +5618,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-MyoZ0jgnLvB2X3Lg5HqpFmn1kybDiIfEQmKzTb5apr51Rb+T3KdmMiqa70T+bhGnyv7bQ6WMj2QMHpGMmlrUYQ==
-  /env-cmd/10.1.0:
-    dependencies:
-      commander: 4.1.1
-      cross-spawn: 7.0.3
-    dev: true
-    engines:
-      node: '>=8.0.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-mMdWTT9XKN7yNth/6N6g2GuKuJTsKMDHlQFUDacb/heQRRWOTIZ42t1rMHnQu4jYxU1ajdTeJM+9eEETlqToMA==
   /envinfo/7.7.3:
     dev: false
     engines:
@@ -9323,6 +9308,7 @@ packages:
     resolution:
       integrity: sha1-o32U7ZzaLVmGXJ92/llu4fM4dB4=
   /isexe/2.0.0:
+    dev: false
     resolution:
       integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
   /isobject/2.1.0:
@@ -11465,6 +11451,7 @@ packages:
     resolution:
       integrity: sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
   /path-key/3.1.1:
+    dev: false
     engines:
       node: '>=8'
     resolution:
@@ -13603,6 +13590,7 @@ packages:
   /shebang-command/2.0.0:
     dependencies:
       shebang-regex: 3.0.0
+    dev: false
     engines:
       node: '>=8'
     resolution:
@@ -13614,6 +13602,7 @@ packages:
     resolution:
       integrity: sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=
   /shebang-regex/3.0.0:
+    dev: false
     engines:
       node: '>=8'
     resolution:
@@ -15709,6 +15698,7 @@ packages:
   /which/2.0.2:
     dependencies:
       isexe: 2.0.0
+    dev: false
     engines:
       node: '>= 8'
     hasBin: true
@@ -16044,7 +16034,7 @@ specifiers:
   '@emotion/styled': ^10.0.27
   '@sindresorhus/slugify': ^1.1.0
   date-fns: ^2.16.1
-  env-cmd: ^10.1.0
+  dotenv: ^8.2.0
   gatsby: ^2.24.65
   gatsby-image: ^2.4.19
   gatsby-plugin-emotion: ^4.3.11

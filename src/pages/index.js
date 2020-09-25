@@ -2,6 +2,7 @@ import { css } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import ArticleCard from '../components/articleCard';
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 import SmallCard from '../components/smallCard';
 
 export default function Home() {
@@ -57,8 +58,8 @@ export default function Home() {
         }
       `}
     >
+      <SEO />
       <ArticleCard className="main-card" node={data.latestPost.edges[0].node} />
-
       <div
         dir="rtl"
         css={css`
