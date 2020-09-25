@@ -11,8 +11,8 @@ const InfoLine = ({
     <div
       className={className}
       css={css`
-        * + * {
-          margin-inline-start: ${space};
+        * :not(:last-child) {
+          margin-inline-end: ${space};
         }
         font-size: ${size};
         font-weight: ${weight};

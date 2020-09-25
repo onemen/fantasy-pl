@@ -33,12 +33,15 @@ const Container = styled.header`
     }
   }
 
+  @media (max-width: ${({ maxWidth }) => (maxWidth || 0) + 20}px) {
+    padding: 0 1rem;
+  }
+
   @media (max-width: 769px) {
     .navbar-box,
     .end-menu-box {
       display: none;
     }
-    padding: 0 1rem;
   }
 
   .mobile-nav {

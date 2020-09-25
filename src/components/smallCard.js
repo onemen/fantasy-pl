@@ -23,6 +23,7 @@ const SmallCard = ({ node }) => {
         text-decoration: none;
 
         width: 350px;
+        max-width: 90vw;
         @media (min-width: 500px) {
           width: auto;
           max-width: 350px;

@@ -8,8 +8,8 @@ export const MenuList = styled.ul`
   margin: 0;
   padding: 0;
 
-  li + li {
-    margin-inline-start: ${prop => prop.space || '6rem'};
+  li :not(:last-child) {
+    margin-inline-end: ${prop => prop.space || '6rem'};
   }
 
   .nav-item {

@@ -21,6 +21,17 @@ const blogStyle = css`
     margin-bottom: 1rem;
     text-align: center;
   }
+  @media (max-width: 767px) {
+    h1 {
+      font-size: 1.6rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
 
   .banner {
     text-align: center;

@@ -35,6 +35,24 @@ const Container = styled.footer`
         margin: 0;
       }
     }
+
+    @media (max-width: 600px) {
+      padding: 1rem;
+      .navbar {
+        ul {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        li :not(:last-child) {
+          margin-inline-end: 0;
+          margin-bottom: 0.5rem;
+        }
+      }
+      .left {
+        align-self: center;
+      }
+    }
   }
 `;
 
@@ -42,7 +60,7 @@ const Footer = ({ maxWidth, language }) => {
   return (
     <Container maxWidth={maxWidth} language={language}>
       <div className="footer-content">
-        <Navbar color="text" />
+        <Navbar className="navbar" color="text" />
         <div className="left">
           <span>פנטזי ליג @ 2020. כל הזכויות שמורות</span>
         </div>

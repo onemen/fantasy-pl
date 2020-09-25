@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import InfoLine from './infoLine';
 
-const ArticleCard = ({ node }) => {
+const ArticleCard = ({ node, className }) => {
   const {
     fields: { author, date, language, keywords, slug, summery, title },
     bannerField: { banner },
@@ -12,6 +12,7 @@ const ArticleCard = ({ node }) => {
   return (
     <Link
       to={slug}
+      className={className}
       aria-label="לקריאת המאמר"
       css={css`
         display: flex;
@@ -27,6 +28,7 @@ const ArticleCard = ({ node }) => {
           0 10px 10px rgba(0, 0, 0, 0.22);
 
         width: 350px;
+        max-width: 90vw;
         @media (min-width: 500px) {
           max-width: 500px;
           width: unset;

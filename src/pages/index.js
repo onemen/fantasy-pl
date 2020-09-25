@@ -42,20 +42,30 @@ export default function Home() {
       css={css`
         display: flex;
         flex-direction: column;
-        padding: 3.35rem 1rem 0;
+        padding: 0 1rem;
+
+        .main-card {
+          margin: 2rem 0;
+        }
+
         @media (min-width: ${+maxWidth + 10}px) {
-          padding: 3.35rem 0 0;
+          padding: 0;
+
+          .main-card {
+            margin: 3.35rem 0;
+          }
         }
       `}
     >
-      <ArticleCard node={data.latestPost.edges[0].node} />
+      <ArticleCard className="main-card" node={data.latestPost.edges[0].node} />
+
       <div
         dir="rtl"
         css={css`
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
           gap: 2rem 10%;
-          margin: 3.35rem 0;
+          margin-bottom: 3.35rem;
         `}
       >
         {cards.map(({ node }, i) => (
