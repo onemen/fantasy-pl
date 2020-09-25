@@ -32,7 +32,10 @@ const Container = props => {
 
 const Toggle = ({ color = 'white' }) => {
   const [isToggledOn, setToggle] = useState(false);
-  const toggle = () => setToggle(!isToggledOn);
+  const toggle = () => {
+    console.log('toggle clicked', 'isToggledOn', isToggledOn);
+    setToggle(!isToggledOn);
+  };
 
   const onOpenTextColor = theme.colors.lightGreen;
   return (
@@ -132,6 +135,7 @@ const Toggle = ({ color = 'white' }) => {
               activeClassName="active-nav-item"
               to="/"
               aria-label="דף הבית"
+              onClick={toggle}
             >
               דף הבית
             </Link>
@@ -140,6 +144,7 @@ const Toggle = ({ color = 'white' }) => {
               activeClassName="active-nav-item"
               to="/about"
               aria-label="אודות"
+              onClick={toggle}
             >
               אודות
             </Link>
@@ -148,6 +153,7 @@ const Toggle = ({ color = 'white' }) => {
               activeClassName="active-nav-item"
               to="/contact"
               aria-label="כתבו לנו"
+              onClick={toggle}
             >
               כתבו לנו
             </Link>
