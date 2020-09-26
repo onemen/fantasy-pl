@@ -111,6 +111,18 @@ const blogStyle = css`
       margin-inline-start: 0.75rem;
       margin-inline-end: 0.75rem;
     }
+
+    .comment-link {
+      background-color: #fff3d4;
+      border-inline-start: 5px solid ${theme.brand.primary};
+      color: ${theme.colors.primaryDark};
+      font-size: 1.1rem;
+      padding: 1rem;
+
+      .link {
+        color: ${theme.colors.link_color};
+      }
+    }
   }
 `;
 

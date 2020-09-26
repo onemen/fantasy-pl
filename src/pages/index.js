@@ -33,8 +33,7 @@ export default function Home() {
     }
   `);
 
-  const posts = data.posts.edges;
-  const cards = [...posts, ...posts, ...posts, ...posts, ...posts];
+  const cards = data.posts.edges;
 
   const maxWidth = '1170';
   return (

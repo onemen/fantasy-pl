@@ -9,6 +9,8 @@ const SmallCard = ({ node }) => {
     bannerField: { banner },
   } = node;
 
+  console.log('date', date);
+
   return (
     <Link
       to={slug}
@@ -25,7 +27,7 @@ const SmallCard = ({ node }) => {
         width: 350px;
         max-width: 90vw;
         @media (min-width: 500px) {
-          width: auto;
+          width: 100%;
           max-width: 350px;
         }
         justify-self: center;

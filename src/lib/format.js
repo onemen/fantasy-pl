@@ -11,7 +11,7 @@ export default function (
 ) {
   try {
     if (typeof date === 'string') {
-      date = new Date(date);
+      date = date ? new Date(date) : Date.now();
     }
     return format(date, formatStr, options);
   } catch (error) {

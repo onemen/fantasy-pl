@@ -1,0 +1,39 @@
+---
+slug: פנטזי-פרמייר-ליג-איך-מתחילים
+title: פנטזי פרמייר ליג - איך מתחילים
+subtitle:
+date: '2020-09-26'
+author: guest
+description:
+summery: >
+
+language: he
+keywords:
+  - fantasy
+  - football
+banner: ./images/banner.jpg
+bannerCredit:
+  'צילום [Egor Vikhrev](https://unsplash.com/photos/cUVSKLuM7HI) ב
+  [Unsplash](https://unsplash.com)'
+---
+
+<p>
+  משחק הפנטזי פרמייר ליג מאפשר לנו לקחת על עצמנו את תפקיד המנג'ר ולבנות באמצעות
+  תקציב של 100 מיליון פאונד סגל וירטואלי המכיל 15 שחקנים מרחבי הליגה האנגלית
+  (הפרמייר ליג).
+</p>
+<p>
+  בכל שבוע משחקים, אנו נקבל ניקוד על סמך ביצועי השחקנים אותם בחרנו בקטגוריות
+  שונות (הבקעת שערים, מתן אסיסטים, שמירה על רשת נקייה וכו').
+</p>
+<p class="comment-link">
+  להסבר מפורט על חוקי המשחק, אופן קבלת הניקוד ושאר האפשרויות הקיימות בו –
+  <span class="link">לחצן כאן</span>.
+</p>
+<p>
+  על מנת להתחיל לשחק, כל מה שעליכם לעשות הוא להתחבר לאתר
+  <a href="https://fantasy.premierleague.com/"> Fantasy.premierleague.com </a> לפתוח חשבון באמצעות המייל או חשבון הפייסבוק שלכם
+  ולהתחיל במלאכת בניית הקבוצה.
+</p>
+
+![צילום מסך של פתיחת חשבון באתר](./images/register-screenshot.png)

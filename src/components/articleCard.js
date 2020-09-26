@@ -31,14 +31,14 @@ const ArticleCard = ({ node, className }) => {
         max-width: 90vw;
         @media (min-width: 500px) {
           max-width: 500px;
-          width: unset;
+          width: 100%;
         }
 
         @media (min-width: 900px) {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           grid-template-rows: 330px;
-          width: unset;
+          width: 100%;
           max-width: unset;
 
           img {
@@ -61,15 +61,17 @@ const ArticleCard = ({ node, className }) => {
       `}
     >
       <div>
-        <Img
-          fluid={banner.childImageSharp.fluid}
-          css={css`
-            border-radius: 10px 10px 0 0;
-            width: 100%;
-            height: 100%;
-          `}
-          alt={keywords.join(', ')}
-        />
+        {banner && (
+          <Img
+            fluid={banner.childImageSharp.fluid}
+            css={css`
+              border-radius: 10px 10px 0 0;
+              width: 100%;
+              height: 100%;
+            `}
+            alt={keywords.join(', ')}
+          />
+        )}
       </div>
       <div
         css={css`

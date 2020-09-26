@@ -8,7 +8,6 @@
  * 3. remove all space after <em > /<em\s+>/g -> '<em>'
  * 4. remove all space after </em > /<\/em\s+>/g -> '</em>'
  * 5. replace all spaces with one space /\s{2,}/g -> ' '
- * 6. remove spaces after >  />\s+/ -> '>'
  *
  */
 export const cleanHtml = text => {
@@ -17,6 +16,5 @@ export const cleanHtml = text => {
     .replace(/>\s+</g, '><')
     .replace(/<em\s+>/g, '<em>')
     .replace(/<\/em\s+>/g, '</em>')
-    .replace(/\s{2,}/g, ' ')
-    .replace(/>\s+/g, '>');
+    .replace(/\s{2,}/g, ' ');
 };
