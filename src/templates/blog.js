@@ -7,7 +7,6 @@ import InfoLine from '../components/infoLine';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { cleanHtml } from '../lib/cleanHtml';
-import format from '../lib/format';
 import theme from '../styles/theme';
 
 const blogStyle = css`
@@ -141,7 +140,7 @@ const blog = ({ data: { markdown } }) => {
 
         <InfoLine size="">
           <span>{author}</span>
-          <span>{format(date)}</span>
+          <span>{date}</span>
         </InfoLine>
 
         {banner && (
@@ -169,7 +168,7 @@ export const pageQuery = graphql`
       fields {
         title
         author
-        date
+        date(formatString: "MMMM Do, YYYY", locale: "he-IL")
         banner {
           ...bannerImage720
         }
