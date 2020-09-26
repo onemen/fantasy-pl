@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown/with-html';
 import InfoLine from '../components/infoLine';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import { cleanHtml } from '../lib/cleanHtml';
 import format from '../lib/format';
 import theme from '../styles/theme';
 
@@ -123,22 +124,26 @@ const blog = ({ data: { markdown } }) => {
         metaImage={banner?.childImageSharp?.fluid?.src}
         isBlogPost
       />
-      <h1>{title}</h1>
+      <article>
+        <h1>{title}</h1>
 
-      <InfoLine size="">
-        <span>{author}</span>
-        <span>{format(date)}</span>
-      </InfoLine>
+        <InfoLine size="">
+          <span>{author}</span>
+          <span>{format(date)}</span>
+        </InfoLine>
 
-      {banner && (
-        <div className="banner">
-          <Img className="banner__img" fluid={banner.childImageSharp.fluid} />
-          {bannerCredit ? <Markdown>{bannerCredit}</Markdown> : null}
-        </div>
-      )}
+        {banner && (
+          <div className="banner">
+            <Img className="banner__img" fluid={banner.childImageSharp.fluid} />
+            {bannerCredit ? <Markdown>{bannerCredit}</Markdown> : null}
+          </div>
+        )}
 
-      <article className="blog">
-        <ReactMarkdown source={markdown.html} escapeHtml={false} />
+        <ReactMarkdown
+          className="blog"
+          source={cleanHtml(markdown.html)}
+          escapeHtml={false}
+        />
       </article>
     </Layout>
   );
@@ -159,7 +164,6 @@ export const pageQuery = graphql`
         bannerCredit
       }
       html
-      htmlAst
     }
   }
 `;
