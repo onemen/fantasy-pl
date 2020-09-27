@@ -9,7 +9,7 @@ const colors = {
   primaryDark: '#575353',
   primaryDarker: '#3C2F2F',
   darkGray: '#676262',
-  gray: '#DBDADA',
+  gray: '#e2e2e2',
   lightGreen: '#4CE656',
   green: '#00CA6F',
   link_color: brand.primary,

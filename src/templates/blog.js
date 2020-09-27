@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { lighten } from 'polished';
 import Markdown from 'react-markdown';
 import ReactMarkdown from 'react-markdown/with-html';
 import InfoLine from '../components/infoLine';
@@ -14,7 +15,7 @@ const blogStyle = css`
   margin: 0px auto;
   max-width: 800px;
   padding: 20px 40px 40px;
-  background-color: ${theme.colors.darkGray};
+  background-color: ${theme.colors.primaryDark};
 
   h1 {
     font-size: 2.25rem;
@@ -110,15 +111,14 @@ const blogStyle = css`
     }
 
     .comment-link {
-      background-color: #fff3d4;
+      background-color: ${theme.colors.darkGray};
       border-inline-start: 5px solid ${theme.brand.primary};
-      color: ${theme.colors.primaryDark};
+      color: ${theme.colors.gray};
       margin-left: 2rem;
       margin-right: 2rem;
       padding: 1rem;
-
       .link {
-        color: ${theme.colors.link_color};
+        color: ${lighten(0.2, theme.colors.green)};
       }
     }
   }
