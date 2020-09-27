@@ -22,19 +22,24 @@ function SEO({
     ? `${seo.canonicalUrl}${postMeta.slug}`
     : seo.canonicalUrl,
   datePublished = isBlogPost ? postMeta.datePublished : false,
+  skipTitleTemplate,
 }) {
+  const defaultTitle = seo?.title;
+
   return (
     <>
       <Helmet
         htmlAttributes={{
           lang,
         }}
+        title={title}
+        titleTemplate={
+          !skipTitleTemplate && defaultTitle ? `%s | ${defaultTitle}` : null
+        }
       >
         {/* General tags */}
-        <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="image" content={image} />
-
         {/* OpenGraph tags */}
         <meta property="og:url" content={url} />
         {isBlogPost ? <meta property="og:type" content="article" /> : null}
@@ -42,7 +47,6 @@ function SEO({
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
         <meta property="fb:app_id" content={seo.social.fbAppID} />
-
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content={seo.social.twitter} />

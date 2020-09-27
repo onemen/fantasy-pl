@@ -138,7 +138,7 @@ const blog = ({ data: { markdown } }) => {
   const dir = language === 'he' ? 'rtl' : 'ltr';
 
   return (
-    <Layout dir={dir} frontmatter={markdown.fields}>
+    <Layout dir={dir}>
       <SEO
         frontmatter={markdown.fields}
         metaImage={banner?.childImageSharp?.fluid?.src}

@@ -60,7 +60,7 @@ export default function Home() {
         }
       `}
     >
-      <SEO />
+      <SEO skipTitleTemplate />
       <ArticleCard
         dir={DIRECTION}
         className="main-card"

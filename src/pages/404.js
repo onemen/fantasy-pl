@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 import theme from '../styles/theme';
 
 const NotFound = () => {
@@ -16,6 +17,7 @@ const NotFound = () => {
         margin: '50px auto',
       }}
     >
+      <SEO title="404: דף לא נמצא" />
       <h1 dir="rtl">הדף אליו ביקשתם להגיע אינו קיים</h1>
       <h1>The requested page doesn't exist</h1>
       <h3>

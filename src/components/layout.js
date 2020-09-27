@@ -1,7 +1,5 @@
 import { css, Global } from '@emotion/core';
 import styled from '@emotion/styled';
-import { graphql, useStaticQuery } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import '../styles/fonts.css';
 import reset from '../styles/reset';
 import theme from '../styles/theme';
@@ -52,51 +50,13 @@ const Container = styled.div`
 const Layout = ({
   children,
   className,
-  frontmatter = { title: '' },
   maxWidth = 1170,
   language = 'he',
   dir = language === 'he' ? 'rtl' : 'ltr',
 }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          description
-          keywords
-        }
-      }
-    }
-  `);
-  const {
-    site: {
-      siteMetadata: {
-        description: siteDescription,
-        keywords: siteKeywords,
-        title: siteTitle,
-      },
-    },
-  } = data;
-
-  const {
-    keywords = siteKeywords,
-    description = siteDescription,
-    title,
-  } = frontmatter;
-
   return (
     <Container maxWidth={maxWidth}>
       <Global styles={globalStyles} />
-      <Helmet
-        title={title ? `${title} | ${siteTitle}` : siteTitle}
-        meta={[
-          { name: 'description', content: description },
-          { name: 'keywords', content: keywords.join() },
-        ]}
-      >
-        <html lang={language} />
-        <noscript>This site runs best with JavaScript enabled.</noscript>
-      </Helmet>
       <div className="content-wrapper">
         <Header maxWidth={maxWidth} dir={dir} />
         <main
