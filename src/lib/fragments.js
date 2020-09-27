@@ -25,7 +25,8 @@ export const bannerImage = graphql`
   fragment cardFields on MarkdownRemark {
     fields {
       author
-      date(formatString: "MMMM Do, YYYY", locale: "he-IL")
+      date(formatString: "MMMM Do, YYYY")
+      dateHe: date(formatString: "MMMM Do, YYYY", locale: "he-IL")
       language
       keywords
       slug

@@ -9,7 +9,6 @@ const Container = styled.footer`
   .footer-content {
     display: flex;
     flex-direction: column;
-    direction: ${prop => (prop.language === 'he' ? 'rtl' : 'ltr')};
 
     margin: 0 auto;
     padding: 0 1rem;
@@ -56,11 +55,11 @@ const Container = styled.footer`
   }
 `;
 
-const Footer = ({ maxWidth, language }) => {
+const Footer = ({ maxWidth, dir }) => {
   return (
-    <Container maxWidth={maxWidth} language={language}>
+    <Container maxWidth={maxWidth} dir={dir}>
       <div className="footer-content">
-        <Navbar className="navbar" color="text" />
+        <Navbar className="navbar" color="text" dir={dir} />
         <div className="left">
           <span>פנטזי ליג @ 2020. כל הזכויות שמורות</span>
         </div>

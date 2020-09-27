@@ -1,24 +1,30 @@
 import { css } from '@emotion/core';
 
 const InfoLine = ({
-  children,
-  className,
+  author,
+  date,
   size = '0.775rem',
   space = '1rem',
   weight = '100',
+  dir,
+  ...props
 }) => {
   return (
     <div
-      className={className}
+      {...props}
       css={css`
+        * {
+          display: inline;
+        }
         * :not(:last-child) {
-          margin-inline-end: ${space};
+          ${dir === 'rtl' ? 'margin-left' : 'margin-right'}: 0.75rem;
         }
         font-size: ${size};
         font-weight: ${weight};
       `}
     >
-      {children}
+      <div>{author}</div>
+      <div>{date}</div>
     </div>
   );
 };

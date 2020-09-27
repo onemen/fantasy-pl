@@ -17,7 +17,7 @@ const WorkInProgress = () => {
       }}
     >
       <img src="work_in_progress.svg" alt="" />
-      <h1 dir="rtl">הדף עדין איננו מוכן</h1>
+      <h1 dir="rtl">הדף עדין אינו מוכן</h1>
       <h1>The requested page doesn't exist yet</h1>
       <h3>
         <Link

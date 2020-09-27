@@ -12,7 +12,6 @@ const Container = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    direction: ${prop => (prop.language === 'he' ? 'rtl' : 'ltr')};
 
     margin: 0 auto;
     max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}px` : 'none')};
@@ -29,7 +28,7 @@ const Container = styled.header`
     img {
       height: 40px;
       width: 40px;
-      margin-inline-end: 0.75rem;
+      ${prop => (prop.dir === 'rtl' ? 'margin-left' : 'margin-right')}: 0.75rem;
     }
   }
 
@@ -54,9 +53,9 @@ const Container = styled.header`
   }
 `;
 
-const Header = ({ maxWidth, language }) => {
+const Header = ({ maxWidth, dir }) => {
   return (
-    <Container maxWidth={maxWidth} language={language}>
+    <Container maxWidth={maxWidth} dir={dir}>
       <div className="header-content">
         <div className="start-menu-box">
           <Link className="logo-box" to="/">
@@ -65,7 +64,7 @@ const Header = ({ maxWidth, language }) => {
           </Link>
         </div>
         <MobileNav color={theme.colors.lightGreen} />
-        <Navbar className="navbar-box" />
+        <Navbar className="navbar-box" dir={dir} />
       </div>
     </Container>
   );

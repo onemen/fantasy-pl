@@ -3,20 +3,22 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import InfoLine from './infoLine';
 
-const ArticleCard = ({ node, className }) => {
+const ArticleCard = ({ node, ...props }) => {
   const {
-    fields: { author, date, language, keywords, slug, summery, title },
+    fields: { author, date, dateHe, language, keywords, slug, summery, title },
     bannerField: { banner },
   } = node;
 
+  const dir = language === 'he' ? 'rtl' : 'ltr';
+
   return (
     <Link
+      {...props}
       to={slug}
-      className={className}
       aria-label="לקריאת המאמר"
       css={css`
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-self: center;
 
         border-radius: 15px;
@@ -60,23 +62,10 @@ const ArticleCard = ({ node, className }) => {
         }
       `}
     >
-      <div>
-        {banner && (
-          <Img
-            fluid={banner.childImageSharp.fluid}
-            css={css`
-              border-radius: 10px 10px 0 0;
-              width: 100%;
-              height: 100%;
-            `}
-            alt={keywords.join(', ')}
-          />
-        )}
-      </div>
       <div
         css={css`
           height: 100%;
-          direction: ${language === 'he' ? 'rtl' : 'ltr'};
+          direction: ${dir};
           padding: 1rem;
           display: flex;
           flex-direction: column;
@@ -104,10 +93,26 @@ const ArticleCard = ({ node, className }) => {
         >
           {summery}
         </p>
-        <InfoLine className="card__info">
-          <span>{author}</span>
-          <span>{date}</span>
-        </InfoLine>
+        <InfoLine
+          className="card__info"
+          dir={dir}
+          author={author}
+          date={language === 'he' ? dateHe : date}
+        />
+      </div>
+
+      <div>
+        {banner && (
+          <Img
+            fluid={banner.childImageSharp.fluid}
+            css={css`
+              border-radius: 10px 10px 0 0;
+              width: 100%;
+              height: 100%;
+            `}
+            alt={keywords.join(', ')}
+          />
+        )}
       </div>
     </Link>
   );

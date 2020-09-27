@@ -5,11 +5,11 @@ import InfoLine from './infoLine';
 
 const SmallCard = ({ node }) => {
   const {
-    fields: { author, date, language, keywords, slug, subtitle, title },
+    fields: { author, date, dateHe, language, keywords, slug, subtitle, title },
     bannerField: { banner },
   } = node;
 
-  console.log('date', date);
+  const dir = language === 'he' ? 'rtl' : 'ltr';
 
   return (
     <Link
@@ -60,7 +60,7 @@ const SmallCard = ({ node }) => {
 
       <div
         css={css`
-          direction: ${language === 'he' ? 'rtl' : 'ltr'};
+          direction: ${dir};
           padding: 1rem;
           display: flex;
           flex-direction: column;
@@ -88,10 +88,11 @@ const SmallCard = ({ node }) => {
         >
           {subtitle}
         </p>
-        <InfoLine>
-          <span>{author}</span>
-          <span>{date}</span>
-        </InfoLine>
+        <InfoLine
+          dir={dir}
+          author={author}
+          date={language === 'he' ? dateHe : date}
+        />
       </div>
     </Link>
   );

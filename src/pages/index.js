@@ -5,6 +5,9 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import SmallCard from '../components/smallCard';
 
+// hard coded rtl page !
+const DIRECTION = 'rtl';
+
 export default function Home() {
   const data = useStaticQuery(graphql`
     query {
@@ -58,9 +61,13 @@ export default function Home() {
       `}
     >
       <SEO />
-      <ArticleCard className="main-card" node={data.latestPost.edges[0].node} />
+      <ArticleCard
+        dir={DIRECTION}
+        className="main-card"
+        node={data.latestPost.edges[0].node}
+      />
       <div
-        dir="rtl"
+        dir={DIRECTION}
         css={css`
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

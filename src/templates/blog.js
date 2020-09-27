@@ -105,17 +105,16 @@ const blogStyle = css`
       background-color: ${theme.colors.primaryDark};
     }
     table p {
-      margin: 0;
+      margin: 0 0.75rem;
       text-align: right;
-      margin-inline-start: 0.75rem;
-      margin-inline-end: 0.75rem;
     }
 
     .comment-link {
       background-color: #fff3d4;
       border-inline-start: 5px solid ${theme.brand.primary};
       color: ${theme.colors.primaryDark};
-      font-size: 1.1rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
       padding: 1rem;
 
       .link {
@@ -126,22 +125,33 @@ const blogStyle = css`
 `;
 
 const blog = ({ data: { markdown } }) => {
-  const { author, banner, bannerCredit, date, title } = markdown.fields;
+  const {
+    author,
+    banner,
+    bannerCredit,
+    date,
+    dateHe,
+    language,
+    title,
+  } = markdown.fields;
+
+  const dir = language === 'he' ? 'rtl' : 'ltr';
 
   return (
-    <Layout dir="rtl" css={blogStyle} frontmatter={markdown.fields}>
+    <Layout dir={dir} frontmatter={markdown.fields}>
       <SEO
         frontmatter={markdown.fields}
         metaImage={banner?.childImageSharp?.fluid?.src}
         isBlogPost
       />
-      <article>
+      <article css={blogStyle}>
         <h1>{title}</h1>
 
-        <InfoLine size="">
-          <span>{author}</span>
-          <span>{date}</span>
-        </InfoLine>
+        <InfoLine
+          dir={dir}
+          author={author}
+          date={language === 'he' ? dateHe : date}
+        />
 
         {banner && (
           <div className="banner">
@@ -168,7 +178,9 @@ export const pageQuery = graphql`
       fields {
         title
         author
-        date(formatString: "MMMM Do, YYYY", locale: "he-IL")
+        date(formatString: "MMMM Do, YYYY")
+        dateHe: date(formatString: "MMMM Do, YYYY", locale: "he-IL")
+        language
         banner {
           ...bannerImage720
         }

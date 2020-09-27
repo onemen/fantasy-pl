@@ -9,7 +9,10 @@ export const MenuList = styled.ul`
   padding: 0;
 
   li :not(:last-child) {
-    margin-inline-end: ${prop => prop.space || '6rem'};
+    ${prop =>
+      prop.dir === 'rtl'
+        ? `margin-left: ${prop.space || '6'}`
+        : `margin-right: ${prop.space || '6'}`}rem;
   }
 
   .nav-item {
@@ -31,10 +34,10 @@ export const MenuList = styled.ul`
   }
 `;
 
-const Navbar = ({ color, className }) => {
+const Navbar = ({ color, className, dir }) => {
   return (
     <nav className={className}>
-      <MenuList color={color}>
+      <MenuList color={color} dir={dir}>
         <li>
           <Link
             className="nav-item"

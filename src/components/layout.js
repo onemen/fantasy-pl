@@ -52,10 +52,10 @@ const Container = styled.div`
 const Layout = ({
   children,
   className,
-  dir,
   frontmatter = { title: '' },
   maxWidth = 1170,
   language = 'he',
+  dir = language === 'he' ? 'rtl' : 'ltr',
 }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -85,7 +85,7 @@ const Layout = ({
   } = frontmatter;
 
   return (
-    <div>
+    <Container maxWidth={maxWidth}>
       <Global styles={globalStyles} />
       <Helmet
         title={title ? `${title} | ${siteTitle}` : siteTitle}
@@ -97,23 +97,21 @@ const Layout = ({
         <html lang={language} />
         <noscript>This site runs best with JavaScript enabled.</noscript>
       </Helmet>
-      <Container maxWidth={maxWidth}>
-        <div className="content-wrapper">
-          <Header maxWidth={maxWidth} language={language} />
-          <main
-            css={css`
-              margin: 0 auto;
-              max-width: ${maxWidth ? `${maxWidth}px` : 'none'};
-            `}
-            dir={dir}
-            className={className}
-          >
-            {children}
-          </main>
-        </div>
-        <Footer maxWidth={maxWidth} language={language} />
-      </Container>
-    </div>
+      <div className="content-wrapper">
+        <Header maxWidth={maxWidth} dir={dir} />
+        <main
+          css={css`
+            margin: 0 auto;
+            max-width: ${maxWidth ? `${maxWidth}px` : 'none'};
+          `}
+          dir={dir}
+          className={className}
+        >
+          {children}
+        </main>
+      </div>
+      <Footer maxWidth={maxWidth} dir={dir} />
+    </Container>
   );
 };
 
