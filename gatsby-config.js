@@ -12,6 +12,7 @@ const {
   ROOT_URL: NETLIFY_SITE_URL = config.siteUrl,
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
+  BLOG_TESTING,
 } = process.env;
 
 const isNetlifyProduction = NETLIFY_ENV === 'production';
@@ -49,7 +50,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',
-        path: here('content', 'blog'),
+        path: BLOG_TESTING ? here('__test_content__') : here('content', 'blog'),
       },
     },
     {
@@ -77,6 +78,7 @@ module.exports = {
         showSpinner: false,
       },
     },
+    'gatsby-plugin-workerize-loader',
     'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',

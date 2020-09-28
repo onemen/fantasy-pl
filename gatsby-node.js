@@ -135,12 +135,25 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { createPage } = actions;
 
+  const blogTemplate = path.resolve(`./src/templates/blog.js`);
   edges.forEach(({ node }) => {
     const slug = node.fields.slug;
     createPage({
       path: slug,
-      component: path.resolve(`./src/templates/blog.js`),
+      component: blogTemplate,
       context: { slug },
     });
   });
+};
+
+const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``));
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+  const oldPage = Object.assign({}, page);
+  // Remove trailing slash unless page is /
+  page.path = replacePath(page.path);
+  if (page.path !== oldPage.path) {
+    deletePage(oldPage);
+    createPage(page);
+  }
 };
