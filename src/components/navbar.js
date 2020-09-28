@@ -52,6 +52,16 @@ const Navbar = ({ color, className, dir }) => {
           <Link
             className="nav-item"
             activeClassName="active-nav-item"
+            to="/blog"
+            aria-label="blog"
+          >
+            blog
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="nav-item"
+            activeClassName="active-nav-item"
             to="/about"
             aria-label="אודות"
           >
