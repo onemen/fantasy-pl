@@ -119,6 +119,7 @@ const blogStyle = css`
       padding: 1rem;
       .link {
         color: ${lighten(0.2, theme.colors.green)};
+        text-decoration: none;
       }
     }
   }

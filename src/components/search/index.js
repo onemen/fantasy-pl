@@ -27,10 +27,14 @@ function BlogPostCard({ blogpost }) {
         boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
         borderRadius: 5,
         padding: 30,
+        textDecoration: 'none',
+        color: 'red',
       }}
     >
-      <RouterLink to={slug} css={{ color: 'initial' }}>
-        <h2 css={{ marginTop: 0, lineHeight: 1.4 }}>{title}</h2>
+      <RouterLink to={slug} css={{ color: 'initial', textDecoration: 'none' }}>
+        <h2 css={{ marginTop: 0, lineHeight: 1.25, marginBottom: '0.775rem' }}>
+          {title}
+        </h2>
         <Img fluid={banner.childImageSharp.fluid} alt={keywords.join(', ')} />
         <div css={{ margin: '16px 0 0 0' }}>{description}</div>
       </RouterLink>

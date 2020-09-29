@@ -38,7 +38,11 @@ export default function Home() {
     }
   `);
 
-  const cards = data.posts.edges;
+  // const cards = data.posts.edges;
+  // for testing
+  data.posts.totalCount = 100;
+  const cards = [...data.posts.edges, ...data.posts.edges, ...data.posts.edges];
+  cards.sort(() => (Math.random() < 0.5 ? 1 : -1));
 
   const maxWidth = '1170';
   return (
@@ -81,7 +85,7 @@ export default function Home() {
           <SmallCard key={node.fields.slug + i} node={node} />
         ))}
       </div>
-      {data.posts.totalCount && (
+      {data.posts.totalCount > 10 && (
         <Link
           css={css`
             background-color: var(--link_color);
