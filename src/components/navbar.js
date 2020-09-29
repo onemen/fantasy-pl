@@ -55,7 +55,7 @@ const Navbar = ({ color, className, dir }) => {
             to="/blog"
             aria-label="blog"
           >
-            blog
+            ארכיון
           </Link>
         </li>
         <li>

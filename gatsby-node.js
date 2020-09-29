@@ -111,12 +111,10 @@ module.exports.onCreateNode = ({ node, getNode, actions }) => {
       value: node.frontmatter.bannerCredit,
     });
 
-    // TODO: add categories to markdown files
     createNodeField({
       name: 'categories',
       node,
-      // value: node.frontmatter.categories || [],
-      value: node.frontmatter.keywords || [],
+      value: node.frontmatter.categories || [],
     });
 
     createNodeField({

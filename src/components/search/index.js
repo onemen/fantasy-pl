@@ -16,72 +16,21 @@ function getMatchSorterWorker() {
 }
 
 function BlogPostCard({ blogpost }) {
-  const {
-    slug,
-    productionUrl,
-    title,
-    description,
-    keywords,
-    banner,
-  } = blogpost;
-  const defaultCopyText = 'Copy URL';
-  const [copyText, setCopyText] = React.useState(defaultCopyText);
-
-  React.useEffect(() => {
-    let current = true;
-    if (copyText !== defaultCopyText) {
-      setTimeout(() => {
-        if (current) {
-          setCopyText(defaultCopyText);
-        }
-      }, 3000);
-    }
-    return () => (current = false);
-  }, [copyText]);
-
-  function copy(event) {
-    event.preventDefault();
-    navigator.clipboard.writeText(productionUrl).then(
-      () => {
-        setCopyText('Copied');
-      },
-      () => {
-        setCopyText('Error copying text');
-      }
-    );
-  }
+  const { slug, title, description, keywords, banner } = blogpost;
 
   return (
     <div
       css={{
-        margin: 20,
+        margin: 25,
         width: 320,
         background: theme.colors.white,
         boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
         borderRadius: 5,
         padding: 30,
-        position: 'relative',
-        paddingBottom: 60,
       }}
     >
       <RouterLink to={slug} css={{ color: 'initial' }}>
-        <h2 css={{ marginTop: 0 }}>{title}</h2>
-        <div css={{ width: '100%' }}>
-          <button
-            css={{
-              display: 'block',
-              width: '100%',
-              position: 'absolute',
-              bottom: '0',
-              left: '0',
-              borderTopRightRadius: '0',
-              borderTopLeftRadius: '0',
-            }}
-            onClick={copy}
-          >
-            {copyText}
-          </button>
-        </div>
+        <h2 css={{ marginTop: 0, lineHeight: 1.4 }}>{title}</h2>
         <Img fluid={banner.childImageSharp.fluid} alt={keywords.join(', ')} />
         <div css={{ margin: '16px 0 0 0' }}>{description}</div>
       </RouterLink>
@@ -239,17 +188,17 @@ function Search(props) {
   }
 
   return (
-    <div>
+    <>
       <div css={{ maxWidth: 500, margin: 'auto' }}>
-        <div css={{ position: 'relative' }}>
+        <div css={{ position: 'relative', color: '#000000' }}>
           <form action="/blog" method="GET" onSubmit={handlePreventSubmit}>
             <input
-              name="q" /* the GET query parameter in https://kentcdodds.com/blog/?q=test */
-              css={{ width: '100%', paddingRight: 50 }}
+              name="q" /* the GET query parameter in SITE_URL/blog/?q=test */
+              css={{ width: '100%', paddingLeft: 50 }}
               onChange={event => setSearch(event.target.value)}
               type="search"
-              placeholder="Search Blogposts"
-              aria-label="Search Blogposts"
+              placeholder="חיפוש בארכיון"
+              aria-label="חיפוש בארכיון"
               value={search}
               autoFocus
             />
@@ -257,7 +206,7 @@ function Search(props) {
           <div
             css={{
               position: 'absolute',
-              right: 14,
+              left: 14,
               top: 10,
               opacity: 0.6,
               fontSize: '0.8rem',
@@ -277,13 +226,6 @@ function Search(props) {
             </CategoryButton>
           ))}
         </div>
-        <small css={{ marginTop: 10, display: 'block' }}>
-          {`If you can't find what you're looking for with this, try `}
-          <a href="https://www.google.com/search?q=site%3Akentcdodds.com%2Fblog+testing">
-            using Google
-          </a>
-          {'.'}
-        </small>
       </div>
       <div
         css={{
@@ -299,19 +241,24 @@ function Search(props) {
       </div>
       {maxPostsToRender < filteredBlogPosts.length ? (
         <>
-          <div css={{ marginTop: 20, textAlign: 'center' }}>
-            Oh? You wanna scroll do you? Rendering all the posts...
+          <div
+            css={{
+              marginTop: 20,
+              textAlign: 'center',
+              color: 'var(--link_color)',
+              fontWeight: 'bold',
+            }}
+          >
+            רוצה להמשיך? מציג את כל המאמרים...
           </div>
           <Intersection onVisible={() => setMaxPostsToRender(Infinity)} />
         </>
       ) : null}
-    </div>
+    </>
   );
 }
 
 export default Search;
 
-/*
-eslint
-  no-func-assign: "off"
-*/
+/* eslint no-func-assign: "off" */
+/* eslint jsx-a11y/no-autofocus: "off" */

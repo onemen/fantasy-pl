@@ -1,7 +1,10 @@
-import Search from 'components/search';
+import { css } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
+import Layout from '../components/layout';
+import Search from '../components/search';
+import SEO from '../components/seo';
 
-function BlogScreen() {
+function BlogPage(args) {
   const result = useStaticQuery(
     graphql`
       query {
@@ -17,13 +20,12 @@ function BlogScreen() {
               fields {
                 id
                 slug
-                productionUrl
                 title
                 categories
                 keywords
                 description: plainTextDescription
                 banner {
-                  ...bannerImage400
+                  ...bannerImage260
                 }
               }
               excerpt(pruneLength: 190)
@@ -33,7 +35,20 @@ function BlogScreen() {
       }
     `
   );
-  return <Search blogposts={result.blogposts} />;
+
+  return (
+    <Layout
+      css={css`
+        width: 100%;
+        margin: 0px auto;
+        padding: 40px 0;
+        min-height: calc(100vh - 8rem + 1px);
+      `}
+    >
+      <SEO title="חיפוש בארכיון" />
+      <Search blogposts={result.blogposts} />
+    </Layout>
+  );
 }
 
-export default BlogScreen;
+export default BlogPage;

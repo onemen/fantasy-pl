@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import ArticleCard from '../components/articleCard';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -25,7 +25,9 @@ export default function Home() {
       posts: allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         skip: 1
+        limit: 9
       ) {
+        totalCount
         edges {
           node {
             ...cardFields
@@ -79,6 +81,35 @@ export default function Home() {
           <SmallCard key={node.fields.slug + i} node={node} />
         ))}
       </div>
+      {data.posts.totalCount && (
+        <Link
+          css={css`
+            background-color: var(--link_color);
+            border: 0.1em solid var(--title-color);
+            border-radius: 0.3em;
+            font-size: 1.2rem;
+            margin: 4rem auto;
+            padding: 0.5em 1.5em;
+
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.5s ease-in;
+            color: #ffffff;
+
+            &:hover,
+            &:focus {
+              color: var(--title-color);
+              background-color: transparent;
+            }
+          `}
+          className="nav-item"
+          activeClassName="active-nav-item"
+          to="/blog"
+          aria-label="blog"
+        >
+          לצפיה וחיפוש בארכיון המאמרים
+        </Link>
+      )}
     </Layout>
   );
 }
