@@ -20,7 +20,7 @@ export const globalStyles = css`
   body {
     font-style: normal;
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.55;
     word-wrap: break-word;
   }
   body {
@@ -29,6 +29,16 @@ export const globalStyles = css`
   }
   button {
     cursor: pointer;
+  }
+  input,
+  textarea {
+    border-radius: 4px;
+    border: 1px solid ${theme.colors.gray};
+    padding: 5px 10px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    ::placeholder {
+      opacity: 0.4;
+    }
   }
 
   ${reset};
@@ -39,7 +49,7 @@ const Container = styled.div`
   flex-direction: column;
   min-height: 100vh;
 
-  line-height: 1.7;
+  line-height: 1.55;
   word-wrap: break-word;
 
   .content-wrapper {

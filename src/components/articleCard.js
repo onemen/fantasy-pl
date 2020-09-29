@@ -39,7 +39,7 @@ const ArticleCard = ({ node, ...props }) => {
         @media (min-width: 900px) {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          grid-template-rows: 330px;
+          grid-template-rows: minmax(330px, auto);
           width: 100%;
           max-width: unset;
 

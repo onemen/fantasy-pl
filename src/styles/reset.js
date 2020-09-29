@@ -9,23 +9,50 @@ const reset = css`
     padding: 0;
     margin: 0;
   }
+  html {
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 
   a {
     color: ${theme.colors.link_color};
   }
 
-  a:not([href]):not([tabindex]) {
-    color: inherit;
-    text-decoration: none;
-    &:hover,
-    &:focus {
-      color: inherit;
-      text-decoration: none;
-    }
-    &:focus {
-      outline: 0;
-    }
-  } */
+  a,
+  area,
+  button,
+  [role='button'],
+  input,
+  label,
+  select,
+  summary,
+  textarea {
+    touch-action: manipulation;
+  }
+  input,
+  button,
+  select,
+  textarea {
+    line-height: inherit;
+  }
+  input[type='date'],
+  input[type='time'],
+  input[type='datetime-local'],
+  input[type='month'] {
+    -webkit-appearance: listbox;
+  }
+  textarea {
+    resize: vertical;
+  }
+  input[type='search'] {
+    appearance: none;
+    font-family: inherit;
+    font-size: inherit;
+  }
 `;
 
 export default reset;
