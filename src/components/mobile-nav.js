@@ -142,6 +142,14 @@ const Toggle = ({ color = 'white' }) => {
             <Link
               className="nav-item"
               activeClassName="active-nav-item"
+              to="/blog"
+              aria-label="blog"
+            >
+              ארכיון
+            </Link>
+            <Link
+              className="nav-item"
+              activeClassName="active-nav-item"
               to="/about"
               aria-label="אודות"
               onClick={toggle}

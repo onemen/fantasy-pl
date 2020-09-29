@@ -3,6 +3,7 @@ const slugify = require('@sindresorhus/slugify');
 const path = require('path');
 const stripMarkdownPlugin = require('strip-markdown');
 const remark = require('remark');
+const config = require('./config/website');
 
 function stripMarkdown(markdownString) {
   return remark()
@@ -83,6 +84,15 @@ module.exports.onCreateNode = ({ node, getNode, actions }) => {
       value: slug,
     });
 
+    const productionUrl = new URL(config.siteUrl);
+    productionUrl.pathname = slug;
+
+    createNodeField({
+      name: 'productionUrl',
+      node,
+      value: productionUrl.toString(),
+    });
+
     createNodeField({
       name: 'date',
       node,
@@ -99,6 +109,12 @@ module.exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'bannerCredit',
       node,
       value: node.frontmatter.bannerCredit,
+    });
+
+    createNodeField({
+      name: 'categories',
+      node,
+      value: node.frontmatter.categories || [],
     });
 
     createNodeField({

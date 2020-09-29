@@ -50,7 +50,9 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',
-        path: BLOG_TESTING ? here('__test_content__') : here('content', 'blog'),
+        path: BLOG_TESTING
+          ? here('__test_content__', 'content', 'blog')
+          : here('content', 'blog'),
       },
     },
     {
