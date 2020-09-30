@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import Search from '../components/search';
 import SEO from '../components/seo';
 
-function BlogPage(args) {
+function BlogPage() {
   const result = useStaticQuery(
     graphql`
       query {
@@ -20,6 +20,7 @@ function BlogPage(args) {
               fields {
                 id
                 slug
+                date(difference: "milliseconds")
                 title
                 categories
                 keywords

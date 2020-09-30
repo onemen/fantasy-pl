@@ -166,6 +166,8 @@ function Search(props) {
             maxRanking: matchSorterRankings.CONTAINS,
           },
         ],
+        // default sort by date difference, newer post appear first
+        baseSort: (a, b) => a.date - b.date,
       })
       .then(
         results => setFilteredBlogPosts(results),
