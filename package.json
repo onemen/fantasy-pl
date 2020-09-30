@@ -52,6 +52,8 @@
     "strip-markdown": "^3.1.2"
   },
   "devDependencies": {
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
     "node-fetch": "2.6.1",
     "prettier": "2.1.2"
   },
@@ -61,6 +63,11 @@
   },
   "bugs": {
     "url": "https://github.com/onemen/fantasy-pl/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "resolutions": {
     "node-fetch": "^2.6.1"
