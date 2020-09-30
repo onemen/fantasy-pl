@@ -65,6 +65,10 @@ const blogStyle = css`
       margin: 0 0 1.55rem 0;
     }
 
+    p > strong {
+      font-weight: 500;
+    }
+
     p + ul {
       margin-top: calc(-1.55rem / 1.5);
     }
