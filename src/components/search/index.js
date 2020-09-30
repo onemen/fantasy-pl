@@ -1,5 +1,6 @@
+import { css } from '@emotion/core';
 import styled from '@emotion/styled';
-import { Link as RouterLink } from '@reach/router';
+import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { rankings as matchSorterRankings } from 'match-sorter';
 import React from 'react';
@@ -28,16 +29,24 @@ function BlogPostCard({ blogpost }) {
         borderRadius: 5,
         padding: 30,
         textDecoration: 'none',
-        color: 'red',
       }}
     >
-      <RouterLink to={slug} css={{ color: 'initial', textDecoration: 'none' }}>
+      <Link
+        to={slug}
+        css={css`
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          color: initial;
+          text-decoration: none;
+        `}
+      >
         <h2 css={{ marginTop: 0, lineHeight: 1.25, marginBottom: '0.775rem' }}>
           {title}
         </h2>
         <Img fluid={banner.childImageSharp.fluid} alt={keywords.join(', ')} />
         <div css={{ margin: '16px 0 0 0' }}>{description}</div>
-      </RouterLink>
+      </Link>
     </div>
   );
 }
