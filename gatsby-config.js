@@ -31,7 +31,7 @@ module.exports = {
     ],
     canonicalUrl: siteUrl,
     image: config.siteLogo,
-    author: guest
+    author: {
       name: config.author,
       minibio: config.minibio,
     },

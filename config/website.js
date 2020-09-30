@@ -9,7 +9,7 @@ module.exports = {
   siteDescription:
     'בואו לבדוק את פנטזי ליג בלוג, האתר שיגלה לכם כל מה שאתם לא יודעים.',
   minibio: ``,
-  author: guest
+  author: 'tabmix.onemen@gmail.com', // Author for schemaORGJSONLD
   organization: '',
 
   siteFBAppID: '', // Facebook App ID - Optional
