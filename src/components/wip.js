@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
+import SEO from 'components/seo';
 import { Link } from 'gatsby';
-import SEO from '../components/seo';
-import theme from '../styles/theme';
+import theme from 'styles/theme';
 import Layout from './layout';
 
 const WorkInProgress = ({ title }) => {

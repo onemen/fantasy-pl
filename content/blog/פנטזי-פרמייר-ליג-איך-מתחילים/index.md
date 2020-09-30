@@ -1,10 +1,10 @@
 ---
 slug: פנטזי-פרמייר-ליג-איך-מתחילים
 title: פנטזי פרמייר ליג - איך מתחילים
-subtitle: רוצה להיות המנג'ר של קוצה מהליגה האנגלית?
+subtitle: רוצה להיות המנג'ר של קבוצה מהליגה האנגלית?
 date: '2020-09-26'
 author: אורח
-description: רוצה להיות המנג'ר של קוצה מהליגה האנגלית?
+description: רוצה להיות המנג'ר של קבוצה מהליגה האנגלית?
 summery: >
   משחק הפנטזי פרמייר ליג מאפשר לנו לקחת על עצמנו את תפקיד המנג'ר ולבנות באמצעות
   תקציב של 100 מיליון פאונד סגל וירטואלי המכיל 15 שחקנים מרחבי הליגה האנגלית
@@ -16,8 +16,7 @@ keywords:
   - fantasy
   - football
 banner: ./images/banner.jpg
-bannerCredit:
-  'צילום [Egor Vikhrev](https://unsplash.com/photos/cUVSKLuM7HI) ב
+bannerCredit: 'צילום [Egor Vikhrev](https://unsplash.com/photos/cUVSKLuM7HI) ב
   [Unsplash](https://unsplash.com)'
 ---
 

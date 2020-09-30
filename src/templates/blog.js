@@ -1,14 +1,14 @@
 import { css } from '@emotion/core';
+import InfoLine from 'components/infoLine';
+import Layout from 'components/layout';
+import SEO from 'components/seo';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { cleanHtml } from 'lib/cleanHtml';
 import { lighten } from 'polished';
 import Markdown from 'react-markdown';
 import ReactMarkdown from 'react-markdown/with-html';
-import InfoLine from '../components/infoLine';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import { cleanHtml } from '../lib/cleanHtml';
-import theme from '../styles/theme';
+import theme from 'styles/theme';
 
 const blogStyle = css`
   width: 100%;

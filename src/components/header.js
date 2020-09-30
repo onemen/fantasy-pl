@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import logo from '../images/premier-league.svg';
-import theme from '../styles/theme';
+import logo from 'images/premier-league.svg';
+import theme from 'styles/theme';
 import MobileNav from './mobile-nav';
 import Navbar from './navbar';
 

@@ -1,8 +1,8 @@
 import { css } from '@emotion/core';
+import Layout from 'components/layout';
+import SEO from 'components/seo';
 import { Link } from 'gatsby';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import theme from '../styles/theme';
+import theme from 'styles/theme';
 
 const NotFound = () => {
   return (

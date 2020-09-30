@@ -1,8 +1,8 @@
 import { css } from '@emotion/core';
+import Layout from 'components/layout';
+import Search from 'components/search';
+import SEO from 'components/seo';
 import { graphql, useStaticQuery } from 'gatsby';
-import Layout from '../components/layout';
-import Search from '../components/search';
-import SEO from '../components/seo';
 
 function BlogPage() {
   const result = useStaticQuery(

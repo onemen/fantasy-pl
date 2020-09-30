@@ -1,9 +1,9 @@
 import { css } from '@emotion/core';
+import ArticleCard from 'components/articleCard';
+import Layout from 'components/layout';
+import SEO from 'components/seo';
+import SmallCard from 'components/smallCard';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import ArticleCard from '../components/articleCard';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import SmallCard from '../components/smallCard';
 
 // hard coded rtl page !
 const DIRECTION = 'rtl';

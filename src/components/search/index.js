@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { rankings as matchSorterRankings } from 'match-sorter';
 import React from 'react';
-import theme from '../../styles/theme';
+import theme from 'styles/theme';
 import MatchSorterWorker from './match-sorter.worker';
 
 let matchSorterWorker;
