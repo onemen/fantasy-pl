@@ -1,6 +1,13 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
+const menuItems = {
+  '/': 'דף הבית',
+  '/blog': 'ארכיון',
+  '/about': 'אודות',
+  '/contact': 'כתבו לנו',
+};
+
 export const MenuList = styled.ul`
   display: flex;
   align-items: center;
@@ -38,46 +45,18 @@ const Navbar = ({ color, className, dir }) => {
   return (
     <nav className={className}>
       <MenuList color={color} dir={dir}>
-        <li>
-          <Link
-            className="nav-item"
-            activeClassName="active-nav-item"
-            to="/"
-            aria-label="דף הבית"
-          >
-            דף הבית
-          </Link>
-        </li>
-        <li>
-          <Link
-            className="nav-item"
-            activeClassName="active-nav-item"
-            to="/blog"
-            aria-label="blog"
-          >
-            ארכיון
-          </Link>
-        </li>
-        <li>
-          <Link
-            className="nav-item"
-            activeClassName="active-nav-item"
-            to="/about"
-            aria-label="אודות"
-          >
-            אודות
-          </Link>
-        </li>
-        <li>
-          <Link
-            className="nav-item"
-            activeClassName="active-nav-item"
-            to="/contact"
-            aria-label="כתבו לנו"
-          >
-            כתבו לנו
-          </Link>
-        </li>
+        {Object.entries(menuItems).map(([to, title]) => (
+          <li>
+            <Link
+              className="nav-item"
+              activeClassName="active-nav-item"
+              to={to}
+              aria-label={title}
+            >
+              {title}
+            </Link>
+          </li>
+        ))}
       </MenuList>
     </nav>
   );
