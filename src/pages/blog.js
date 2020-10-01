@@ -20,7 +20,6 @@ function BlogPage() {
               fields {
                 id
                 slug
-                date(difference: "milliseconds")
                 title
                 categories
                 keywords
