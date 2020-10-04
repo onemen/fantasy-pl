@@ -15,11 +15,15 @@ export const MenuList = styled.ul`
   margin: 0;
   padding: 0;
 
-  li :not(:last-child) {
-    ${prop =>
-      prop.dir === 'rtl'
-        ? `margin-left: ${prop.space || '6'}`
-        : `margin-right: ${prop.space || '6'}`}rem;
+  li {
+    margin-bottom: 0;
+
+    :not(:last-child) {
+      ${prop =>
+        prop.dir === 'rtl'
+          ? `margin-left: ${prop.space || '6'}`
+          : `margin-right: ${prop.space || '6'}`}rem;
+    }
   }
 
   .nav-item {

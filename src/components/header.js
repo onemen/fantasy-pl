@@ -28,6 +28,7 @@ const Container = styled.header`
     img {
       height: 40px;
       width: 40px;
+      margin-bottom: 0;
       ${prop => (prop.dir === 'rtl' ? 'margin-left' : 'margin-right')}: 0.75rem;
     }
   }

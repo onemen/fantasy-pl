@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import { rhythm, scale } from 'styles/typography';
 import InfoLine from './infoLine';
 
 const SmallCard = ({ node }) => {
@@ -67,22 +68,19 @@ const SmallCard = ({ node }) => {
           flex-grow: 1;
         `}
       >
-        <p
+        <h3
           css={css`
             color: var(--title-color);
-            font-size: 1.25rem;
-            font-weight: 400;
-            line-height: 1;
-            margin-bottom: 0.5rem;
+            ${scale(2 / 5)}
+            margin: ${rhythm(1 / 2)} 0;
           `}
         >
           {title}
-        </p>
+        </h3>
         <p
           css={css`
-            font-size: 0.875rem;
-            line-height: 1.3;
-            margin-bottom: 0.5rem;
+            ${scale(-1 / 5)}
+            margin-bottom: ${rhythm(1 / 2)};
             flex-grow: 1;
           `}
         >

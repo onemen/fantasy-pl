@@ -17,13 +17,12 @@ keywords:
   - fantasy
   - football
 banner: ./images/banner.jpg
-bannerCredit:
-  'צילום [Lars Bo Nielsen](https://unsplash.com/photos/Wu7hYE7Lzzs) ב [Unsplash](https://unsplash.com/)'
+bannerCredit: 'צילום [Lars Bo Nielsen](https://unsplash.com/photos/Wu7hYE7Lzzs) ב [Unsplash](https://unsplash.com/)'
 ---
 
 <h2>העברות – עשו ואל תעשו</h2>
-<p>אנחנו מכירים את התחושה.</p>
-<p>כולנו רוצים להחליף חצי קבוצה עוד לפני שהמחזור נגמר, ככה זה.</p>
+<p>אנחנו מכירים את התחושה.<br/>
+כולנו רוצים להחליף חצי קבוצה עוד לפני שהמחזור נגמר, ככה זה.</p>
 <p>
   תמיד השוער שהרגע הוצאנו אחרי התלבטות של שישה מחזורים בדיוק שמר על רשת נקייה,
   בדיוק שרכשנו את לורד לונדסטורם הוא הפך לשחקן ספסל וכמובן שלא נולד המנג'ר

@@ -5,9 +5,14 @@ const reset = css`
   *,
   *:before,
   *:after {
-    box-sizing: border-box;
+    box-sizing: inherit;
     padding: 0;
     margin: 0;
+  }
+  html,
+  body {
+    font-style: normal;
+    word-wrap: break-word;
   }
   html {
     text-rendering: optimizeLegibility;
@@ -47,6 +52,9 @@ const reset = css`
   }
   textarea {
     resize: vertical;
+  }
+  form {
+    margin: 0;
   }
   input[type='search'] {
     appearance: none;

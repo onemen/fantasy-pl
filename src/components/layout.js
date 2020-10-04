@@ -2,7 +2,6 @@ import { css, Global } from '@emotion/core';
 import styled from '@emotion/styled';
 import reset from 'styles/reset';
 import theme from 'styles/theme';
-import '../styles/fonts.css';
 import Footer from './footer';
 import Header from './header';
 
@@ -15,13 +14,6 @@ export const globalStyles = css`
     --link_color: ${theme.colors.link_color};
     --link_color_hover: ${theme.colors.link_color_hover};
     --active_menu: ${theme.colors.link_color_active};
-  }
-  html,
-  body {
-    font-style: normal;
-    font-size: 18px;
-    line-height: 1.55;
-    word-wrap: break-word;
   }
   body {
     color: ${theme.colors.gray};
@@ -49,8 +41,8 @@ const Container = styled.div`
   flex-direction: column;
   min-height: 100vh;
 
-  line-height: 1.55;
-  word-wrap: break-word;
+  /* line-height: 1.55;
+  word-wrap: break-word; */
 
   .content-wrapper {
     flex-grow: 1;

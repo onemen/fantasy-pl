@@ -9,6 +9,7 @@ import { lighten } from 'polished';
 import Markdown from 'react-markdown';
 import ReactMarkdown from 'react-markdown/with-html';
 import theme from 'styles/theme';
+import { rhythm, scale } from 'styles/typography';
 
 const blogStyle = css`
   width: 100%;
@@ -18,20 +19,20 @@ const blogStyle = css`
   background-color: ${theme.colors.primaryDark};
 
   h1 {
-    font-size: 2.25rem;
-    line-height: 1.1;
-    margin-bottom: 1rem;
+    ${scale(1.2)}
+    margin-top: ${rhythm(3 / 2)};
+    margin-bottom: ${rhythm(2 / 3)};
     text-align: center;
   }
   @media (max-width: 767px) {
     h1 {
-      font-size: 1.6rem;
+      ${scale(3 / 5)}
     }
     h2 {
-      font-size: 1.4rem;
+      ${scale(2 / 5)}
     }
     h3 {
-      font-size: 1.2rem;
+      ${scale(1 / 5)}
     }
   }
 
@@ -51,18 +52,8 @@ const blogStyle = css`
   }
 
   .blog {
-    h2 {
-      margin-top: 2.55rem;
-      margin-bottom: 1.55rem;
-    }
-
     h3 {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    p {
-      margin: 0 0 1.55rem 0;
+      margin-bottom: ${rhythm(1 / 3)};
     }
 
     p > strong {

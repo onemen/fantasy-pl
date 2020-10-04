@@ -135,6 +135,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/styles/typography`,
+      },
+    },
     /**
      *  TODO:
      *
@@ -165,11 +171,5 @@ module.exports = {
     },
      */
     'gatsby-plugin-sitemap',
-    /**
-     *  TODO:
-     *
-     *  read more about typography for hebrew font
-     *  gatsby-plugin-typography
-     */
   ],
 };

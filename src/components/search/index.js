@@ -37,11 +37,18 @@ function BlogPostCard({ blogpost }) {
           display: flex;
           flex-direction: column;
           height: 100%;
-          color: initial;
+          color: rgba(0, 0, 0, 0.8);
           text-decoration: none;
         `}
       >
-        <h2 css={{ marginTop: 0, lineHeight: 1.25, marginBottom: '0.775rem' }}>
+        <h2
+          css={{
+            marginTop: 0,
+            lineHeight: 1.25,
+            marginBottom: '0.775rem',
+            color: 'rgba(0, 0, 0, 0.8)',
+          }}
+        >
           {title}
         </h2>
         <Img fluid={banner.childImageSharp.fluid} alt={keywords.join(', ')} />

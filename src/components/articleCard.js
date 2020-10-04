@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import { rhythm, scale } from 'styles/typography';
 import InfoLine from './infoLine';
 
 const ArticleCard = ({ node, ...props }) => {
@@ -48,16 +49,16 @@ const ArticleCard = ({ node, ...props }) => {
           }
 
           .card__title {
-            font-size: 2rem;
+            ${scale(1)}
+            margin-top: ${rhythm(1 / 2)};
           }
 
           .card__summery {
-            font-size: 1rem;
-            line-height: 1.5;
+            ${scale(0)}
           }
 
           .card__info {
-            font-size: 1rem;
+            ${scale(-1 / 5)}
           }
         }
       `}
@@ -71,23 +72,21 @@ const ArticleCard = ({ node, ...props }) => {
           flex-direction: column;
         `}
       >
-        <h1
+        <h3
           className="card__title"
           css={css`
             color: var(--title-color);
-            font-size: 1.5rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
+            ${scale(3 / 5)}
+            margin: ${rhythm(1 / 2)} 0;
           `}
         >
           {title}
-        </h1>
+        </h3>
         <p
           className="card__summery"
           css={css`
-            font-size: 0.875rem;
-            line-height: 1.3;
-            margin-bottom: 1rem;
+            ${scale(-1 / 5)}
+            margin-bottom: ${rhythm(1 / 2)};
             flex-grow: 1;
           `}
         >
