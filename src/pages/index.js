@@ -77,7 +77,7 @@ export default function Home() {
         css={css`
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 2rem 10%;
+          grid-gap: 2rem 10%;
           margin-bottom: 3.35rem;
         `}
       >

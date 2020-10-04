@@ -203,7 +203,15 @@ function Search(props) {
 
   return (
     <>
-      <div css={{ maxWidth: 500, margin: 'auto' }}>
+      <div
+        css={css`
+          margin: auto 25px;
+          @media (min-width: 550px) {
+            margin: auto;
+            max-width: 500px;
+          }
+        `}
+      >
         <div css={{ position: 'relative', color: '#000000' }}>
           <form action="/blog" method="GET" onSubmit={handlePreventSubmit}>
             <input

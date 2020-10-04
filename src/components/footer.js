@@ -9,13 +9,19 @@ const Container = styled.footer`
   .footer-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin: 1.5rem auto;
 
-    margin: 0 auto;
     padding: 0 1rem;
     max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}px` : 'none')};
     min-height: 4rem;
-
     font-size: 0.9rem;
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 4rem;
+    }
 
     & > * {
       margin: 0.5rem 0;
@@ -28,8 +34,7 @@ const Container = styled.footer`
     @media (min-width: 769px) {
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
-
+      align-items: flex-end;
       & > * {
         margin: 0;
       }
@@ -38,18 +43,10 @@ const Container = styled.footer`
     @media (max-width: 600px) {
       padding: 1rem;
       .navbar {
-        ul {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
         li :not(:last-child) {
           margin-inline-end: 0;
           margin-bottom: 0.5rem;
         }
-      }
-      .left {
-        align-self: center;
       }
     }
   }
