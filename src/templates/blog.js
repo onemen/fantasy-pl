@@ -112,10 +112,10 @@ const blogStyle = css`
       margin-left: 2rem;
       margin-right: 2rem;
       padding: 1rem;
-      .link {
-        color: ${lighten(0.2, theme.colors.green)};
-        text-decoration: none;
-      }
+    }
+    .link {
+      color: ${lighten(0.2, theme.colors.green)};
+      text-decoration: none;
     }
   }
 `;

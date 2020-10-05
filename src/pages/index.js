@@ -18,7 +18,7 @@ export default function Home() {
         edges {
           node {
             ...cardFields
-            ...bannerField720
+            ...articleBanner
           }
         }
       }
@@ -77,7 +77,7 @@ export default function Home() {
         css={css`
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          grid-gap: 2rem 10%;
+          grid-gap: 2rem 6%;
           margin-bottom: 3.35rem;
         `}
       >

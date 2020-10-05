@@ -1,15 +1,13 @@
 ---
 slug: פנטזי-פרמייר-ליג-החוקים
 title: פנטזי פרמייר ליג – החוקים
-subtitle: החוקים הבסיסיים והפחות בסיסיים של המשחק
+subtitle: הסבר מקיף על כלל החוקים ב – Fantasy Premier league
 date: '2020-09-09'
 author: אורח
-description: החוקים הבסיסיים והפחות בסיסיים של המשחק
-summery: >
-  תקציר המאמר...
-  תקציר המאמר...
-  תקציר המאמר...
-  תקציר המאמר...
+description: הסבר מקיף על כלל החוקים ב – Fantasy Premier league
+summery: |-
+  פתחתם כבר קבוצה?! עכשיו הגיע הזמן להבין איך מקבלים ניקוד, מה הצ'יפים שעומדים לרשותנו במהלך העונה, איך עובד מנגנון החילופים ואיך עובד מנגנון ניקוד הבונוס בכל משחק ומשחק (כן, יש מנגנון כזה).
+  הסבר מקיף על כל החוקים נמצא כאן.
 language: he
 categories:
   - הדרכה
@@ -17,8 +15,7 @@ keywords:
   - fantasy
   - football
 banner: ./images/banner.jpg
-bannerCredit:
-  'צילום [Arseny Togulev](https://unsplash.com/photos/GKLQ8PJuCzI) ב
+bannerCredit: 'צילום [Arseny Togulev](https://unsplash.com/photos/GKLQ8PJuCzI) ב
   [Unsplash](https://unsplash.com)'
 ---
 

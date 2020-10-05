@@ -49,8 +49,8 @@ const Navbar = ({ color, className, dir }) => {
   return (
     <nav className={className}>
       <MenuList color={color} dir={dir}>
-        {Object.entries(menuItems).map(([to, title]) => (
-          <li>
+        {Object.entries(menuItems).map(([to, title], i) => (
+          <li key={i}>
             <Link
               className="nav-item"
               activeClassName="active-nav-item"

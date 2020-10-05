@@ -15,9 +15,14 @@ export const bannerImage = graphql`
       }
     }
   }
-  fragment bannerImage640 on File {
+  fragment bannerImage620 on File {
     childImageSharp {
-      fluid(maxWidth: 640, traceSVG: { color: "#573ede" }) {
+      fluid(
+        maxWidth: 620
+        maxHeight: 350
+        traceSVG: { color: "#573ede" }
+        quality: 75
+      ) {
         ...GatsbyImageSharpFluid_withWebp_tracedSVG
       }
     }
@@ -49,10 +54,10 @@ export const bannerImage = graphql`
       }
     }
   }
-  fragment bannerField720 on MarkdownRemark {
+  fragment articleBanner on MarkdownRemark {
     bannerField: fields {
       banner {
-        ...bannerImage720
+        ...bannerImage620
       }
     }
   }

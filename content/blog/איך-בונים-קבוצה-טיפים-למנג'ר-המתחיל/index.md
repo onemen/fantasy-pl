@@ -1,12 +1,14 @@
 ---
 slug: איך-בונים-קבוצה-טיפים-למנג'ר-המתחיל
 title: איך בונים קבוצה - טיפים למנג'ר המתחיל
-subtitle: מדריך איך לבנות קבוצה עם עבודת הכנה נכונה ושמירה על מספר כללים בסיסיים
+subtitle: הטיפים שלנו לבנייה נכונה של קבוצה מנצחת.
 date: '2020-09-26'
 author: אורח
-description: מדריך איך לבנות קבוצה עם עבודת הכנה נכונה ושמירה על מספר כללים בסיסיים
-summery: >
+description: הטיפים שלנו לבנייה נכונה של קבוצה מנצחת.
+summery: |-
+  אין ספק שבניית קבוצה מצליחה מושפעת לא מעט מפציעות, השעיות ובעיקר הרבה מזל, אבל עם עבודת הכנה נכונה ושמירה על מספר כללים בסיסיים נוכל לבנות בסיס טוב לקבוצה שתרוץ למעלה במהלך העונה.
 
+  אלו הם הטיפים שלנו לבנייה של קבוצה מנצחת.
 language: he
 categories:
   - הדרכה
@@ -14,8 +16,7 @@ keywords:
   - fantasy
   - football
 banner: ./images/banner.jpg
-bannerCredit:
-  'צילום [david clarke](https://unsplash.com/photos/DRtKiuN9_Mk) ב
+bannerCredit: 'צילום [david clarke](https://unsplash.com/photos/DRtKiuN9_Mk) ב
   [Unsplash](https://unsplash.com)'
 ---
 
