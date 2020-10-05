@@ -2,6 +2,8 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import deleteIcon from 'images/delete-icon.svg';
+import searchIcon from 'images/search-icon.svg';
 import { rankings as matchSorterRankings } from 'match-sorter';
 import React from 'react';
 import theme from 'styles/theme';
@@ -146,6 +148,8 @@ function Search(props) {
     [blogposts]
   );
 
+  const inputRef = React.useRef();
+
   const [search, setSearch] = useQueryParamState('q');
   const [filteredBlogPosts, setFilteredBlogPosts] = React.useState(
     // if there's a search, let's wait for it to load
@@ -208,6 +212,13 @@ function Search(props) {
     event.preventDefault();
   }
 
+  function handleClearSearch() {
+    if (search) {
+      setSearch('');
+      inputRef.current.focus();
+    }
+  }
+
   return (
     <>
       <div
@@ -222,6 +233,7 @@ function Search(props) {
         <div css={{ position: 'relative', color: '#000000' }}>
           <form action="/blog" method="GET" onSubmit={handlePreventSubmit}>
             <input
+              ref={inputRef}
               name="q" /* the GET query parameter in SITE_URL/blog/?q=test */
               css={{ width: '100%', paddingLeft: 50 }}
               onChange={event => setSearch(event.target.value)}
@@ -243,6 +255,26 @@ function Search(props) {
           >
             {filteredBlogPosts.length}
           </div>
+          <button
+            css={css`
+              appearance: none;
+              border: none;
+              background-color: transparent;
+              font-size: 0.8rem;
+              cursor: ${search === '' ? 'text' : 'pointer'};
+
+              position: absolute;
+              left: 35px;
+              top: 11px;
+
+              img {
+                margin: 0;
+              }
+            `}
+            onClick={handleClearSearch}
+          >
+            <img src={search ? deleteIcon : searchIcon} alt="" />
+          </button>
         </div>
         <div>
           {categories.map(category => (
