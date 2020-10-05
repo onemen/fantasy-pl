@@ -9,7 +9,7 @@ summery: |-
   חדשים לגמרי ב – Fantasy Premier League? לא בניתם קבוצה כבר כמה עונות? בפוסט הבא תוכלו למצוא הסבר קצר ומספר לינקים שיעזרו לכם לבנות את קבוצת החלומות שלכם. יאללה מתחילים!
 language: he
 categories:
-  - הדרכה
+  - פנטזי א-ב
 keywords:
   - fantasy
   - football

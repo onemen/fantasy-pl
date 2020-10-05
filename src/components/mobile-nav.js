@@ -3,6 +3,14 @@ import { Link } from 'gatsby';
 import { useState } from 'react';
 import theme from 'styles/theme';
 
+const menuItems = {
+  '/': 'דף הבית',
+  '/blog': 'ארכיון',
+  '/basic': 'פנטזי א-ב',
+  '/about': 'אודות',
+  '/contact': 'כתבו לנו',
+};
+
 const Container = props => {
   const {
     maxWidth = 720,
@@ -32,11 +40,7 @@ const Container = props => {
 
 const Toggle = ({ color = 'white' }) => {
   const [isToggledOn, setToggle] = useState(false);
-  const toggle = () => {
-    console.log('toggle clicked', 'isToggledOn', isToggledOn);
-    setToggle(!isToggledOn);
-  };
-
+  const toggle = () => setToggle(!isToggledOn);
   const onOpenTextColor = theme.colors.lightGreen;
   return (
     <div className="mobile-nav">
@@ -130,41 +134,18 @@ const Toggle = ({ color = 'white' }) => {
               }
             `}
           >
-            <Link
-              className="nav-item"
-              activeClassName="active-nav-item"
-              to="/"
-              aria-label="דף הבית"
-              onClick={toggle}
-            >
-              דף הבית
-            </Link>
-            <Link
-              className="nav-item"
-              activeClassName="active-nav-item"
-              to="/blog"
-              aria-label="blog"
-            >
-              ארכיון
-            </Link>
-            <Link
-              className="nav-item"
-              activeClassName="active-nav-item"
-              to="/about"
-              aria-label="אודות"
-              onClick={toggle}
-            >
-              אודות
-            </Link>
-            <Link
-              className="nav-item"
-              activeClassName="active-nav-item"
-              to="/contact"
-              aria-label="כתבו לנו"
-              onClick={toggle}
-            >
-              כתבו לנו
-            </Link>
+            {Object.entries(menuItems).map(([to, title], i) => (
+              <Link
+                key={i}
+                className="nav-item"
+                activeClassName="active-nav-item"
+                to={to}
+                aria-label={title}
+                onClick={toggle}
+              >
+                {title}
+              </Link>
+            ))}
           </Container>
         </div>
       )}

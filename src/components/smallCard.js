@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import { rhythm, scale } from 'styles/typography';
 import InfoLine from './infoLine';
 
-const SmallCard = ({ node }) => {
+const SmallCard = ({ node, noImage }) => {
   const {
     fields: { author, date, dateHe, language, keywords, slug, subtitle, title },
     bannerField: { banner },
@@ -44,20 +44,22 @@ const SmallCard = ({ node }) => {
         }
       `}
     >
-      <div
-        css={css`
-          height: 200px;
-        `}
-      >
-        <Img
-          fluid={banner.childImageSharp.fluid}
+      {!noImage && (
+        <div
           css={css`
-            border-radius: 10px 10px 0 0;
-            height: 100%;
+            height: 200px;
           `}
-          alt={keywords.join(', ')}
-        />
-      </div>
+        >
+          <Img
+            fluid={banner.childImageSharp.fluid}
+            css={css`
+              border-radius: 10px 10px 0 0;
+              height: 100%;
+            `}
+            alt={keywords.join(', ')}
+          />
+        </div>
+      )}
 
       <div
         css={css`

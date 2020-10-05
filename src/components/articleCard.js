@@ -5,7 +5,7 @@ import { rhythm, scale } from 'styles/typography';
 import InfoLine from './infoLine';
 import ParagraphGroup from './paragraphs';
 
-const ArticleCard = ({ node, ...props }) => {
+const ArticleCard = ({ node, noImage, ...props }) => {
   const {
     fields: { author, date, dateHe, language, keywords, slug, summery, title },
     bannerField: { banner },
@@ -44,9 +44,11 @@ const ArticleCard = ({ node, ...props }) => {
         }
 
         @media (min-width: 900px) {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          grid-template-rows: minmax(330px, auto);
+          ${noImage
+            ? ``
+            : `display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-template-rows: minmax(330px, auto);`}
           width: 100%;
           max-width: unset;
 
@@ -102,8 +104,8 @@ const ArticleCard = ({ node, ...props }) => {
         />
       </div>
 
-      <div>
-        {banner && (
+      {!noImage && banner && (
+        <div>
           <Img
             fluid={banner.childImageSharp.fluid}
             css={css`
@@ -113,8 +115,8 @@ const ArticleCard = ({ node, ...props }) => {
             `}
             alt={keywords.join(', ')}
           />
-        )}
-      </div>
+        </div>
+      )}
     </Link>
   );
 };

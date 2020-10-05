@@ -13,6 +13,7 @@ summery: |-
   בואו נראה איך עושים זאת נכון (או לפחות מנסים).
 language: he
 categories:
+  - פנטזי א-ב
 keywords:
   - fantasy
   - football

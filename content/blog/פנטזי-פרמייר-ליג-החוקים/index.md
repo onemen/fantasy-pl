@@ -10,7 +10,7 @@ summery: |-
   הסבר מקיף על כל החוקים נמצא כאן.
 language: he
 categories:
-  - הדרכה
+  - פנטזי א-ב
 keywords:
   - fantasy
   - football

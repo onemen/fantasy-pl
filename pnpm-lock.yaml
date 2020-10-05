@@ -4,6 +4,7 @@ dependencies:
   '@sindresorhus/slugify': 1.1.0
   dotenv: 8.2.0
   gatsby: 2.24.66_b1025ba158be5d32019f6d9ecca2d430
+  gatsby-background-image: 1.1.2_react-dom@16.13.1+react@16.13.1
   gatsby-image: 2.4.20
   gatsby-plugin-catch-links: 2.3.13_gatsby@2.24.66
   gatsby-plugin-emotion: 4.3.12_66c0d882bc14f0e4445fa8b6fbfb3d91
@@ -6535,6 +6536,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==
+  /filter-invalid-dom-props/2.0.0:
+    dependencies:
+      html-attributes: 1.1.0
+    dev: false
+    resolution:
+      integrity: sha1-Un8UlMs8Tygqc8Q4BBU+uAxC3Cw=
   /finalhandler/1.1.2:
     dependencies:
       debug: 2.6.9
@@ -6826,6 +6833,21 @@ packages:
     dev: false
     resolution:
       integrity: sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
+  /gatsby-background-image/1.1.2_react-dom@16.13.1+react@16.13.1:
+    dependencies:
+      '@babel/runtime': 7.11.2
+      filter-invalid-dom-props: 2.0.0
+      global: 4.4.0
+      react: 16.13.1
+      react-dom: 16.13.1_react@16.13.1
+      short-uuid: 3.1.1
+      sort-media-queries: 0.2.2
+    dev: false
+    peerDependencies:
+      react: 16.x
+      react-dom: 16.x
+    resolution:
+      integrity: sha512-3QargmBQiFeGSJTIS1EzQ/V33vdi6dab9WtXHwFBmGrh+EzB6lHmRkuHxgrcyy+ssqhPjxAg9zQa5pFm7n9Qrg==
   /gatsby-cli/2.12.101_gatsby@2.24.66+react-dom@16.13.1:
     dependencies:
       '@babel/code-frame': 7.10.4
@@ -8435,6 +8457,13 @@ packages:
     dev: false
     resolution:
       integrity: sha1-wc56MWjIxmFAM6S194d/OyJfnDg=
+  /html-attributes/1.1.0:
+    dev: false
+    engines:
+      node: '>= 0.10.26'
+      npm: '>=1.4.3'
+    resolution:
+      integrity: sha1-ggJ6T6x6YHDqbBjMOIauoY1t6gk=
   /html-comment-regex/1.1.2:
     dev: false
     resolution:
@@ -13928,6 +13957,13 @@ packages:
     dev: false
     resolution:
       integrity: sha1-9HgZSczkAmlxJ0MOo7PFR29IF2c=
+  /short-uuid/3.1.1:
+    dependencies:
+      any-base: 1.1.0
+      uuid: 3.4.0
+    dev: false
+    resolution:
+      integrity: sha512-7dI69xtJYpTIbg44R6JSgrbDtZFuZ9vAwwmnF/L0PinykbFrhQ7V8omKsQcVw1TP0nYJ7uQp1PN6/aVMkzQFGQ==
   /side-channel/1.0.3:
     dependencies:
       es-abstract: 1.18.0-next.0
@@ -14158,6 +14194,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-ZYU1WEhh7JfXMNbPQYIuH1ZoQSg=
+  /sort-media-queries/0.2.2:
+    dependencies:
+      xtend: 4.0.2
+    dev: false
+    resolution:
+      integrity: sha1-/d/B5w1mJ1kJG2ojd29EiGg9yh4=
   /source-list-map/2.0.1:
     dev: false
     resolution:
@@ -16395,6 +16437,7 @@ specifiers:
   '@sindresorhus/slugify': ^1.1.0
   dotenv: ^8.2.0
   gatsby: ^2.24.66
+  gatsby-background-image: ^1.1.2
   gatsby-image: ^2.4.20
   gatsby-plugin-catch-links: ^2.3.13
   gatsby-plugin-emotion: ^4.3.12

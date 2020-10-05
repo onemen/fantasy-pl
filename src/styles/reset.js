@@ -15,7 +15,6 @@ const reset = css`
     word-wrap: break-word;
   }
   html {
-    text-rendering: optimizeLegibility;
     overflow-x: hidden;
     overflow-y: auto !important;
     box-sizing: border-box;
