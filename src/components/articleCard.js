@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { rhythm, scale } from 'styles/typography';
 import InfoLine from './infoLine';
+import ParagraphGroup from './paragraphs';
 
 const ArticleCard = ({ node, ...props }) => {
   const {
@@ -35,6 +36,11 @@ const ArticleCard = ({ node, ...props }) => {
         @media (min-width: 500px) {
           max-width: 500px;
           width: 100%;
+        }
+
+        .card__summery {
+          ${scale(-1 / 5)}
+          flex-grow: 1;
         }
 
         @media (min-width: 900px) {
@@ -82,16 +88,12 @@ const ArticleCard = ({ node, ...props }) => {
         >
           {title}
         </h3>
-        <p
-          className="card__summery"
-          css={css`
-            ${scale(-1 / 5)}
-            margin-bottom: ${rhythm(1 / 2)};
-            flex-grow: 1;
-          `}
-        >
-          {summery}
-        </p>
+        <div className="card__summery">
+          <ParagraphGroup
+            summery={summery}
+            margin={{ top: 0, bottom: rhythm(1 / 2) }}
+          />
+        </div>
         <InfoLine
           className="card__info"
           dir={dir}
