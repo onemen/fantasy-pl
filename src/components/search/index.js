@@ -8,6 +8,7 @@ import { rankings as matchSorterRankings } from 'match-sorter';
 import React from 'react';
 import theme from 'styles/theme';
 import MatchSorterWorker from './match-sorter.worker';
+import SearchForm from './searchForm';
 
 let matchSorterWorker;
 
@@ -162,39 +163,39 @@ function Search(props) {
   React.useEffect(() => {
     if (!search) {
       setFilteredBlogPosts(blogposts);
-    } else {
-      getMatchSorterWorker()
-        .searchAndSort(blogposts, search, {
-          keys: [
-            {
-              key: 'title',
-              threshold: matchSorterRankings.CONTAINS,
-            },
-            {
-              key: 'categories',
-              threshold: matchSorterRankings.CONTAINS,
-              maxRanking: matchSorterRankings.CONTAINS,
-            },
-            {
-              key: 'keywords',
-              threshold: matchSorterRankings.CONTAINS,
-              maxRanking: matchSorterRankings.CONTAINS,
-            },
-            {
-              key: 'description',
-              threshold: matchSorterRankings.CONTAINS,
-              maxRanking: matchSorterRankings.CONTAINS,
-            },
-          ],
-        })
-        .then(
-          results => setFilteredBlogPosts(results),
-          error => {
-            // eslint-disable-next-line no-console
-            console.error(error);
-          }
-        );
+      return;
     }
+    getMatchSorterWorker()
+      .searchAndSort(blogposts, search, {
+        keys: [
+          {
+            key: 'title',
+            threshold: matchSorterRankings.CONTAINS,
+          },
+          {
+            key: 'categories',
+            threshold: matchSorterRankings.CONTAINS,
+            maxRanking: matchSorterRankings.CONTAINS,
+          },
+          {
+            key: 'keywords',
+            threshold: matchSorterRankings.CONTAINS,
+            maxRanking: matchSorterRankings.CONTAINS,
+          },
+          {
+            key: 'description',
+            threshold: matchSorterRankings.CONTAINS,
+            maxRanking: matchSorterRankings.CONTAINS,
+          },
+        ],
+      })
+      .then(
+        results => setFilteredBlogPosts(results),
+        error => {
+          // eslint-disable-next-line no-console
+          console.error(error);
+        }
+      );
   }, [blogposts, search]);
 
   function handleCategoryClick(category) {
@@ -230,52 +231,34 @@ function Search(props) {
           }
         `}
       >
-        <div css={{ position: 'relative', color: '#000000' }}>
-          <form action="/blog" method="GET" onSubmit={handlePreventSubmit}>
-            <input
-              ref={inputRef}
-              name="q" /* the GET query parameter in SITE_URL/blog/?q=test */
-              css={{ width: '100%', paddingLeft: 50 }}
-              onChange={event => setSearch(event.target.value)}
-              type="search"
-              placeholder="חיפוש בארכיון"
-              aria-label="חיפוש בארכיון"
-              value={search}
-              autoFocus
-            />
-          </form>
-          <div
-            css={{
-              position: 'absolute',
-              left: 14,
-              top: 10,
-              opacity: 0.6,
-              fontSize: '0.8rem',
-            }}
-          >
-            {filteredBlogPosts.length}
-          </div>
+        <SearchForm
+          search={search}
+          action="/blog"
+          method="GET"
+          onSubmit={handlePreventSubmit}
+        >
+          <button className="btn search-btn" title="חיפוש בארכיון">
+            <img src={searchIcon} alt="" />
+          </button>
+          <input
+            ref={inputRef}
+            name="q" /* the GET query parameter in SITE_URL/blog/?q=test */
+            onChange={event => setSearch(event.target.value)}
+            type="search"
+            placeholder="חיפוש בארכיון"
+            aria-label="חיפוש בארכיון"
+            value={search}
+            autoFocus
+          />
           <button
-            css={css`
-              appearance: none;
-              border: none;
-              background-color: transparent;
-              font-size: 0.8rem;
-              cursor: ${search === '' ? 'text' : 'pointer'};
-
-              position: absolute;
-              left: 35px;
-              top: 11px;
-
-              img {
-                margin: 0;
-              }
-            `}
+            className="btn delete-btn"
+            title="חיפוש חדש"
             onClick={handleClearSearch}
           >
-            <img src={search ? deleteIcon : searchIcon} alt="" />
+            <img src={deleteIcon} alt="" />
           </button>
-        </div>
+          <div className="result-counter">{filteredBlogPosts.length}</div>
+        </SearchForm>
         <div>
           {categories.map(category => (
             <CategoryButton
