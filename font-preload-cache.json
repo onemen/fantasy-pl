@@ -1,0 +1,78 @@
+{
+  "timestamp": 1602075458430,
+  "hash": "90d34470688976bd6eda3cef78fa69e5",
+  "assets": {
+    "/blog/%D7%90%D7%99%D7%9A-%D7%91%D7%95%D7%A0%D7%99%D7%9D-%D7%A7%D7%91%D7%95%D7%A6%D7%94-%D7%98%D7%99%D7%A4%D7%99%D7%9D-%D7%9C%D7%9E%D7%A0%D7%92'%D7%A8-%D7%94%D7%9E%D7%AA%D7%97%D7%99%D7%9C": {
+      "/static/rubik-regular-fe974aaa5f61c82b6b1848735a5464fe.woff2": true,
+      "/static/rubik-600-af9cbb1d316048d8e763f4d07a654679.woff2": true,
+      "/static/rubik-300-fd9ba25460b2d53050dc3bca9f796edd.woff2": true,
+      "/static/rubik-500-e815eb214b4addc543e0a82e44fb0dc2.woff2": true
+    },
+    "/blog/%D7%94%D7%A6%D7%99%D7%A4%D7%99%D7%9D-%D7%A9%D7%9C%D7%A0%D7%95": {
+      "/static/rubik-regular-fe974aaa5f61c82b6b1848735a5464fe.woff2": true,
+      "/static/rubik-600-af9cbb1d316048d8e763f4d07a654679.woff2": true,
+      "/static/rubik-300-fd9ba25460b2d53050dc3bca9f796edd.woff2": true,
+      "/static/rubik-500-e815eb214b4addc543e0a82e44fb0dc2.woff2": true
+    },
+    "/blog/%D7%97%D7%99%D7%9C%D7%95%D7%A4%D7%99%D7%9D-%D7%9B%D7%9B%D7%94-%D7%A2%D7%95%D7%A9%D7%99%D7%9D-%D7%90%D7%AA-%D7%96%D7%94-%D7%A0%D7%9B%D7%95%D7%9F": {
+      "/static/rubik-regular-fe974aaa5f61c82b6b1848735a5464fe.woff2": true,
+      "/static/rubik-600-af9cbb1d316048d8e763f4d07a654679.woff2": true,
+      "/static/rubik-300-fd9ba25460b2d53050dc3bca9f796edd.woff2": true,
+      "/static/rubik-500-e815eb214b4addc543e0a82e44fb0dc2.woff2": true
+    },
+    "/blog/%D7%A4%D7%A0%D7%98%D7%96%D7%99-%D7%A4%D7%A8%D7%9E%D7%99%D7%99%D7%A8-%D7%9C%D7%99%D7%92-%D7%90%D7%99%D7%9A-%D7%9E%D7%AA%D7%97%D7%99%D7%9C%D7%99%D7%9D": {
+      "/static/rubik-regular-fe974aaa5f61c82b6b1848735a5464fe.woff2": true,
+      "/static/rubik-600-af9cbb1d316048d8e763f4d07a654679.woff2": true,
+      "/static/rubik-300-fd9ba25460b2d53050dc3bca9f796edd.woff2": true
+    },
+    "/blog/%D7%A4%D7%A0%D7%98%D7%96%D7%99-%D7%A4%D7%A8%D7%9E%D7%99%D7%99%D7%A8-%D7%9C%D7%99%D7%92-%D7%94%D7%97%D7%95%D7%A7%D7%99%D7%9D": {
+      "/static/rubik-regular-fe974aaa5f61c82b6b1848735a5464fe.woff2": true,
+      "/static/rubik-600-af9cbb1d316048d8e763f4d07a654679.woff2": true,
+      "/static/rubik-300-fd9ba25460b2d53050dc3bca9f796edd.woff2": true,
+      "/static/rubik-500-e815eb214b4addc543e0a82e44fb0dc2.woff2": true,
+      "/static/rubik-700italic-6c6cd9f69ebec9849e51690cd6140d20.woff2": true,
+      "/static/rubik-italic-e1f0ba2ef0b9b7cd0422bed44005dd0b.woff2": true,
+      "/static/rubik-700-a47189e0c4b8245160c9145ab3efd023.woff2": true,
+      "/static/rubik-500italic-7d6d0ed918d3633a4d9537c801fe1371.woff2": true
+    },
+    "/dev-404-page": {
+      "/static/rubik-600-af9cbb1d316048d8e763f4d07a654679.woff2": true,
+      "/static/rubik-regular-fe974aaa5f61c82b6b1848735a5464fe.woff2": true
+    },
+    "/": {
+      "/static/rubik-regular-fe974aaa5f61c82b6b1848735a5464fe.woff2": true,
+      "/static/rubik-700-a47189e0c4b8245160c9145ab3efd023.woff2": true,
+      "/static/rubik-600-af9cbb1d316048d8e763f4d07a654679.woff2": true,
+      "/static/rubik-300-fd9ba25460b2d53050dc3bca9f796edd.woff2": true
+    },
+    "/404.html": {
+      "/static/rubik-regular-fe974aaa5f61c82b6b1848735a5464fe.woff2": true,
+      "/static/rubik-600-af9cbb1d316048d8e763f4d07a654679.woff2": true
+    },
+    "/404": {
+      "/static/rubik-regular-fe974aaa5f61c82b6b1848735a5464fe.woff2": true,
+      "/static/rubik-600-af9cbb1d316048d8e763f4d07a654679.woff2": true
+    },
+    "/about": {
+      "/static/rubik-regular-fe974aaa5f61c82b6b1848735a5464fe.woff2": true,
+      "/static/rubik-700-a47189e0c4b8245160c9145ab3efd023.woff2": true,
+      "/static/rubik-600-af9cbb1d316048d8e763f4d07a654679.woff2": true
+    },
+    "/basic": {
+      "/static/rubik-regular-fe974aaa5f61c82b6b1848735a5464fe.woff2": true,
+      "/static/rubik-700-a47189e0c4b8245160c9145ab3efd023.woff2": true,
+      "/static/rubik-600-af9cbb1d316048d8e763f4d07a654679.woff2": true,
+      "/static/rubik-300-fd9ba25460b2d53050dc3bca9f796edd.woff2": true
+    },
+    "/blog": {
+      "/static/rubik-regular-fe974aaa5f61c82b6b1848735a5464fe.woff2": true,
+      "/static/rubik-700-a47189e0c4b8245160c9145ab3efd023.woff2": true,
+      "/static/rubik-600-af9cbb1d316048d8e763f4d07a654679.woff2": true
+    },
+    "/contact": {
+      "/static/rubik-regular-fe974aaa5f61c82b6b1848735a5464fe.woff2": true,
+      "/static/rubik-700-a47189e0c4b8245160c9145ab3efd023.woff2": true,
+      "/static/rubik-600-af9cbb1d316048d8e763f4d07a654679.woff2": true
+    }
+  }
+}

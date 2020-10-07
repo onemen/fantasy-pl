@@ -2,6 +2,7 @@ import { css, Global } from '@emotion/core';
 import styled from '@emotion/styled';
 import reset from 'styles/reset';
 import theme from 'styles/theme';
+import '../fonts/fonts.css';
 import Footer from './footer';
 import Header from './header';
 
