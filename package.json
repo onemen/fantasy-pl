@@ -6,7 +6,7 @@
   "license": "MIT",
   "author": "tabmix.onemen@gmail.com",
   "scripts": {
-    "build": "gatsby build",
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "develop": "gatsby develop",
     "test:build": "BLOG_TESTING=true gatsby build",
     "test:develop": "BLOG_TESTING=true gatsby develop",
