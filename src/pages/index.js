@@ -183,7 +183,7 @@ export default function Home() {
           `}
         >
           <h1>
-            <div>המנג'ר</div>
+            <div>המנג&#39;ר</div>
             <div className="text-sm">ילמד אותך כל מה שצריך לדעת על</div>
             <div className="text-xl">Fantasy Premier League</div>
           </h1>

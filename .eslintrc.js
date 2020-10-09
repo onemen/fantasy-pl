@@ -4,8 +4,25 @@ module.exports = {
     __PATH_PREFIX__: true,
     __BASE_PATH__: true, // this will rarely, if ever, be used by consumers
   },
-  extends: [require.resolve(`eslint-config-react-app`)],
-  plugins: [`graphql`],
+  extends: [
+    require.resolve(`eslint-config-react-app`),
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+  ],
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+  },
+  plugins: ['graphql', 'react'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
   rules: {
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
@@ -109,5 +126,7 @@ module.exports = {
     'jsx-a11y/role-supports-aria-props': `warn`,
     'jsx-a11y/scope': `warn`,
     'jsx-a11y/tabindex-no-positive': `warn`,
+
+    'react/prop-types': 'off',
   },
 };
