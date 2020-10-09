@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import config from '../../../config/website';
 import defaultMetaImage from '../../../static/images/metaImage.jpg';
 

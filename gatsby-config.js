@@ -71,9 +71,14 @@ module.exports = {
     },
     'gatsby-plugin-emotion',
     'gatsby-plugin-pnpm',
-    'gatsby-plugin-preload-fonts',
+    {
+      resolve: 'gatsby-plugin-preload-fonts',
+      options: {
+        crossOrigin: 'use-credentials',
+      },
+    },
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-react-helmet-async',
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {

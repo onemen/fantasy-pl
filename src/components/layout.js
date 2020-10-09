@@ -1,5 +1,6 @@
 import { css, Global } from '@emotion/core';
 import styled from '@emotion/styled';
+import React from 'react';
 import reset from 'styles/reset';
 import theme from 'styles/theme';
 import '../fonts/fonts.css';
@@ -58,23 +59,25 @@ const Layout = ({
   dir = language === 'he' ? 'rtl' : 'ltr',
 }) => {
   return (
-    <Container maxWidth={maxWidth}>
-      <Global styles={globalStyles} />
-      <div className="content-wrapper">
-        <Header maxWidth={maxWidth} dir={dir} />
-        <main
-          css={css`
-            margin: 0 auto;
-            max-width: ${maxWidth ? `${maxWidth}px` : 'none'};
-          `}
-          dir={dir}
-          className={className}
-        >
-          {children}
-        </main>
-      </div>
-      <Footer maxWidth={maxWidth} dir={dir} />
-    </Container>
+    <React.StrictMode>
+      <Container maxWidth={maxWidth}>
+        <Global styles={globalStyles} />
+        <div className="content-wrapper">
+          <Header maxWidth={maxWidth} dir={dir} />
+          <main
+            css={css`
+              margin: 0 auto;
+              max-width: ${maxWidth ? `${maxWidth}px` : 'none'};
+            `}
+            dir={dir}
+            className={className}
+          >
+            {children}
+          </main>
+        </div>
+        <Footer maxWidth={maxWidth} dir={dir} />
+      </Container>
+    </React.StrictMode>
   );
 };
 
