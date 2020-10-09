@@ -132,6 +132,7 @@ export default function Home() {
                 border: 0.2em solid var(--link_color);
                 border-radius: 0.3em;
                 font-size: 1.1rem;
+                font-weight: 500;
                 margin-top: 1.5rem;
                 padding: 0.5em 1em;
 
@@ -142,7 +143,7 @@ export default function Home() {
 
               .cta-one {
                 background-color: var(--link_color);
-                color: #ffffff;
+                color: #000000;
                 &:hover,
                 &:focus {
                   background-color: transparent;
@@ -156,7 +157,7 @@ export default function Home() {
                 &:hover,
                 &:focus {
                   background-color: var(--link_color);
-                  color: #ffffff;
+                  color: #000000;
                 }
               }
             }
