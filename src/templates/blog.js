@@ -18,12 +18,27 @@ const blogStyle = css`
   padding: 20px 40px 40px;
   background-color: ${theme.colors.primaryDark};
 
-  h1 {
-    ${scale(1.2)}
-    margin-top: ${rhythm(3 / 2)};
-    margin-bottom: ${rhythm(2 / 3)};
-    text-align: center;
+  .link,
+  a {
+    color: ${lighten(0.2, theme.colors.green)};
+    text-decoration: none;
   }
+
+  .blog-header {
+    text-align: center;
+
+    h1 {
+      ${scale(1.2)}
+      margin-top: ${rhythm(3 / 2)};
+      margin-bottom: ${rhythm(2 / 3)};
+    }
+
+    h2 {
+      margin-top: ${rhythm(2 / 3)};
+      margin-bottom: ${rhythm(2 / 3)};
+    }
+  }
+
   @media (max-width: 767px) {
     h1 {
       ${scale(3 / 5)}
@@ -89,7 +104,7 @@ const blogStyle = css`
       padding-top: 11px;
       padding-bottom: 11px;
       background-color: ${theme.brand.primary};
-      color: white;
+      color: ${theme.colors.primaryDarker};
     }
     td,
     th {
@@ -113,10 +128,6 @@ const blogStyle = css`
       margin-right: 2rem;
       padding: 1rem;
     }
-    .link {
-      color: ${lighten(0.2, theme.colors.green)};
-      text-decoration: none;
-    }
   }
 `;
 
@@ -129,6 +140,7 @@ const blog = ({ data: { markdown } }) => {
     dateHe,
     language,
     title,
+    subtitle,
   } = markdown.fields;
 
   const dir = language === 'he' ? 'rtl' : 'ltr';
@@ -141,7 +153,10 @@ const blog = ({ data: { markdown } }) => {
         isBlogPost
       />
       <article css={blogStyle}>
-        <h1>{title}</h1>
+        <div className="blog-header">
+          <h1>{title}</h1>
+          <h2>{subtitle}</h2>
+        </div>
 
         <InfoLine
           dir={dir}
@@ -173,6 +188,7 @@ export const pageQuery = graphql`
     markdown: markdownRemark(fields: { slug: { eq: $slug } }) {
       fields {
         title
+        subtitle
         author
         date(formatString: "MMMM Do, YYYY")
         dateHe: date(formatString: "MMMM Do, YYYY", locale: "he-IL")

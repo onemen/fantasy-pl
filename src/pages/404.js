@@ -18,8 +18,10 @@ const NotFound = () => {
       }}
     >
       <SEO title="404: דף לא נמצא" />
-      <h1 dir="rtl">הדף אליו ביקשתם להגיע אינו קיים</h1>
-      <h1>The requested page doesn&#39;t exist</h1>
+      <h1 dir="rtl" tabIndex="-1">
+        הדף אליו ביקשתם להגיע אינו קיים
+      </h1>
+      <h1 tabIndex="-1">The requested page doesn&#39;t exist</h1>
       <h3>
         <Link
           css={css`

@@ -56,7 +56,9 @@ const Footer = ({ maxWidth, dir }) => {
   return (
     <Container maxWidth={maxWidth} dir={dir}>
       <div className="footer-content">
-        <Navbar className="navbar" color="text" dir={dir} />
+        <div role="navigation" aria-label="תפריט תחתון">
+          <Navbar className="navbar" color="text" dir={dir} />
+        </div>
         <div className="left">
           <span>פנטזי ליג @ 2020. כל הזכויות שמורות</span>
         </div>

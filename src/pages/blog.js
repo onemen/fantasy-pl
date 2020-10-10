@@ -46,6 +46,7 @@ function BlogPage() {
       `}
     >
       <SEO title="חיפוש בארכיון" />
+      <h1 css={{ visibility: 'hidden' }}>חיפוש בארכיון מאמרים</h1>
       <Search blogposts={result.blogposts} />
     </Layout>
   );

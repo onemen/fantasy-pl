@@ -70,3 +70,6 @@ yarn-error.log
 
 # mock data
 __test_content__
+
+cypress/videos
+cypress/screenshots

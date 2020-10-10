@@ -70,7 +70,7 @@ const SmallCard = ({ node, noImage }) => {
           flex-grow: 1;
         `}
       >
-        <h3
+        <h2
           css={css`
             color: var(--title-color);
             ${scale(2 / 5)}
@@ -78,7 +78,7 @@ const SmallCard = ({ node, noImage }) => {
           `}
         >
           {title}
-        </h3>
+        </h2>
         <p
           css={css`
             ${scale(-1 / 5)}

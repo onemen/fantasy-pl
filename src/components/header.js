@@ -38,8 +38,7 @@ const Container = styled.header`
   }
 
   @media (max-width: 769px) {
-    .navbar-box,
-    .end-menu-box {
+    .main-menu {
       display: none;
     }
   }
@@ -64,8 +63,10 @@ const Header = ({ maxWidth, dir }) => {
             פנטזי ליג
           </Link>
         </div>
-        <MobileNav color={theme.colors.lightGreen} />
-        <Navbar className="navbar-box" dir={dir} />
+        <nav aria-label="תפריט עליון">
+          <MobileNav color={theme.colors.lightGreen} />
+          <Navbar className="main-menu" dir={dir} />
+        </nav>
       </div>
     </Container>
   );

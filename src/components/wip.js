@@ -19,7 +19,9 @@ const WorkInProgress = ({ title }) => {
     >
       <SEO title={title} />
       <img src="work_in_progress.svg" alt="" />
-      <h1 dir="rtl">הדף עדין אינו מוכן</h1>
+      <h1 dir="rtl" tabIndex="-1">
+        הדף עדין אינו מוכן
+      </h1>
       <h1>The requested page doesn&#39;t exist yet</h1>
       <h3>
         <Link

@@ -80,7 +80,7 @@ const ArticleCard = ({ node, noImage, ...props }) => {
           flex-direction: column;
         `}
       >
-        <h3
+        <h2
           className="card__title"
           css={css`
             color: var(--title-color);
@@ -89,7 +89,7 @@ const ArticleCard = ({ node, noImage, ...props }) => {
           `}
         >
           {title}
-        </h3>
+        </h2>
         <div className="card__summery">
           <ParagraphGroup
             summery={summery}

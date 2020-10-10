@@ -33,10 +33,26 @@ export const MenuList = styled.ul`
     );
     font-size: 0.9rem;
     text-decoration: none;
+    padding: 5px 0;
+    position: relative;
 
-    &:hover,
-    &:focus {
-      color: var(--link_color_hover);
+    :after {
+      background: none;
+      bottom: -2px;
+      content: '';
+      display: inline-block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      transition: width 0.2s ease 0s, left 0.2s ease 0s;
+      width: 0;
+    }
+    &:hover:after,
+    &:focus:after {
+      width: 100%;
+      left: 0;
+      background: ${prop =>
+        prop.color === 'text' ? 'var(--primary-color)' : 'var(--title-color)'};
     }
   }
 
@@ -48,22 +64,20 @@ export const MenuList = styled.ul`
 
 const Navbar = ({ color, className, dir }) => {
   return (
-    <nav className={className}>
-      <MenuList color={color} dir={dir}>
-        {Object.entries(menuItems).map(([to, title], i) => (
-          <li key={i}>
-            <Link
-              className="nav-item"
-              activeClassName="active-nav-item"
-              to={to}
-              aria-label={title}
-            >
-              {title}
-            </Link>
-          </li>
-        ))}
-      </MenuList>
-    </nav>
+    <MenuList className={className} color={color} dir={dir}>
+      {Object.entries(menuItems).map(([to, title], i) => (
+        <li key={i}>
+          <Link
+            className="nav-item"
+            activeClassName="active-nav-item"
+            to={to}
+            aria-label={title}
+          >
+            {title}
+          </Link>
+        </li>
+      ))}
+    </MenuList>
   );
 };
 

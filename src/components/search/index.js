@@ -100,11 +100,11 @@ const CategoryButton = styled.button([
   },
   ({ isSelected }) => {
     const selectedStyles = {
-      color: theme.colors.white,
+      color: '#042901',
       backgroundColor: theme.colors.link_color_hover,
     };
     const unselectedStyles = {
-      color: theme.colors.link_color_hover,
+      color: '#0e7704',
       backgroundColor: theme.colors.white,
     };
     return isSelected

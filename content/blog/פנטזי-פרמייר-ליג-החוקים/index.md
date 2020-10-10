@@ -207,7 +207,7 @@ bannerCredit: 'צילום [Arseny Togulev](https://unsplash.com/photos/GKLQ8PJuC
 </p>
 
 אפשרות שימוש בצ'יפ Wildcard
-![תמונות של שימוש בצ'יפים](./images/wildcard-chips.png)
+![אפשרות שימוש בצ'יפ Wildcard](./images/wildcard-chips.png)
 
 אפשרות שימוש בצ'יפים האחרים
 ![תמונות של שימוש בצ'יפים](./images/other-chips.png)
@@ -418,7 +418,7 @@ bannerCredit: 'צילום [Arseny Togulev](https://unsplash.com/photos/GKLQ8PJuC
 </table>
 
 ניקוד של שחקן כלשהו במשחק מסוים
-![ניקוד של שחקן כלשהו במשחק מסוים](./images/player-points.png)
+![ניקוד של שחקן](./images/player-points.png)
 
 <h3>
   <strong><em>אסיסט</em></strong>
@@ -499,7 +499,7 @@ bannerCredit: 'צילום [Arseny Togulev](https://unsplash.com/photos/GKLQ8PJuC
 </p>
 
 ניקוד בונוס ממשחק מסוים
-![ניקוד בונוס ממשחק מסוים](./images/bonus-points.png)
+![ניקוד בונוס](./images/bonus-points.png)
 
 <p>חישוב נקודות הבונוס המצטבר במהלך המשחק יחושב כדלקמן –</p>
 <table>
