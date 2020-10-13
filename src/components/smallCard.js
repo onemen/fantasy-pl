@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import theme from 'styles/theme';
 import { rhythm, scale } from 'styles/typography';
 import InfoLine from './infoLine';
 
@@ -21,7 +22,8 @@ const SmallCard = ({ node, noImage }) => {
         flex-direction: column;
 
         border-radius: 10px;
-        background-color: var(--card-bg-color);
+        // opacity 0.7
+        background-color: ${theme.colors.darkGray}b3;
         color: var(--primary-color);
         text-decoration: none;
 

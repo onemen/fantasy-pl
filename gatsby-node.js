@@ -62,7 +62,7 @@ module.exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       name: 'author',
       node,
-      value: trim(node.frontmatter.author) || 'אורח',
+      value: trim(node.frontmatter.author) || 'המערכת',
     });
 
     const description = trim(node.frontmatter.description);

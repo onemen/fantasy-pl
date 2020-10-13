@@ -60,7 +60,7 @@ const Header = ({ maxWidth, dir }) => {
         <div className="start-menu-box">
           <Link className="logo-box" to="/">
             <img src={logo} alt="לוגו" />
-            פנטזי ליג
+            פנטזי מנג&#39;ר
           </Link>
         </div>
         <nav aria-label="תפריט עליון">

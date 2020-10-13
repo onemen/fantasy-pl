@@ -60,7 +60,7 @@ const Footer = ({ maxWidth, dir }) => {
           <Navbar className="navbar" color="text" dir={dir} />
         </div>
         <div className="left">
-          <span>פנטזי ליג @ 2020. כל הזכויות שמורות</span>
+          <span>פנטזי מנג&#39;ר @ 2020. כל הזכויות שמורות</span>
         </div>
       </div>
     </Container>

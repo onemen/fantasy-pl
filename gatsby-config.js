@@ -25,7 +25,7 @@ module.exports = {
     description: config.siteDescription,
     keywords: [
       'fantasy premier league',
-      'פנטזי ליג - בלוג',
+      "פנטזי מנג'ר - בלוג",
       'fantasy football',
       'football',
     ],

@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import theme from 'styles/theme';
 import { rhythm, scale } from 'styles/typography';
 import InfoLine from './infoLine';
 import ParagraphGroup from './paragraphs';
@@ -24,7 +25,8 @@ const ArticleCard = ({ node, noImage, ...props }) => {
         align-self: center;
 
         border-radius: 15px;
-        background-color: var(--card-bg-color);
+        // opacity 0.7
+        background-color: ${theme.colors.darkGray}b3;
         color: var(--primary-color);
         text-decoration: none;
 
