@@ -19,9 +19,10 @@ export default function Home() {
           }
         }
       }
-      latestPost: allMarkdownRemark(
+      latestPosts: allMarkdownRemark(
+        filter: { fields: { categories: { nin: "פנטזי א-ב" } } }
         sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1
+        limit: 5
       ) {
         edges {
           node {
@@ -31,9 +32,9 @@ export default function Home() {
         }
       }
       posts: allMarkdownRemark(
+        filter: { fields: { categories: { in: "פנטזי א-ב" } } }
         sort: { order: DESC, fields: [frontmatter___date] }
-        skip: 1
-        limit: 9
+        limit: 6
       ) {
         totalCount
         edges {
@@ -47,6 +48,7 @@ export default function Home() {
   `);
 
   const imageData = data.desktop.childImageSharp.fluid;
+  const latestPosts = data.latestPosts.edges;
   const cards = data.posts.edges;
 
   const maxWidth = '1170';
@@ -76,6 +78,12 @@ export default function Home() {
 
           @media (min-width: ${+maxWidth + 10}px) {
             padding: 0;
+          }
+
+          .latest-posts {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-row-gap: 2rem;
           }
 
           .cards {
@@ -202,13 +210,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="cards">
+        <section className="latest-posts cards">
           <h2 className="cards-title">מאמרים אחרונים</h2>
-          <ArticleCard
-            noImage
-            dir={DIRECTION}
-            node={data.latestPost.edges[0].node}
-          />
+          {latestPosts.map(({ node }) => (
+            <ArticleCard
+              key={node.fields.slug}
+              noImage
+              dir={DIRECTION}
+              node={node}
+            />
+          ))}
         </section>
 
         <section className="cards">
@@ -221,7 +232,7 @@ export default function Home() {
               grid-gap: 2rem 6%;
             `}
           >
-            {cards.map(({ node }, i) => (
+            {cards.map(({ node }) => (
               <SmallCard key={node.fields.slug} node={node} noImage />
             ))}
           </div>

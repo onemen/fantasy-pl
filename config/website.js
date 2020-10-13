@@ -1,7 +1,7 @@
 module.exports = {
-  siteTitle: 'פנזטי ליג - בלוג', // Navigation and Site Title
+  siteTitle: 'פנטזי ליג - בלוג', // Navigation and Site Title
   siteTitleAlt: 'פנטזי פרמייר ליג - בלוג (ישראל)', // Alternative Site title for SEO
-  siteTitleShort: 'פנזטי ליג', // short_name for manifest
+  siteTitleShort: 'פנטזי ליג', // short_name for manifest
   siteUrl: process.env.ROOT_URL || 'http://tabmixplus.org', // Domain of your site. No trailing slash!
   lang: 'he', // Language Tag on <html> element
   pathPrefix: '/',

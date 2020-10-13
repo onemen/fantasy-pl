@@ -13,6 +13,7 @@ function BlogPage() {
     graphql`
       query {
         posts: allMarkdownRemark(
+          filter: { fields: { categories: { in: "פנטזי א-ב" } } }
           sort: { order: DESC, fields: [frontmatter___date] }
         ) {
           edges {
