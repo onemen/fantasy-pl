@@ -21,7 +21,10 @@ export default function Home() {
       }
       latestPosts: allMarkdownRemark(
         filter: { fields: { categories: { nin: "פנטזי א-ב" } } }
-        sort: { order: DESC, fields: [frontmatter___date] }
+        sort: {
+          fields: [frontmatter___date, frontmatter___title]
+          order: [DESC, ASC]
+        }
         limit: 5
       ) {
         edges {
@@ -33,7 +36,10 @@ export default function Home() {
       }
       posts: allMarkdownRemark(
         filter: { fields: { categories: { in: "פנטזי א-ב" } } }
-        sort: { order: DESC, fields: [frontmatter___date] }
+        sort: {
+          fields: [frontmatter___date, frontmatter___title]
+          order: [DESC, ASC]
+        }
         limit: 6
       ) {
         totalCount
@@ -210,16 +216,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="latest-posts cards">
+        <section className="cards">
           <h2 className="cards-title">מאמרים אחרונים</h2>
-          {latestPosts.map(({ node }) => (
-            <ArticleCard
-              key={node.fields.slug}
-              noImage
-              dir={DIRECTION}
-              node={node}
-            />
-          ))}
+          <div className="latest-posts" dir={DIRECTION}>
+            {latestPosts.map(({ node }) => (
+              <ArticleCard key={node.fields.slug} noImage node={node} />
+            ))}
+          </div>
         </section>
 
         <section className="cards">

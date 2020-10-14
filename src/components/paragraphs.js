@@ -21,17 +21,20 @@ const paragraphs = text => {
 };
 
 const ParagraphGroup = ({ summery, margin = { top: 0, bottom: 0 } }) => {
-  return paragraphs(summery).map((p, i) => (
-    <p
-      key={i}
-      css={css`
-        margin-top: ${p.start ? margin.top : 0};
-        margin-bottom: ${p.end ? margin.bottom : 0};
-      `}
-    >
-      {p.text}
-    </p>
-  ));
+  return (
+    summery &&
+    paragraphs(summery).map((p, i) => (
+      <p
+        key={i}
+        css={css`
+          margin-top: ${p.start ? margin.top : 0};
+          margin-bottom: ${p.end ? margin.bottom : 0};
+        `}
+      >
+        {p.text}
+      </p>
+    ))
+  );
 };
 
 export default ParagraphGroup;
