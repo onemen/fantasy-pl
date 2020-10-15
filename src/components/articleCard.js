@@ -1,12 +1,11 @@
 import { css } from '@emotion/core';
-import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import theme from 'styles/theme';
 import { rhythm, scale } from 'styles/typography';
 import InfoLine from './infoLine';
+import LinkCard from './linkCard';
 import ParagraphGroup from './paragraphs';
 
-const ArticleCard = ({ node, noImage, ...props }) => {
+const ArticleCard = ({ node, noImage }) => {
   const {
     fields: { author, date, dateHe, language, keywords, slug, summery, title },
     bannerField: { banner },
@@ -15,29 +14,22 @@ const ArticleCard = ({ node, noImage, ...props }) => {
   const dir = language === 'he' ? 'rtl' : 'ltr';
 
   return (
-    <Link
-      {...props}
+    <LinkCard
       to={slug}
       aria-label="לקריאת המאמר"
+      direction={dir}
+      maxwidth="500px"
       css={css`
-        display: flex;
-        flex-direction: column-reverse;
-        align-self: center;
-
-        border-radius: 15px;
-        // opacity 0.7
-        background-color: ${theme.colors.darkGray}b3;
-        color: var(--primary-color);
-        text-decoration: none;
-
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-          0 10px 10px rgba(0, 0, 0, 0.22);
-
-        width: 350px;
-        max-width: 90vw;
-        @media (min-width: 500px) {
-          max-width: 500px;
+        .card__image {
+          border-radius: 10px 10px 0 0;
           width: 100%;
+          height: 100%;
+        }
+
+        .card__title {
+          color: var(--title-color);
+          ${scale(3 / 5)}
+          margin: ${rhythm(1 / 2)} 0;
         }
 
         .card__summery {
@@ -51,11 +43,9 @@ const ArticleCard = ({ node, noImage, ...props }) => {
             : `display: grid;
               grid-template-columns: repeat(2, 1fr);
               grid-template-rows: minmax(330px, auto);`}
-          width: 100%;
-          max-width: unset;
 
-          img {
-            border-radius: 15px 0 0 15px;
+          .card__image {
+            border-radius: 10px 0 0 10px;
           }
 
           .card__title {
@@ -73,25 +63,16 @@ const ArticleCard = ({ node, noImage, ...props }) => {
         }
       `}
     >
-      <div
-        css={css`
-          height: 100%;
-          direction: ${dir};
-          padding: 1rem;
-          display: flex;
-          flex-direction: column;
-        `}
-      >
-        <h2
-          className="card__title"
-          css={css`
-            color: var(--title-color);
-            ${scale(3 / 5)}
-            margin: ${rhythm(1 / 2)} 0;
-          `}
-        >
-          {title}
-        </h2>
+      {!noImage && banner && (
+        <Img
+          className="card__image"
+          fluid={banner.childImageSharp.fluid}
+          alt={keywords.join(', ')}
+        />
+      )}
+
+      <div className="card__content">
+        <h2 className="card__title">{title}</h2>
         <div className="card__summery">
           <ParagraphGroup
             summery={summery}
@@ -105,21 +86,7 @@ const ArticleCard = ({ node, noImage, ...props }) => {
           date={language === 'he' ? dateHe : date}
         />
       </div>
-
-      {!noImage && banner && (
-        <div>
-          <Img
-            fluid={banner.childImageSharp.fluid}
-            css={css`
-              border-radius: 10px 10px 0 0;
-              width: 100%;
-              height: 100%;
-            `}
-            alt={keywords.join(', ')}
-          />
-        </div>
-      )}
-    </Link>
+    </LinkCard>
   );
 };
 
