@@ -7,8 +7,8 @@ const menuItems = {
   '/': 'דף הבית',
   '/blog': 'ארכיון',
   '/basic': 'פנטזי למתחילים',
-  '/about': 'אודות',
-  '/contact': 'כתבו לנו',
+  // '/about': 'אודות',
+  // '/contact': 'כתבו לנו',
 };
 
 const Container = props => {
