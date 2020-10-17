@@ -128,6 +128,12 @@ const blogStyle = css`
       margin-right: 2rem;
       padding: 1rem;
     }
+
+    .credit {
+      display: block;
+      text-align: center;
+      ${scale(-1 / 5)}
+    }
   }
 `;
 

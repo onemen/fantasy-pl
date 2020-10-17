@@ -11,7 +11,7 @@ summery: |-
   אלו הם הטיפים שלנו לבנייה של קבוצה מנצחת.
 language: he
 categories:
-  - פנטזי א-ב
+  - פנטזי למתחילים
 keywords:
   - fantasy
   - football

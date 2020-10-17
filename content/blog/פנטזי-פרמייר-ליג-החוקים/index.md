@@ -2,7 +2,7 @@
 slug: פנטזי-פרמייר-ליג-החוקים
 title: פנטזי פרמייר ליג – החוקים
 subtitle: הסבר מקיף על כלל החוקים ב – Fantasy Premier league
-date: '2020-09-09'
+date: '2020-10-01'
 author: המערכת
 description: הסבר מקיף על כלל החוקים ב – Fantasy Premier league
 summery: |-
@@ -10,7 +10,7 @@ summery: |-
   הסבר מקיף על כל החוקים נמצא כאן.
 language: he
 categories:
-  - פנטזי א-ב
+  - פנטזי למתחילים
 keywords:
   - fantasy
   - football
@@ -44,8 +44,8 @@ bannerCredit: 'צילום [Arseny Togulev](https://unsplash.com/photos/GKLQ8PJuC
   <li>3 שחקני התקפה.</li>
 </ul>
 
-צילום מסך של קבוצה מלאה
 ![סגל מלא](./images/team-screenshot.png)
+<span class="credit">צילום מסך של קבוצה מלאה</span>
 
 <p class="comment-link">
   פעם ראשונה שאתם מרכיבים קבוצה?
@@ -112,8 +112,8 @@ bannerCredit: 'צילום [Arseny Togulev](https://unsplash.com/photos/GKLQ8PJuC
   העונה.
 </p>
 
-חלון החילופים – גרסת הרשימה
 ![חלון החילופים](./images/transfers.png)
+<span class="credit">חלון החילופים – גרסת הרשימה</span>
 
 <p>
   <em
@@ -206,11 +206,11 @@ bannerCredit: 'צילום [Arseny Togulev](https://unsplash.com/photos/GKLQ8PJuC
   העוקב למחזור המשחקים בו השתמשנו בצ'יפ נהיה זכאים להעברה חופשית אחת בלבד.
 </p>
 
-אפשרות שימוש בצ'יפ Wildcard
 ![אפשרות שימוש בצ'יפ Wildcard](./images/wildcard-chips.png)
+<span class="credit">אפשרות שימוש בצ'יפ Wildcard</span>
 
-אפשרות שימוש בצ'יפים האחרים
 ![תמונות של שימוש בצ'יפים](./images/other-chips.png)
+<span class="credit">אפשרות שימוש בצ'יפים האחרים</span>
 
 <p>אלו הם הצ'יפים שעומדים לרשותנו במהלך העונה –</p>
 <h3><strong>כרטיס חילופים חופשי (Wildcard) – פעמיים במהלך העונה</strong></h3>
@@ -417,8 +417,8 @@ bannerCredit: 'צילום [Arseny Togulev](https://unsplash.com/photos/GKLQ8PJuC
   </tbody>
 </table>
 
-ניקוד של שחקן כלשהו במשחק מסוים
 ![ניקוד של שחקן](./images/player-points.png)
+<span class="credit">ניקוד של שחקן כלשהו במשחק מסוים</span>
 
 <h3>
   <strong><em>אסיסט</em></strong>
@@ -498,8 +498,8 @@ bannerCredit: 'צילום [Arseny Togulev](https://unsplash.com/photos/GKLQ8PJuC
   משלושה שחקנים אשר זכאים לנקודות בונוס במשחק מסוים).
 </p>
 
-ניקוד בונוס ממשחק מסוים
 ![ניקוד בונוס](./images/bonus-points.png)
+<span class="credit">ניקוד בונוס ממשחק מסוים</span>
 
 <p>חישוב נקודות הבונוס המצטבר במהלך המשחק יחושב כדלקמן –</p>
 <table>

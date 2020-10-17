@@ -13,7 +13,7 @@ function BlogPage() {
     graphql`
       query {
         posts: allMarkdownRemark(
-          filter: { fields: { categories: { in: "פנטזי א-ב" } } }
+          filter: { fields: { categories: { in: "פנטזי למתחילים" } } }
           sort: { order: DESC, fields: [frontmatter___date] }
         ) {
           edges {
@@ -35,9 +35,9 @@ function BlogPage() {
         padding: 3.35rem 0 0;
       `}
     >
-      <SEO title="פנטזי א-ב" />
+      <SEO title="פנטזי למתחילים" />
       <div>
-        <h1 css={{ marginBottom: 20, textAlign: 'center' }}>פנטזי א-ב</h1>
+        <h1 css={{ marginBottom: 20, textAlign: 'center' }}>פנטזי למתחילים</h1>
         <p
           css={css`
             background-color: ${theme.colors.darkGray};
@@ -51,10 +51,8 @@ function BlogPage() {
             }
           `}
         >
-          ברוכים הבאים,
-          <br /> במאמרים בעמוד זה <span>המנג&#39;ר</span> ידריך אתכם במושגים
-          הבסיסיים שכל מי שמשחק ב- <span>Fantasy Premier League</span> חייב
-          לדעת.
+          בעמוד זה תוכלו למצוא מספר מאמרים מקיפים שילמדו אתכם את כל הדברים
+          החשובים שצריכים לדעת בכדי לבנות קבוצה מנצחת
         </p>
       </div>
       <div

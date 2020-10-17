@@ -37,13 +37,13 @@ describe('Accessibility tests', () => {
       .click()
       .checkA11y(null, null, terminalLog);
     cy.url().should('eq', 'http://localhost:8000/blog');
-    cy.findByRole('button', { name: 'פנטזי א-ב' })
+    cy.findByRole('button', { name: 'פנטזי למתחילים' })
       .click()
       .checkA11y(null, null, terminalLog);
   });
 
   it('Navigates to page /basic and checks for accessibility violations', () => {
-    cy.findAllByRole('link', { name: 'פנטזי א-ב' })
+    cy.findAllByRole('link', { name: 'פנטזי למתחילים' })
       .first()
       .click()
       .checkA11y(null, null, terminalLog);
@@ -67,7 +67,7 @@ describe('Accessibility tests', () => {
   });
 
   it('Navigates to blog pages and checks for accessibility violations', () => {
-    cy.findAllByRole('link', { name: 'פנטזי א-ב' }).first().click();
+    cy.findAllByRole('link', { name: 'פנטזי למתחילים' }).first().click();
     cy.wait(200);
 
     const pages = [

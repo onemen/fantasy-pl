@@ -20,7 +20,7 @@ export default function Home() {
         }
       }
       latestPosts: allMarkdownRemark(
-        filter: { fields: { categories: { nin: "פנטזי א-ב" } } }
+        filter: { fields: { categories: { nin: "פנטזי למתחילים" } } }
         sort: {
           fields: [frontmatter___date, frontmatter___title]
           order: [DESC, ASC]
@@ -35,7 +35,7 @@ export default function Home() {
         }
       }
       posts: allMarkdownRemark(
-        filter: { fields: { categories: { in: "פנטזי א-ב" } } }
+        filter: { fields: { categories: { in: "פנטזי למתחילים" } } }
         sort: {
           fields: [frontmatter___date, frontmatter___title]
           order: [DESC, ASC]
@@ -125,6 +125,7 @@ export default function Home() {
 
             h1 {
               font-size: 2rem;
+              text-align: center;
             }
 
             .text-sm {
@@ -190,16 +191,16 @@ export default function Home() {
                 margin-top: 1rem;
                 padding: 0;
                 a {
-                  font-size: 1.45rem;
-                  padding: 0.5em 1.5em;
+                  font-size: 1.35rem;
+                  padding: 0.5em 1em;
                 }
               }
             }
           `}
         >
           <h1>
-            <div>המנג&#39;ר</div>
-            <div className="text-sm">ילמד אותך כל מה שצריך לדעת על</div>
+            <span>פנטזי מנג&#39;ר</span>
+            <span className="text-sm"> - מדברים</span>
             <div className="text-xl">Fantasy Premier League</div>
           </h1>
           <div className="cta-container">
@@ -210,8 +211,12 @@ export default function Home() {
             >
               לארכיון המאמרים המלא
             </Link>
-            <Link className="cta-two" to="/basic" aria-label="פנטזי א-ב">
-              פנטזי א-ב
+            <Link
+              className="cta-two"
+              to="/basic"
+              aria-label="מאמרים למנג'ר המתחיל"
+            >
+              מאמרים למנג&#39;ר המתחיל
             </Link>
           </div>
         </section>
@@ -226,7 +231,7 @@ export default function Home() {
         </section>
 
         <section className="cards">
-          <h2 className="cards-title">פנטזי א-ב</h2>
+          <h2 className="cards-title">פנטזי למתחילים</h2>
           <div
             dir={DIRECTION}
             css={css`

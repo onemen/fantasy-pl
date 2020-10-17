@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 const menuItems = {
   '/': 'דף הבית',
   '/blog': 'ארכיון',
-  '/basic': 'פנטזי א-ב',
+  '/basic': 'פנטזי למתחילים',
   '/about': 'אודות',
   '/contact': 'כתבו לנו',
 };
