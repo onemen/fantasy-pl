@@ -5,6 +5,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import config from '../../../config/website';
 import defaultMetaImage from '../../../static/images/metaImage.jpg';
+import SchemaOrg from './schema-org';
 
 function SEO({
   siteMetadata: seo,
@@ -54,9 +55,6 @@ function SEO({
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
       </Helmet>
-      {/*
-      TODO:
-      add this after we get new domain
       <SchemaOrg
         isBlogPost={isBlogPost}
         url={url}
@@ -69,7 +67,6 @@ function SEO({
         organization={seo.organization}
         defaultTitle={seo.title}
       />
-       */}
     </>
   );
 }

@@ -2,7 +2,7 @@ module.exports = {
   siteTitle: "פנטזי מנג'ר - בלוג", // Navigation and Site Title
   siteTitleAlt: "פנטזי מנג'ר - בלוג (ישראל)", // Alternative Site title for SEO
   siteTitleShort: "פנטזי מנג'ר", // short_name for manifest
-  siteUrl: process.env.ROOT_URL || 'http://tabmixplus.org', // Domain of your site. No trailing slash!
+  siteUrl: process.env.ROOT_URL || 'https://fantasymanager.co.il', // Domain of your site. No trailing slash!
   lang: 'he', // Language Tag on <html> element
   pathPrefix: '/',
   siteLogo: 'images/logo.png', // Used for SEO and manifest, path to your image you placed in the 'static' folder

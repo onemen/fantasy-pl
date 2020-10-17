@@ -148,35 +148,27 @@ module.exports = {
         omitGoogleFont: true,
       },
     },
-    /**
-     *  TODO:
-     *
-     *  enable when we get a domain name
-     *
-     *  pnpm install gatsby-plugin-robots-txt
-     *
-     {
+    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
-            policy: [{userAgent: '*'}],
+            policy: [{ userAgent: '*' }],
           },
           'branch-deploy': {
-            policy: [{userAgent: '*', disallow: ['/']}],
+            policy: [{ userAgent: '*', disallow: ['/'] }],
             sitemap: null,
             host: null,
           },
           'deploy-preview': {
-            policy: [{userAgent: '*', disallow: ['/']}],
+            policy: [{ userAgent: '*', disallow: ['/'] }],
             sitemap: null,
             host: null,
           },
         },
       },
     },
-     */
     'gatsby-plugin-sitemap',
   ],
 };
