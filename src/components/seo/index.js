@@ -15,9 +15,7 @@ function SEO({
   frontmatter: postMeta = postData.childMarkdownRemark.frontmatter || {},
   title = postMeta.title || config.siteTitle,
   lang = postMeta.language || config.ogLanguage,
-  description = postMeta.plainTextDescription ||
-    postMeta.description ||
-    seo.description,
+  description = postMeta.description || seo.description,
   image = `${seo.canonicalUrl}${metaImage || defaultMetaImage}`,
   url = postMeta.slug
     ? `${seo.canonicalUrl}${postMeta.slug}`

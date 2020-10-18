@@ -23,7 +23,7 @@ function BlogPage() {
                 title
                 categories
                 keywords
-                description: plainTextDescription
+                description
                 banner {
                   ...bannerImage260
                 }

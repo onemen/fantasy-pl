@@ -1,16 +1,7 @@
 const { createFilePath } = require('gatsby-source-filesystem');
 const slugify = require('@sindresorhus/slugify');
 const path = require('path');
-const stripMarkdownPlugin = require('strip-markdown');
-const remark = require('remark');
 const config = require('./config/website');
-
-function stripMarkdown(markdownString) {
-  return remark()
-    .use(stripMarkdownPlugin)
-    .processSync(markdownString)
-    .toString();
-}
 
 function trim(text) {
   return (text || '').trim();
@@ -70,12 +61,6 @@ module.exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'description',
       node,
       value: description,
-    });
-
-    createNodeField({
-      name: 'plainTextDescription',
-      node,
-      value: stripMarkdown(description),
     });
 
     createNodeField({
