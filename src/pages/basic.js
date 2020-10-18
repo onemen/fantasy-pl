@@ -16,11 +16,9 @@ function BlogPage() {
           filter: { fields: { categories: { in: "פנטזי למתחילים" } } }
           sort: { order: DESC, fields: [frontmatter___date] }
         ) {
-          edges {
-            node {
-              ...cardFields
-              ...bannerField400
-            }
+          nodes {
+            ...cardFields
+            ...bannerField400
           }
         }
       }
@@ -65,7 +63,7 @@ function BlogPage() {
           height: 100%;
         `}
       >
-        {result.posts.edges.map(({ node }, i) => (
+        {result.posts.nodes.map((node, i) => (
           <SmallCard key={node.fields.slug + i} node={node} />
         ))}
       </div>

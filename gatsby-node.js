@@ -114,11 +114,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const { data, errors } = await graphql(`
     query {
       allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
+        nodes {
+          fields {
+            slug
           }
         }
       }
@@ -129,15 +127,15 @@ exports.createPages = async ({ graphql, actions }) => {
     return Promise.reject(errors);
   }
 
-  const { edges } = data.allMarkdownRemark;
-  if (!edges.length) {
+  const { nodes } = data.allMarkdownRemark;
+  if (!nodes.length) {
     return Promise.reject('There are no posts!');
   }
 
   const { createPage } = actions;
 
   const blogTemplate = path.resolve(`./src/templates/blog.js`);
-  edges.forEach(({ node }) => {
+  nodes.forEach(node => {
     const slug = node.fields.slug;
     createPage({
       path: slug,

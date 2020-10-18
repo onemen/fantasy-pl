@@ -27,11 +27,9 @@ export default function Home() {
         }
         limit: 5
       ) {
-        edges {
-          node {
-            ...cardFields
-            ...articleBanner
-          }
+        nodes {
+          ...cardFields
+          ...articleBanner
         }
       }
       posts: allMarkdownRemark(
@@ -43,19 +41,17 @@ export default function Home() {
         limit: 6
       ) {
         totalCount
-        edges {
-          node {
-            ...cardFields
-            ...bannerField400
-          }
+        nodes {
+          ...cardFields
+          ...bannerField400
         }
       }
     }
   `);
 
   const imageData = data.desktop.childImageSharp.fluid;
-  const latestPosts = data.latestPosts.edges;
-  const cards = data.posts.edges;
+  const latestPosts = data.latestPosts.nodes;
+  const cards = data.posts.nodes;
 
   const maxWidth = '1170';
   return (
@@ -224,7 +220,7 @@ export default function Home() {
         <section className="cards">
           <h2 className="cards-title">מאמרים אחרונים</h2>
           <div className="latest-posts" dir={DIRECTION}>
-            {latestPosts.map(({ node }) => (
+            {latestPosts.map(node => (
               <ArticleCard key={node.fields.slug} noImage node={node} />
             ))}
           </div>
@@ -240,7 +236,7 @@ export default function Home() {
               grid-gap: 2rem 6%;
             `}
           >
-            {cards.map(({ node }) => (
+            {cards.map(node => (
               <SmallCard key={node.fields.slug} node={node} noImage />
             ))}
           </div>

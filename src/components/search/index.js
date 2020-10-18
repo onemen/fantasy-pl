@@ -138,11 +138,11 @@ function Search(props) {
   // this will be the same every time and because this re-renders on every
   // keystroke I'm pretty sure useMemo is appropriate here.
   const blogposts = React.useMemo(() => {
-    return props.blogposts.edges.map(e => ({
-      ...e.node.fields,
-      excerpt: e.node.excerpt,
+    return props.blogposts.nodes.map(e => ({
+      ...e.fields,
+      excerpt: e.excerpt,
     }));
-  }, [props.blogposts.edges]);
+  }, [props.blogposts.nodes]);
 
   const categories = React.useMemo(
     () => Array.from(new Set(blogposts.flatMap(post => post.categories))),

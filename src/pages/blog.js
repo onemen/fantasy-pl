@@ -10,26 +10,21 @@ function BlogPage() {
       query {
         blogposts: allMarkdownRemark(
           sort: { fields: frontmatter___date, order: DESC }
-          filter: {
-            # frontmatter: { published: { ne: false } }
-            fileAbsolutePath: { regex: "//content/blog//" }
-          }
+          filter: { fileAbsolutePath: { regex: "//content/blog//" } }
         ) {
-          edges {
-            node {
-              fields {
-                id
-                slug
-                title
-                categories
-                keywords
-                description
-                banner {
-                  ...bannerImage260
-                }
+          nodes {
+            fields {
+              id
+              slug
+              title
+              categories
+              keywords
+              description
+              banner {
+                ...bannerImage260
               }
-              excerpt(pruneLength: 190)
             }
+            excerpt(pruneLength: 190)
           }
         }
       }
