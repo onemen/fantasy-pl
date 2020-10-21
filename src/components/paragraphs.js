@@ -7,7 +7,7 @@ import { css } from '@emotion/core';
  *
  */
 
-const paragraphs = text => {
+const getParagraphs = text => {
   const sections = text.split('\n\n').map(section => {
     const parts = section
       .split('\n')
@@ -20,20 +20,33 @@ const paragraphs = text => {
   return sections.flat();
 };
 
-const ParagraphGroup = ({ summery, margin = { top: 0, bottom: 0 } }) => {
-  return (
-    summery &&
-    paragraphs(summery).map((p, i) => (
-      <p
-        key={i}
-        css={css`
-          margin-top: ${p.start ? margin.top : 0};
-          margin-bottom: ${p.end ? margin.bottom : 0};
-        `}
-      >
-        {p.text}
-      </p>
-    ))
+const ParagraphGroup = ({
+  className,
+  summery,
+  margin = { top: 0, bottom: 0 },
+}) => {
+  if (!summery) {
+    return null;
+  }
+
+  const parts = getParagraphs(summery);
+  const paragraphs = parts.map((p, i) => (
+    <p
+      className={parts.length === 1 ? className : null}
+      key={i}
+      css={css`
+        margin-top: ${p.start ? margin.top : 0};
+        margin-bottom: ${p.end ? margin.bottom : 0};
+      `}
+    >
+      {p.text}
+    </p>
+  ));
+
+  return paragraphs.length === 1 ? (
+    paragraphs[0]
+  ) : (
+    <div className={className}>{paragraphs}</div>
   );
 };
 

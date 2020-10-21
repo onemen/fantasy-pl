@@ -42,8 +42,6 @@ export const bannerImage = graphql`
       language
       keywords
       slug
-      subtitle
-      summery
       title
     }
   }

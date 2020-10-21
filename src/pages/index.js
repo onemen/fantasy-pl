@@ -29,6 +29,9 @@ export default function Home() {
       ) {
         nodes {
           ...cardFields
+          fields {
+            summery
+          }
           ...articleBanner
         }
       }
@@ -40,9 +43,11 @@ export default function Home() {
         }
         limit: 6
       ) {
-        totalCount
         nodes {
           ...cardFields
+          fields {
+            summery: subtitle
+          }
           ...bannerField400
         }
       }

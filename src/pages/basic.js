@@ -14,10 +14,16 @@ function BlogPage() {
       query {
         posts: allMarkdownRemark(
           filter: { fields: { categories: { in: "פנטזי למתחילים" } } }
-          sort: { order: DESC, fields: [frontmatter___date] }
+          sort: {
+            fields: [frontmatter___date, frontmatter___title]
+            order: [DESC, ASC]
+          }
         ) {
           nodes {
             ...cardFields
+            fields {
+              summery: subtitle
+            }
             ...bannerField400
           }
         }
@@ -63,8 +69,8 @@ function BlogPage() {
           height: 100%;
         `}
       >
-        {result.posts.nodes.map((node, i) => (
-          <SmallCard key={node.fields.slug + i} node={node} />
+        {result.posts.nodes.map(node => (
+          <SmallCard key={node.fields.slug} node={node} />
         ))}
       </div>
     </Layout>
