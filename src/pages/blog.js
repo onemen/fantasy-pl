@@ -19,7 +19,7 @@ function BlogPage() {
               title
               categories
               keywords
-              description
+              description: subtitle
               banner {
                 ...bannerImage260
               }
