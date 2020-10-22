@@ -60,6 +60,9 @@ const Footer = ({ maxWidth, dir }) => {
           <Navbar className="navbar" color="text" dir={dir} />
         </div>
         <div className="left">
+          <div css={{ marginBottom: 10, fontWeight: 500, fontSize: '1rem' }}>
+            כתבו לנו: ILFantasymanager@gmail.com
+          </div>
           <span>פנטזי מנג&#39;ר @ 2020. כל הזכויות שמורות</span>
         </div>
       </div>
