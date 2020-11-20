@@ -11,6 +11,7 @@ summery: |-
 language: he
 categories:
   - מחזור 5 - 2020
+  - צ'יפים
 keywords:
   - fantasy
   - football

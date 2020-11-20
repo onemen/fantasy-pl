@@ -129,6 +129,7 @@ const blogStyle = css`
       padding: 1rem;
     }
 
+    .credit-link,
     .credit {
       display: block;
       text-align: center;

@@ -14,6 +14,7 @@ summery: |-
 language: he
 categories:
   - פנטזי למתחילים
+  - צ'יפים
 keywords:
   - fantasy
   - football
